@@ -10,7 +10,18 @@ const float MAX_DIMENSION     = 55.0f;
 // Constructeur
 MyGLWidget::MyGLWidget(QWidget * parent) : QGLWidget(parent)
 {
+    // Reglage de la taille/position
+    setFixedSize(WIN_WIDTH, WIN_HEIGHT);
+    move(QApplication::desktop()->screen()->rect().center() - rect().center());
+
     game=GameManager();
+    //Boucle d'animation
+    connect(&m_AnimationTimer,  &QTimer::timeout, [&] {
+        updateGL();
+    });
+
+    m_AnimationTimer.setInterval(10);
+    m_AnimationTimer.start();
 
 }
 
