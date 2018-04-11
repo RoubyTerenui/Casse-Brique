@@ -138,19 +138,19 @@ void MyGLWidget::paintGL()
 
     // Affichage du cube du background
     glBegin(GL_QUADS);
-    glTexCoord2d(0,0); glVertex3f(55.0f, 55.0f, -10.0f);
-    glTexCoord2d(1,0); glVertex3f(-55.0f, 55.0f, -10.0f);
-    glTexCoord2d(1,1); glVertex3f(-55.0f, -55.0f, -10.0f);
-    glTexCoord2d(0,1); glVertex3f(55.0f, -55.0f, -10.0f);
+    glTexCoord2d(0,0); glVertex3f(55.0f,31.0f, -10.0f);
+    glTexCoord2d(1,0); glVertex3f(-55.0f, 31.0f, -10.0f);
+    glTexCoord2d(1,1); glVertex3f(-55.0f, -31.0f, -10.0f);
+    glTexCoord2d(0,1); glVertex3f(55.0f, -31.0f, -10.0f);
     glEnd();
 
 
     glBindTexture(GL_TEXTURE_2D, tab_text[1]);
     glBegin(GL_QUADS);
-    glTexCoord2d(0,0); glVertex3f(111.0f, 222.0f, -10.0f);
-    glTexCoord2d(1,0); glVertex3f(0.0f, 222.0f, -10.0f);
-    glTexCoord2d(1,1); glVertex3f(0.0f, 111.0f, -10.0f);
-    glTexCoord2d(0,1); glVertex3f(111.0f, 111.0f, -10.0f);
+    glTexCoord2d(0,0); glVertex3f(111.0f, 62.0f, -10.0f);
+    glTexCoord2d(1,0); glVertex3f(0.0f, 62.0f, -10.0f);
+    glTexCoord2d(1,1); glVertex3f(0.0f, 31.0f, -10.0f);
+    glTexCoord2d(0,1); glVertex3f(111.0f, 31.0f, -10.0f);
     glEnd();
 
     glClear(GL_DEPTH_BUFFER_BIT);

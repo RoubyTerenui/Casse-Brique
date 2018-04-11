@@ -15,7 +15,7 @@ public:
 
 public:
     GameManager();
-    int collisionBrick();//Renvoie un entier entre 0 et 8indiquant la collision avec une brick et met à jour sa vie
+    int collisionBrick(Square brick);//Renvoie un entier entre 0 et 8indiquant la collision avec une brick et met à jour sa vie
     int collisionWall();//Renvoie un entier entre 0 et 6 indiquant la collision avec les bords du plateau
     int collisionStick();// Renvoie vrai ou faux
     void updateListBricks_Score();//Elements de la liste Score
