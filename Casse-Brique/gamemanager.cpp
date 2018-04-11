@@ -76,14 +76,19 @@ void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nom
     }
 }
 
-int GameManager::collisionBrick()
+int GameManager::collisionBrick(Square brick)
 {
     if (bille_.getState()==QString("fixed"))
     {
 
     }
     else{
-
+        double  H = brick.height_/2;
+        double W = brick.width_/2;
+        QPoint BG = QPoint(brick.center_[0]-W,brick.center_[1]-H);
+        QPoint BD = QPoint(brick.center_[0]+W,brick.center_[1]-H);
+        QPoint HG = QPoint(brick.center_[0]-W,brick.center_[1]+H);
+        QPoint HD = QPoint(brick.center_[0]+W,brick.center_[1]+H);
     }
 
 }

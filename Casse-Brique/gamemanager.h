@@ -4,6 +4,8 @@
 #include "square.h"
 #include "palette.h"
 #include "player.h"
+#include <QPoint>
+
 class GameManager
 {
 public:
