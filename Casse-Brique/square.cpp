@@ -6,11 +6,12 @@ Square::Square(){
     center_[1]=0;
     center_[2]=0;
 }
-Square::Square(double width,double height,double X,double Y,double Z)
+Square::Square(double width,double height,double X,double Y,double Z,int life)
 {
     width_=width;
     height_=height;
     center_[0]=X;
     center_[1]=Y;
     center_[2]=Z;
+    life_=life;
 }

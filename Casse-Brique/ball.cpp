@@ -13,6 +13,10 @@ Ball::Ball(double radius,double x ,double y,double z,double speed)
     center_[1]=y;
     center_[2]=z;
     speed_=speed;
+    directionX_=1;
+    directionY_=1;
+    directionZ_=0;
+    state_=QString("fixed");// A l'initialisation la bille est collé
 }
 double *Ball::getDirection(){
     double direction[3];

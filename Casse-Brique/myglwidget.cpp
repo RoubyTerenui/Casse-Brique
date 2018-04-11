@@ -2,6 +2,7 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <iostream>
+#include <QTimer>
 #include <gamemanager.h>
 // Declaration des constantes
 const unsigned int WIN_WIDTH  = 1600;
@@ -207,7 +208,12 @@ void MyGLWidget::dessineCube(double centerX,double centerY,double centerZ,double
 
 
 void MyGLWidget::drawBall(){//Dessin de la bille
-
+    double newpositionX=game.bille_.getDirectionX()*game.bille_.getspeed()+game.bille_.getX();
+    double newpositionY=game.bille_.getDirectionY()*game.bille_.getspeed()+game.bille_.getY();
+    double newpositionZ=game.bille_.getDirectionZ()*game.bille_.getspeed()+game.bille_.getZ();
+    game.bille_.setX(newpositionX);
+    game.bille_.setY(newpositionY);
+    game.bille_.setZ(newpositionZ);
     glEnable(GL_FRONT);
     glPushMatrix();
     glBindTexture(GL_TEXTURE_2D, tab_text[8]);
