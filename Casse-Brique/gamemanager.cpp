@@ -15,7 +15,7 @@ GameManager::GameManager()
 }
 
 
-void GameManager::updateBille()//Position de la Bille et Direction et update de la vie des bricks
+void GameManager::updateBille_Score()//Position de la Bille et Direction et update de la vie des bricks
 {
     for (int i=0;i<120;i++ && listbricks_[i].getLife()>0){
         if(collisionBrick(listbricks_[i])!=0)
@@ -76,7 +76,7 @@ void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nom
     }
     if (cleared){
         nbwin+=1;
-        bille_.speed_+=0.05;
+        bille_.setSpeed(bille_.getspeed()+0.05);
     }
 
 }
