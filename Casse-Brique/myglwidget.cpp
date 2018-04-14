@@ -160,7 +160,10 @@ void MyGLWidget::paintGL()
     glBindTexture(GL_TEXTURE_2D, tab_text[6]);
     // Affichage du terrain de la partie initiale
     for (int i=0;i<120;i++){
-        dessineCube(game.listbricks_[i].getX(),game.listbricks_[i].getY(),game.listbricks_[i].getZ(),game.listbricks_[i].getWidth(),game.listbricks_[i].getHeight());
+        if (game.listbricks_[i].getLife()>0)
+        {
+            dessineCube(game.listbricks_[i].getX(),game.listbricks_[i].getY(),game.listbricks_[i].getZ(),game.listbricks_[i].getWidth(),game.listbricks_[i].getHeight());
+        }
     }
     glBindTexture(GL_TEXTURE_2D, tab_text[7]);
     dessineCube(game.stick_.getX(),game.stick_.getY(),game.stick_.getZ(),game.stick_.getWidth(),game.stick_.getHeight());

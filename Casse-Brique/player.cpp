@@ -2,6 +2,6 @@
 
 Player::Player()
 {
-    lifePoint_=5;
+    lifePoint_=3;
     score_=0;
 }

@@ -14,4 +14,5 @@ Square::Square(double width,double height,double X,double Y,double Z,int life)
     center_[1]=Y;
     center_[2]=Z;
     life_=life;
+    score=0;
 }
