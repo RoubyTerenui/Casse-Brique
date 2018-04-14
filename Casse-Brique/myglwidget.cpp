@@ -18,6 +18,7 @@ MyGLWidget::MyGLWidget(QWidget * parent) : QGLWidget(parent)
     game=GameManager();
     //Boucle d'animation
     connect(&m_AnimationTimer,  &QTimer::timeout, [&] {
+        game.updateBille();
         updateGL();
     });
 
