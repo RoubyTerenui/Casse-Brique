@@ -17,8 +17,8 @@ public:
     int nbwin;
 private:
     bool collisionPointCercle(double x,double y,Ball b);
-    bool collisionDroite(QPoint A,QPoint B,Ball C);
-    bool collisionSegmentCercle(QPoint A,QPoint B,Ball C);
+    bool collisionDroite(double aX,double aY,double bX,double bY,Ball C);
+    bool collisionSegmentCercle(double aX,double aY,double bX,double bY,Ball C);
 public:
     GameManager();
     int collisionBrick(Square brick);//Renvoie un entier entre 0 et 8 indiquant la collision avec une brick et met à jour sa vie
