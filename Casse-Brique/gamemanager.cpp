@@ -65,7 +65,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
         if (direction==1){
             if(player.getLifePoint()>0){
                 player.setLifePoint(player.getLifePoint()-1);
-                bille_.reinitialiser(stick_.getX(),-23.65,55);
+                bille_.reinitialiser(stick_.getX(),-23.6,55);
             }
             else{//TO DO Faire un écran Game over
                 state_=QString("Game Over");
