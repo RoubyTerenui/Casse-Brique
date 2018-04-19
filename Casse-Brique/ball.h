@@ -16,12 +16,14 @@ private:
 public:
     Ball();
     Ball(double radius,double x,double y,double z,double speed);
+    void reinitialiser(double x,double y,double z);
     double getRadius(){return radius_;}
     double getspeed(){return speed_;}
     double getX(){return center_[0];}
     double getY(){return center_[1];}
     double getZ(){return center_[2];}
     QString getState(){return state_;}
+    void setState(QString change){state_=change;}
     double *getDirection();
     double getDirectionX(){return directionX_;}
     double getDirectionY(){return directionY_;}

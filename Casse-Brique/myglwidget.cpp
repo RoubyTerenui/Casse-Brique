@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QTimer>
 #include <gamemanager.h>
+#include <QDebug>
 // Declaration des constantes
 const unsigned int WIN_WIDTH  = 1600;
 const unsigned int WIN_HEIGHT = 900;
@@ -14,11 +15,12 @@ MyGLWidget::MyGLWidget(QWidget * parent) : QGLWidget(parent)
     // Reglage de la taille/position
     setFixedSize(WIN_WIDTH, WIN_HEIGHT);
     move(QApplication::desktop()->screen()->rect().center() - rect().center());
-
+    this->setMouseTracking(true);
     game=GameManager();
     //Boucle d'animation
     connect(&m_AnimationTimer,  &QTimer::timeout, [&] {
         game.updateBille_Score();
+        game.updateNbWin();
         updateGL();
     });
 
@@ -212,12 +214,7 @@ void MyGLWidget::dessineCube(double centerX,double centerY,double centerZ,double
 
 
 void MyGLWidget::drawBall(){//Dessin de la bille
-    double newpositionX=game.bille_.getDirectionX()*game.bille_.getspeed()+game.bille_.getX();
-    double newpositionY=game.bille_.getDirectionY()*game.bille_.getspeed()+game.bille_.getY();
-    double newpositionZ=game.bille_.getDirectionZ()*game.bille_.getspeed()+game.bille_.getZ();
-    game.bille_.setX(newpositionX);
-    game.bille_.setY(newpositionY);
-    game.bille_.setZ(newpositionZ);
+
     glEnable(GL_FRONT);
     glPushMatrix();
     glBindTexture(GL_TEXTURE_2D, tab_text[8]);
@@ -232,8 +229,51 @@ void MyGLWidget::drawBall(){//Dessin de la bille
 }
 
 
+void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
+{
+    game.stick_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+    //Detecter la position de la souris
+    qDebug() << "x::"<<QString::number(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+    qDebug() << "y::"<< QString::number(-event->pos().y()*2*MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH/WIN_HEIGHT+MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH);
+    //
+    if(game.bille_.getState()==QString("fixed"))
+    {
+       game.bille_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+    }
+}
+
+// Fonction de gestion d'interactions clavier
+void MyGLWidget::keyPressEvent(QKeyEvent * event)
+{
+    switch(event->key())
+    {
+        // Activation/Arret de l'animation
+        case Qt::Key_Space:
+        {
+            if(game.bille_.getState()==QString("fixed"))
+            {
+                game.bille_.setState(QString("unfixed"));
+                game.bille_.setY(-23);
+            }
 
 
+            break;
+        }
 
+        // Sortie de l'application
+        case Qt::Key_Escape:
+        {
+            exit(0);
+        }
+
+        // Cas par defaut
+        default:
+        {
+            // Ignorer l'evenement
+            event->ignore();
+            return;
+        }
+    }
+}
 
 

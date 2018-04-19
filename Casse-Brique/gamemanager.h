@@ -13,6 +13,7 @@ public:
     Square listbricks_[120];
     Palette stick_;
     Player player;
+    QString state_;
     int nbwin;
 private:
     bool collisionPointCercle(double x,double y,Ball b);
@@ -21,10 +22,8 @@ private:
 public:
     GameManager();
     int collisionBrick(Square brick);//Renvoie un entier entre 0 et 8 indiquant la collision avec une brick et met à jour sa vie
-    int collisionWall();//Renvoie un entier entre 0 et 6 indiquant la collision avec les bords du plateau
+    int collisionWall(double dimensionMax,double width,double height);//Renvoie un entier entre 0 et 8 indiquant la collision avec les bords du plateau
     void updateBille_Score();//Position de la Bille et Direction/Vie des briques et scores
-    void updateStick();//Position du palet
-    void updateLife();//Nbre de Point de vie
     void updateNbWin();//Level sur lequel on se situe et comptage du nombre de victoire
 };
 

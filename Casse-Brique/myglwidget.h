@@ -20,7 +20,8 @@ public:
     MyGLWidget(QWidget * parent = nullptr);
 
 protected:
-
+    void keyPressEvent(QKeyEvent * event);
+    void mouseMoveEvent(QMouseEvent *event);
     // Fonction d'initialisation
     void initializeGL();
 

@@ -1,24 +1,33 @@
 #include "gamemanager.h"
-//double equationcercle=sqrt();
 GameManager::GameManager()
 {
     for (int i=0;i<10;i++){
         for (int j=0;j<12;j++){
-            listbricks_[i*12+j]=Square(10,2,-50+(i)*10.5+2.5,30-(j)*2.5,55,1);//To DO redefinir la taille des bricks et du palet et de la bille
+            listbricks_[i*12+j]=Square(10,2,-50+(i)*10.5+2.5,30-(j)*2.5,55,1);
         }
     }
     stick_=Palette(12,1.25,0,-25,55,5);
-    bille_=Ball(0.75,0,-23,55,0.1);//(0.75 correspond au rayon on positionne à l'initialisation la balle sur la palette donc en (0 et en 25+rayon Bille +epaisseur palette/2)en y et sur le même plan en Z
+    bille_=Ball(0.75,0,-23.65,55,0.1);
     player=Player();
     nbwin=0;
+    state_=QString("In_Game");
 
 }
 
 
 void GameManager::updateBille_Score()//Position de la Bille et Direction et update de la vie des bricks
 {
-    for (int i=0;i<120;i++ && listbricks_[i].getLife()>0){
-        if(collisionBrick(listbricks_[i])!=0)
+    if (bille_.getState()==QString("unfixed"))
+    {
+        double newpositionX=bille_.getDirectionX()*bille_.getspeed()+bille_.getX();
+        double newpositionY=bille_.getDirectionY()*bille_.getspeed()+bille_.getY();
+        double newpositionZ=bille_.getDirectionZ()*bille_.getspeed()+bille_.getZ();
+        bille_.setX(newpositionX);
+        bille_.setY(newpositionY);
+        bille_.setZ(newpositionZ);
+    }
+    for (int i=0;i<120;i++){
+        if(collisionBrick(listbricks_[i])!=0 && listbricks_[i].getLife()>0)
         {
             int direction=collisionBrick(listbricks_[i]);
             if (direction==1 || direction==2){//Horizontal
@@ -37,9 +46,31 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
             }
         }
     }
-    if (collisionBrick(stick_)!=0){// Creation d'une fonction pour rendre le code plus propre?
+    if (collisionBrick(stick_)!=0){//TO DO Creation d'une fonction pour rendre le code plus propre?
         int direction=collisionBrick(stick_);
         if (direction==1 || direction==2){//Horizontal
+            bille_.setDirectionY(bille_.getDirectionY()*(-1));
+        }
+        if (direction==3 || direction==4){//Vertical
+            bille_.setDirectionX(bille_.getDirectionX()*(-1));
+        }
+        if (direction >4){//Coins
+            bille_.setDirectionX(bille_.getDirectionX()*(-1));
+            bille_.setDirectionY(bille_.getDirectionY()*(-1));
+        }
+    }
+    if (collisionWall(55,1600,900)!=0){//TO DO Creation d'une fonction pour rendre le code plus propre?
+        int direction=collisionWall(55,1600,900);
+        if (direction==1){
+            if(player.getLifePoint()>0){
+                player.setLifePoint(player.getLifePoint()-1);
+                bille_.reinitialiser(stick_.getX(),-23.65,55);
+            }
+            else{
+                state_=QString("Game Over");
+            }
+        }
+        if (direction==2){//Horizontal
             bille_.setDirectionY(bille_.getDirectionY()*(-1));
         }
         if (direction==3 || direction==4){//Vertical
@@ -53,15 +84,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
 
 }
 
-void GameManager::updateStick()//Position du palet
-{
 
-}
-void GameManager::updateLife()//Nbre de Point de vie
-{
-
-
-}
 void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nombre de victoire
 {
     int i=0;
@@ -81,7 +104,7 @@ void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nom
 
 }
 
-bool GameManager::collisionPointCercle(double x,double y,Ball b){
+bool GameManager::collisionPointCercle(double x,double y,Ball b){//TO DO résoudre les problemes présent avec les collisions
     double eq=(x-b.getX())*(x-b.getX())+(y-b.getY())*(y-b.getY());
     if (eq>b.getRadius()*b.getRadius()){
         return false;
@@ -182,16 +205,42 @@ int GameManager::collisionBrick(Square brick)
     return zoneImpact;
 
 }
-int GameManager::collisionWall()//TODO trouver les bords Réels de la widget
+int GameManager::collisionWall(double dimensionMax,double width,double height)//TO DO Trouver un moyen pour que les bords Réels de la widget s'adapte avec les niveaux
 {
+    int zoneImpact=0;
     if (bille_.getState()==QString("fixed"))
-    {
-
+    {    }
+    else{
+        QPoint BG = QPoint(-dimensionMax,-dimensionMax * height / width);//Point en bas à gauche
+        QPoint BD = QPoint(dimensionMax,-dimensionMax * height / width);//Point en bas à droite
+        QPoint HG = QPoint(-dimensionMax,dimensionMax * height / width);//Point en haut à gauche
+        QPoint HD = QPoint(dimensionMax,dimensionMax * height / width);//Point en haut à droite
+        if (collisionSegmentCercle(BG,BD,bille_)){
+            zoneImpact=1;
+        }
+        // Et le haut
+        if (collisionSegmentCercle(HG,HD,bille_)){
+            zoneImpact=2;
+        }
+        //Puis on s'occupe des cotés et des coins
+        if (collisionSegmentCercle(HG,BG,bille_)){
+            if(zoneImpact==0){
+                zoneImpact=3;
+            }
+            else{
+                zoneImpact+=4;
+            }
+        }
+        if (collisionSegmentCercle(HD,BD,bille_)){
+            if(zoneImpact==0){
+                zoneImpact=4;
+            }
+            else{
+                zoneImpact+=6;
+            }
+        }
     }
-    else
-    {
-
-    }
+    return zoneImpact;
 }
 
 
