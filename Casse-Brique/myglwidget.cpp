@@ -116,7 +116,7 @@ void MyGLWidget::resizeGL(int width, int height)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     if(width != 0)
-       glOrtho(-MAX_DIMENSION, MAX_DIMENSION, -MAX_DIMENSION * height / static_cast<float>(width), MAX_DIMENSION * height / static_cast<float>(width), -MAX_DIMENSION * 2.0f, MAX_DIMENSION * 2.0f);
+       glOrtho(-MAX_DIMENSION, MAX_DIMENSION, -MAX_DIMENSION * height / static_cast<float>(width)+31*(game.nbwin % 9), MAX_DIMENSION * height / static_cast<float>(width)+31*(game.nbwin % 9), -MAX_DIMENSION * 2.0f, MAX_DIMENSION * 2.0f+31*game.nbwin);
     // Centre de l'image (0,0)
 
     // Definition de la matrice de modele
@@ -129,6 +129,10 @@ void MyGLWidget::resizeGL(int width, int height)
 void MyGLWidget::paintGL()
 {
 
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(-MAX_DIMENSION, MAX_DIMENSION,-31, 31, -MAX_DIMENSION * 2.0f, MAX_DIMENSION * 2.0f+31*game.nbwin);
+
     // Definition de la matrice de modele
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
@@ -137,7 +141,7 @@ void MyGLWidget::paintGL()
     // Nettoyage
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Effacer le buffer de couleur
 
-    glBindTexture(GL_TEXTURE_2D, tab_text[0]);
+    glBindTexture(GL_TEXTURE_2D, tab_text[game.nbwin % 7]);
 
     // Affichage du cube du background
     glBegin(GL_QUADS);
@@ -148,13 +152,6 @@ void MyGLWidget::paintGL()
     glEnd();
 
 
-    glBindTexture(GL_TEXTURE_2D, tab_text[1]);
-    glBegin(GL_QUADS);
-    glTexCoord2d(0,0); glVertex3f(111.0f, 62.0f, -10.0f);
-    glTexCoord2d(1,0); glVertex3f(0.0f, 62.0f, -10.0f);
-    glTexCoord2d(1,1); glVertex3f(0.0f, 31.0f, -10.0f);
-    glTexCoord2d(0,1); glVertex3f(111.0f, 31.0f, -10.0f);
-    glEnd();
 
     glClear(GL_DEPTH_BUFFER_BIT);
 

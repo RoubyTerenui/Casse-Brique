@@ -37,7 +37,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
                 if (direction >4){//Coins
                     bille_.setDirectionX(bille_.getDirectionX()*(-1));
                     bille_.setDirectionY(bille_.getDirectionY()*(-1));
-                }
+                }                
             }
             listbricks_[i].setLife(listbricks_[i].getLife()-1);//update de la vie des bricks
             if (listbricks_[i].getLife()==0)

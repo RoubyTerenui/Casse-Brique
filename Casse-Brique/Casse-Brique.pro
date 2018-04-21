@@ -36,3 +36,5 @@ RESOURCES += \
 
 DISTFILES += \
     Images/Background 2.jpg
+
+FORMS +=

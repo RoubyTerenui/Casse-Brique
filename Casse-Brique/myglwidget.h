@@ -10,6 +10,9 @@
 #include <QTimer>
 
 // Classe dediee a l'affichage d'une scene OpenGL
+namespace Ui {
+    class MyGLWidget;
+}
 class MyGLWidget : public QGLWidget
 {
     Q_OBJECT
@@ -35,7 +38,6 @@ protected:
     void drawPallet();
     void dessineCube(double centerX,double centerY,double centerZ,double width,double height);
 private:
-
     // Timer d'animation
     QTimer m_AnimationTimer;
 
