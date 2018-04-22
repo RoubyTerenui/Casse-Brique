@@ -157,6 +157,12 @@ void MyGLWidget::paintGL()
 
 
     glBindTexture(GL_TEXTURE_2D, tab_text[6]);
+
+    //Affichage du texte
+    this->renderText(-53,30,-79,"life Point : " +QString::number(game.player.getLifePoint()),QFont());
+    this->renderText(-53,29,-79,"score : "+QString::number(game.player.getScore()),QFont());
+    this->renderText(-53,28,-79,"Level : " +QString::number(game.nbwin),QFont());
+
     // Affichage du terrain de la partie initiale
     for (int i=0;i<120;i++){
         if (game.listbricks_[i].getLife()>0)
@@ -168,6 +174,8 @@ void MyGLWidget::paintGL()
     dessineCube(game.stick_.getX(),game.stick_.getY(),game.stick_.getZ(),game.stick_.getWidth(),game.stick_.getHeight());
 
     drawBall();
+
+
 
 }
 
