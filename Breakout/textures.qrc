@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/Background 1.jpg</file>
+        <file>Images/Background 2.jpg</file>
+        <file>Images/Background 3.jpg</file>
+        <file>Images/Background 4.jpg</file>
+        <file>Images/Background 5.jpg</file>
+        <file>Images/Background 11.jpg</file>
+        <file>Images/Background 12.png</file>
+        <file>Images/Brick a1.png</file>
+        <file>Images/Brick b1.png</file>
+        <file>Images/Brick b2.png</file>
+        <file>Images/Brick c1.png</file>
+        <file>Images/Brick c2.png</file>
+        <file>Images/Brick c3.png</file>
+        <file>Images/Brick d1.png</file>
+        <file>Images/Brick d2.png</file>
+        <file>Images/Brick d3.png</file>
+        <file>Images/Brick d4.png</file>
+        <file>Images/Brick e1.png</file>
+        <file>Images/Brick e2.png</file>
+        <file>Images/Brick e3.png</file>
+        <file>Images/Brick e4.png</file>
+        <file>Images/Brick e5.png</file>
+        <file>Images/Brick.png</file>
+        <file>Images/Brick.psd</file>
+        <file>Images/lune.jpg</file>
+        <file>Images/palette.jpg</file>
+    </qresource>
+</RCC>
