@@ -7,7 +7,7 @@ GameManager::GameManager()
         }
     }
     stick_=Palette(12,1.25,0,-25,55,5);
-    bille_=Ball(0.725,0,-23.6,55,0.1);
+    bille_=Ball(0.725,0,-23.6,55,0.3);
     player=Player();
     nbwin=0;
     state_=QString("In_Game");
