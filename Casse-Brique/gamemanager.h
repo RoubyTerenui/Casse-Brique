@@ -21,6 +21,7 @@ private:
     bool collisionSegmentCercle(double aX,double aY,double bX,double bY,Ball C);
 public:
     GameManager();
+    double searchPositionImpact( Square brick);
     int collisionBrick(Square brick);//Renvoie un entier entre 0 et 8 indiquant la collision avec une brick et met à jour sa vie
     int collisionWall(double dimensionMax,double width,double height);//Renvoie un entier entre 0 et 8 indiquant la collision avec les bords du plateau
     void updateBille_Score();//Position de la Bille et Direction/Vie des briques et scores

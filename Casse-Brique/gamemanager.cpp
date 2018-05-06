@@ -1,4 +1,5 @@
 #include "gamemanager.h"
+
 GameManager::GameManager()
 {
     for (int i=0;i<10;i++){
@@ -17,6 +18,7 @@ GameManager::GameManager()
 
 void GameManager::updateBille_Score()//Position de la Bille et Direction et update de la vie des bricks
 {
+    // Collision avec les bricks
 
     QString statut=QString("untouched");
     for (int i=0;i<120;i++)
@@ -47,10 +49,19 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
 
         }
     }
+    // Collision avec la palette
     if (collisionBrick(stick_)!=0){
         int direction=collisionBrick(stick_);
-        if (direction==1 || direction==2){//Horizontal haut uniquement
-            bille_.setDirectionY(bille_.getDirectionY()*(-1));
+        if (direction==1 || direction==2){//Horizontal haut
+            double position=searchPositionImpact(stick_);
+            double res=2*(position-stick_.getX())/stick_.getWidth();
+            double ang=(res*80);
+            double angr=(ang*3.14)/180;
+            double a=sin(angr);
+            double b=fabs(cos(angr));
+            bille_.setDirectionX(sin(angr));
+            bille_.setDirectionY(fabs(cos(angr)));
+
         }
         if (direction==3 || direction==4){//Vertical gauche et droites
             bille_.setDirectionX(bille_.getDirectionX()*(-1));
@@ -60,6 +71,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
             bille_.setDirectionY(bille_.getDirectionY()*(-1));
         }
     }
+    //Collision avec les murs
     if (collisionWall(55,1600,900)!=0){
         int direction=collisionWall(55,1600,900);
         if (direction==1){
@@ -169,7 +181,21 @@ bool GameManager::collisionSegmentCercle(double aX, double aY,double bX,double b
     }
     return false;
 }
-
+double GameManager::searchPositionImpact(Square brick)
+{
+    double ecartgauche=brick.getX()-brick.getWidth()/2-bille_.getX();
+    if(ecartgauche>=0){
+        return(brick.getX()-brick.getWidth()/2);
+    }
+    else{
+        if (ecartgauche<=-brick.getWidth()){
+            return(brick.getX()+brick.getWidth()/2);
+        }
+        else{
+            return(brick.getX()-brick.getWidth()/2-ecartgauche);
+        }
+    }
+}
 int GameManager::collisionBrick(Square brick)
 {
     int zoneImpact=0;

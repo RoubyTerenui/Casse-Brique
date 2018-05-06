@@ -2,19 +2,30 @@
 
 GameManager::GameManager()
 {
+    nbwin_=0;
     for (int i=0;i<10;i++){
-        for (int j=0;j<12;j++){
-            listbricks_[i*12+j]=Square(10,2,-50+(i)*10.5+2.5,30-(j)*2.5,55,1);
+        for (int j=0;j<7;j++){
+            int viebrick=rand()%2;
+            listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,55,viebrick);
         }
     }
-    stick_=Palette(12,1.25,0,-25,55,5);
-    bille_=Ball(0.725,0,-23.6,55,0.3);
+    stick_=Palette(9,1.25,0,-18,55,5);
+    bille_=Ball(0.6,0,-18+1.225,55,0.3);
     player=Player();
-    nbwin=0;
     state_=QString("In_Game");
 
 }
 
+void GameManager::reinitialiserBricks(){
+
+    for (int i=0;i<10;i++){
+        for (int j=0;j<7;j++){
+            int viebrick=rand()%(nbwin_+2);
+            listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,55,viebrick);
+        }
+    }
+
+}
 
 void GameManager::updateBille_Score()//Position de la Bille et Direction et update de la vie des bricks
 {
@@ -36,9 +47,33 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
                 if (direction==3 || direction==4){//Vertical
                     bille_.setDirectionX(bille_.getDirectionX()*(-1));
                 }
-                if (direction >4){//Coins
-                    bille_.setDirectionX(bille_.getDirectionX()*(-1));
-                    bille_.setDirectionY(bille_.getDirectionY()*(-1));
+                if (direction==5 || direction==7){//Coins du bas
+                    if (bille_.getDirectionX()!=0){
+                        bille_.setDirectionX(-(1/sqrt(2))*(bille_.getDirectionX())/(fabs(bille_.getDirectionX())));
+                    }
+                    else{
+                        if (direction==5){
+                            bille_.setDirectionX(-1/sqrt(2));
+                        }
+                        else{
+                            bille_.setDirectionX(1/sqrt(2));
+                        }
+                    }
+                    bille_.setDirectionY(-1/sqrt(2));
+                }
+                if (direction==6 || direction==8){// Coins du haut
+                    if (bille_.getDirectionX()!=0){
+                        bille_.setDirectionX(-(1/sqrt(2))*(bille_.getDirectionX())/(fabs(bille_.getDirectionX())));
+                    }
+                    else{
+                        if (direction==5){
+                            bille_.setDirectionX(-1/sqrt(2));
+                        }
+                        else{
+                            bille_.setDirectionX(1/sqrt(2));
+                        }
+                    }
+                    bille_.setDirectionY(1/sqrt(2));
                 }
             }
             listbricks_[i].setLife(listbricks_[i].getLife()-1);//update de la vie des bricks
@@ -72,12 +107,12 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
         }
     }
     //Collision avec les murs
-    if (collisionWall(55,1600,900)!=0){
-        int direction=collisionWall(55,1600,900);
+    if (collisionWall(45,1200,500)!=0){
+        int direction=collisionWall(45,1200,500);
         if (direction==1){
             if(player.getLifePoint()>0){
                 player.setLifePoint(player.getLifePoint()-1);
-                bille_.reinitialiser(stick_.getX(),-23.6,55);
+                bille_.reinitialiser(stick_.getX(),-18+1.225,55);
             }
             else{//TO DO Faire un écran Game over
                 state_=QString("Game Over");
@@ -109,9 +144,10 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
 
 void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nombre de victoire
 {
+
     int i=0;
     bool cleared=true;
-    while (i<120 && cleared==true){
+    while (i<70 && cleared==true){
         if (listbricks_[i].getLife()>0){
             cleared=false;
         }
@@ -120,8 +156,10 @@ void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nom
         }
     }
     if (cleared){
-        nbwin+=1;
+        nbwin_+=1;
         bille_.setSpeed(bille_.getspeed()+0.05);
+        reinitialiserBricks();
+        bille_.reinitialiser(stick_.getX(),-18+1.225,55);
     }
 
 }

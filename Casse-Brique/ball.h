@@ -8,9 +8,9 @@ private:
     double radius_;
     double center_[3];//Juste 2 coordonnées correspond à un z fixe
     double speed_;
-    double directionX_;// vaut -1 ou 1
-    double directionY_;// vaut -1 ou 1
-    double directionZ_;// vaut -1 ou 1
+    double directionX_;// compris entre -1 et  1
+    double directionY_;// compris entre -1 et  1
+    double directionZ_;// compris entre -1 et  1
     QString state_;
 
 public:

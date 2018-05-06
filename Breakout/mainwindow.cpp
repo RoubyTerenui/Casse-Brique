@@ -3,9 +3,9 @@
 #include <QDebug>
 
 // Declaration des constantes
-const unsigned int WIN_WIDTH  = 1600;
-const unsigned int WIN_HEIGHT = 900;
-const float MAX_DIMENSION     = 55.0f;
+const unsigned int WIN_WIDTH  = 1200;
+const unsigned int WIN_HEIGHT = 500;
+const float MAX_DIMENSION     = 45.0f;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setMouseTracking(true);
     ui->centralWidget->setMouseTracking(true);
     ui->openGLWidget->setMouseTracking(true);
+    resize( QSize(2000,1000));
 }
 
 MainWindow::~MainWindow()
@@ -26,7 +27,7 @@ MainWindow::~MainWindow()
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
     this->setMouseTracking(true);
-    if (event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION+ui->openGLWidget->game.stick_.getWidth()/2<=55 && event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION-ui->openGLWidget->game.stick_.getWidth()/2>= -55 )
+    if (event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION+ui->openGLWidget->game.stick_.getWidth()/2<=MAX_DIMENSION && event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION-ui->openGLWidget->game.stick_.getWidth()/2>= -MAX_DIMENSION )
     {
         ui->openGLWidget->game.stick_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
         //Detecter la position de la souris

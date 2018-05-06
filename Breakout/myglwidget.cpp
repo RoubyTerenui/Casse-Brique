@@ -7,9 +7,9 @@
 #include <QDebug>
 
 // Declaration des constantes
-const unsigned int WIN_WIDTH  = 1600;
-const unsigned int WIN_HEIGHT = 900;
-const float MAX_DIMENSION     = 55.0f;
+const unsigned int WIN_WIDTH  = 1200;
+const unsigned int WIN_HEIGHT = 500;
+const float MAX_DIMENSION     = 45.0f;
 
 // Constructeur
 MyGLWidget::MyGLWidget(QWidget * parent) : QGLWidget(parent)
@@ -110,7 +110,7 @@ void MyGLWidget::resizeGL(int width, int height)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     if(width != 0)
-       glOrtho(-MAX_DIMENSION, MAX_DIMENSION, -MAX_DIMENSION * height / static_cast<float>(width)+31*(game.nbwin % 9), MAX_DIMENSION * height / static_cast<float>(width)+31*(game.nbwin % 9), -MAX_DIMENSION * 2.0f, MAX_DIMENSION * 2.0f+31*game.nbwin);
+       glOrtho(-MAX_DIMENSION, MAX_DIMENSION, -MAX_DIMENSION * height / static_cast<float>(width)+(MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH), MAX_DIMENSION * height / static_cast<float>(width)+(MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH), -MAX_DIMENSION * 2.0f, MAX_DIMENSION);
     // Centre de l'image (0,0)
 
     // Definition de la matrice de modele
@@ -125,24 +125,24 @@ void MyGLWidget::paintGL()
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(-MAX_DIMENSION, MAX_DIMENSION,-31, 31, -MAX_DIMENSION * 2.0f, MAX_DIMENSION * 2.0f+31*game.nbwin);
+    glOrtho(-MAX_DIMENSION, MAX_DIMENSION,-MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -MAX_DIMENSION * 2.0f, MAX_DIMENSION * 2.0f+(MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH));
 
     // Definition de la matrice de modele
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    gluLookAt(0,0,80,0,0,0,0,1,0);//On se positionne on -80 (sur z)
+    gluLookAt(0,0,50,0,0,0,0,1,0);//On se positionne on -80 (sur z)
     // Nettoyage
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Effacer le buffer de couleur
 
-    glBindTexture(GL_TEXTURE_2D, tab_text[game.nbwin % 7]);
+    glBindTexture(GL_TEXTURE_2D, tab_text[game.nbwin_ % 5]);
 
     // Affichage du cube du background
     glBegin(GL_QUADS);
-    glTexCoord2d(0,0); glVertex3f(55.0f,31.0f, -10.0f);
-    glTexCoord2d(1,0); glVertex3f(-55.0f, 31.0f, -10.0f);
-    glTexCoord2d(1,1); glVertex3f(-55.0f, -31.0f, -10.0f);
-    glTexCoord2d(0,1); glVertex3f(55.0f, -31.0f, -10.0f);
+    glTexCoord2d(0,0); glVertex3f(MAX_DIMENSION,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+    glTexCoord2d(1,0); glVertex3f(-MAX_DIMENSION, MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+    glTexCoord2d(1,1); glVertex3f(-MAX_DIMENSION, -MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+    glTexCoord2d(0,1); glVertex3f(MAX_DIMENSION, -MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
     glEnd();
 
 
@@ -153,12 +153,12 @@ void MyGLWidget::paintGL()
     glBindTexture(GL_TEXTURE_2D, tab_text[5]);
 
     //Affichage du texte
-    this->renderText(-53,30,-79,"life Point : " +QString::number(game.player.getLifePoint()),QFont());
-    this->renderText(-53,29,-79,"score : "+QString::number(game.player.getScore()),QFont());
-    this->renderText(-53,28,-79,"Level : " +QString::number(game.nbwin),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-1,-79,"life Point : " +QString::number(game.player.getLifePoint()),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-2,-79,"score : "+QString::number(game.player.getScore()),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-3,-79,"Level : " +QString::number(game.nbwin_),QFont());
 
     // Affichage du terrain de la partie initiale
-    for (int i=0;i<120;i++){
+    for (int i=0;i<70;i++){
         if (game.listbricks_[i].getLife()>0)
         {
             dessineCube(game.listbricks_[i].getX(),game.listbricks_[i].getY(),game.listbricks_[i].getZ(),game.listbricks_[i].getWidth(),game.listbricks_[i].getHeight());
