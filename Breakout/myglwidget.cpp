@@ -153,9 +153,9 @@ void MyGLWidget::paintGL()
     glBindTexture(GL_TEXTURE_2D, tab_text[5]);
 
     //Affichage du texte
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-1,-79,"life Point : " +QString::number(game.player.getLifePoint()),QFont());
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-2,-79,"score : "+QString::number(game.player.getScore()),QFont());
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-3,-79,"Level : " +QString::number(game.nbwin_),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-1,-49,"life Point : " +QString::number(game.player.getLifePoint()),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-2,-49,"score : "+QString::number(game.player.getScore()),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-3,-49,"Level : " +QString::number(game.nbwin_+1),QFont());
 
     // Affichage du terrain de la partie initiale
     for (int i=0;i<70;i++){
@@ -226,6 +226,25 @@ void MyGLWidget::drawBall(){//Dessin de la bille
     glPopMatrix();
 
 }
+
+void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
+{
+    this->setMouseTracking(true);
+    if (event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION+game.stick_.getWidth()/2<=MAX_DIMENSION && event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION-game.stick_.getWidth()/2>= -MAX_DIMENSION )
+    {
+        game.stick_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+        //Detecter la position de la souris
+        qDebug() << "x::"<<QString::number(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+        qDebug() << "y::"<< QString::number(-event->pos().y()*2*MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH/WIN_HEIGHT+MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH);
+        //
+        if(game.bille_.getState()==QString("fixed"))
+        {
+            game.bille_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+        }
+    }
+}
+
+
 
 
 

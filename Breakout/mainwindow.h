@@ -15,10 +15,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void keyPressEvent(QKeyEvent * event);
+
 private:
     Ui::MainWindow *ui;
-    void keyPressEvent(QKeyEvent * event);
-    void mouseMoveEvent(QMouseEvent *event);
 };
 
 #endif // MAINWINDOW_H

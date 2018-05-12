@@ -6,7 +6,7 @@ GameManager::GameManager()
     for (int i=0;i<10;i++){
         for (int j=0;j<7;j++){
             int viebrick=rand()%2;
-            listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,55,viebrick);
+            listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,-50,viebrick);
         }
     }
     stick_=Palette(9,1.25,0,-18,55,5);
@@ -47,32 +47,22 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
                 if (direction==3 || direction==4){//Vertical
                     bille_.setDirectionX(bille_.getDirectionX()*(-1));
                 }
-                if (direction==5 || direction==7){//Coins du bas
-                    if (bille_.getDirectionX()!=0){
-                        bille_.setDirectionX(-(1/sqrt(2))*(bille_.getDirectionX())/(fabs(bille_.getDirectionX())));
-                    }
-                    else{
+                if (direction==5 || direction==7){//Coins du bas // Lors de l'impact avec un coin renvoie à 45 degré dans le sens du coin
                         if (direction==5){
                             bille_.setDirectionX(-1/sqrt(2));
                         }
                         else{
                             bille_.setDirectionX(1/sqrt(2));
                         }
-                    }
                     bille_.setDirectionY(-1/sqrt(2));
                 }
                 if (direction==6 || direction==8){// Coins du haut
-                    if (bille_.getDirectionX()!=0){
-                        bille_.setDirectionX(-(1/sqrt(2))*(bille_.getDirectionX())/(fabs(bille_.getDirectionX())));
-                    }
-                    else{
                         if (direction==5){
                             bille_.setDirectionX(-1/sqrt(2));
                         }
                         else{
                             bille_.setDirectionX(1/sqrt(2));
                         }
-                    }
                     bille_.setDirectionY(1/sqrt(2));
                 }
             }
@@ -124,9 +114,23 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
         if (direction==3 || direction==4){//Vertical
             bille_.setDirectionX(bille_.getDirectionX()*(-1));
         }
-        if (direction >4){//Coins
-            bille_.setDirectionX(bille_.getDirectionX()*(-1));
-            bille_.setDirectionY(bille_.getDirectionY()*(-1));
+        if (direction==5 || direction==7){//Coins du bas // Lors de l'impact avec un coin renvoie à 45 degré dans le sens du coin
+                if (direction==5){
+                    bille_.setDirectionX(-1/sqrt(2));
+                }
+                else{
+                    bille_.setDirectionX(1/sqrt(2));
+                }
+            bille_.setDirectionY(-1/sqrt(2));
+        }
+        if (direction==6 || direction==8){// Coins du haut
+                if (direction==5){
+                    bille_.setDirectionX(-1/sqrt(2));
+                }
+                else{
+                    bille_.setDirectionX(1/sqrt(2));
+                }
+            bille_.setDirectionY(1/sqrt(2));
         }
     }
     if (bille_.getState()==QString("unfixed"))

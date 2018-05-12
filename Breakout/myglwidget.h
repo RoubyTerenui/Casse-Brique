@@ -20,7 +20,8 @@ public:
     // Constructeur
     MyGLWidget(QWidget * parent = nullptr);
     GameManager game;
-
+public:
+    void mouseMoveEvent(QMouseEvent *event);
 protected:
     // Fonction d'initialisation
     void initializeGL();
