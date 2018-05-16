@@ -1,18 +1,18 @@
 #include "gamemanager.h"
 
-GameManager::GameManager()
+GameManager::GameManager()//Constructeur par défaut de la classe
 {
     nbwin_=0;
     for (int i=0;i<10;i++){
-        for (int j=0;j<7;j++){
-            int viebrick=rand()%2;
-            listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,-50,viebrick);
+        for (int j=0;j<7;j++){//7 lignes de bricks maximum
+            int viebrick=rand()%2;//Pour le niveau 1 les points de vies sont entre 0 et 1
+            listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,-50,viebrick);//Rapport 1/3 Hauteur/Largeur
         }
     }
-    stick_=Palette(9,1.25,0,-18,55,5);
-    bille_=Ball(0.6,0,-18+1.225,55,0.3);
-    player=Player();
-    state_=QString("In_Game");
+    stick_=Palette(9,1.25,0,-18,55,5);//Palette par défaut de taille 9 d'épaisseur.Situé au milieu de l'axe X
+    bille_=Ball(0.6,0,-18+1.225,55,0.3);// Rayon 0.6 positionné au centre de la palette
+    player=Player();//Nouveau Joueur
+    state_=QString("In_Game");//Début d'une partie
 
 }
 
@@ -20,7 +20,15 @@ void GameManager::reinitialiserBricks(){
 
     for (int i=0;i<10;i++){
         for (int j=0;j<7;j++){
-            int viebrick=rand()%(nbwin_+2);
+            int viebrick=1;
+            if (nbwin_<=5)
+            {
+                viebrick=rand()%(nbwin_+2);//Vie des bricks dépendant du nombre de victoire (à 5 le nombre de points de vie des bricks ne change plus
+            }
+            else
+            {
+                viebrick=rand()%7;
+            }
             listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,55,viebrick);
         }
     }
@@ -38,7 +46,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
         {
             if (statut!=QString("touched"))
             {
-                statut=QString("touched");
+                statut=QString("touched");//String permettant d'éviter de cumuler les changements de direction aprés détection d'une collision
 
                 int direction=collisionBrick(listbricks_[i]);
                 if (direction==1 || direction==2){//Horizontal
@@ -85,7 +93,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
             double a=sin(angr);
             double b=fabs(cos(angr));
             bille_.setDirectionX(sin(angr));
-            bille_.setDirectionY(fabs(cos(angr)));
+            bille_.setDirectionY(fabs(cos(angr)));//Calcul de la direction dependant de la position ou l'impact à eu lieu sur la palette
 
         }
         if (direction==3 || direction==4){//Vertical gauche et droites
@@ -100,7 +108,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
     if (collisionWall(45,1200,500)!=0){
         int direction=collisionWall(45,1200,500);
         if (direction==1){
-            if(player.getLifePoint()>0){
+            if(player.getLifePoint()>0){//Lors de l'arrivé sur le sol réinitialisation de la partie et soustraction d'un point de vie
                 player.setLifePoint(player.getLifePoint()-1);
                 bille_.reinitialiser(stick_.getX(),-18+1.225,55);
             }
@@ -133,7 +141,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
             bille_.setDirectionY(1/sqrt(2));
         }
     }
-    if (bille_.getState()==QString("unfixed"))
+    if (bille_.getState()==QString("unfixed"))//Mise à jour de la nouvelle position de la bille en fonction de ses attributs directionnelles
     {
         double newpositionX=bille_.getDirectionX()*bille_.getspeed()+bille_.getX();
         double newpositionY=bille_.getDirectionY()*bille_.getspeed()+bille_.getY();
@@ -151,7 +159,7 @@ void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nom
 
     int i=0;
     bool cleared=true;
-    while (i<70 && cleared==true){
+    while (i<70 && cleared==true){//Parcours de toute la liste de bricks pour tester si la partie est terminé
         if (listbricks_[i].getLife()>0){
             cleared=false;
         }
@@ -168,7 +176,7 @@ void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nom
 
 }
 
-bool GameManager::collisionPointCercle(double x,double y,Ball b){//TO DO résoudre les problemes présent avec les collisions
+bool GameManager::collisionPointCercle(double x,double y,Ball b){//Fonction testant la collision d'un point avec un cercle:sera utilisé pour les futurs calculs de collision
     double eq=(x-b.getX())*(x-b.getX())+(y-b.getY())*(y-b.getY());
     if (eq>b.getRadius()*b.getRadius()){
         return false;
@@ -178,7 +186,7 @@ bool GameManager::collisionPointCercle(double x,double y,Ball b){//TO DO résoud
     }
 }
 
-bool GameManager::collisionDroite(double aX, double aY,double bX,double bY, Ball C){
+bool GameManager::collisionDroite(double aX, double aY,double bX,double bY, Ball C){//Fonction testant la collision d'un point avec une droite:sera utilisé pour les futurs calculs de collision
     double ux=bX-aX;
     double uy=bY-aY;
     double ACx=C.getX()-aX;
@@ -198,7 +206,7 @@ bool GameManager::collisionDroite(double aX, double aY,double bX,double bY, Ball
     }
 }
 
-bool GameManager::collisionSegmentCercle(double aX, double aY,double bX,double bY, Ball C){
+bool GameManager::collisionSegmentCercle(double aX, double aY,double bX,double bY, Ball C){//Fonction testant la collision d'un cercle avec un segment:utilise les 2 autres fonctions précédentes
 
     if (collisionDroite(aX,aY,bX,bY,C)==false){
         return false; // Si on ne touche pas la droite on ne touchera pas le segment
@@ -223,7 +231,7 @@ bool GameManager::collisionSegmentCercle(double aX, double aY,double bX,double b
     }
     return false;
 }
-double GameManager::searchPositionImpact(Square brick)
+double GameManager::searchPositionImpact(Square brick)//Permet de détécter le point impacte selon X avec une brick
 {
     double ecartgauche=brick.getX()-brick.getWidth()/2-bille_.getX();
     if(ecartgauche>=0){
@@ -238,7 +246,7 @@ double GameManager::searchPositionImpact(Square brick)
         }
     }
 }
-int GameManager::collisionBrick(Square brick)
+int GameManager::collisionBrick(Square brick)//Application des fonctions de collisions définies aux bricks
 {
     int zoneImpact=0;
     if (bille_.getState()==QString("fixed"))
@@ -282,7 +290,7 @@ int GameManager::collisionBrick(Square brick)
     return zoneImpact;
 
 }
-int GameManager::collisionWall(double dimensionMax,double width,double height)//TO DO Trouver un moyen pour que les bords Réels de la widget s'adapte avec les niveaux
+int GameManager::collisionWall(double dimensionMax,double width,double height)// Application des fonctions de collisions définies précédement aux murs
 {
     int zoneImpact=0;
     if (bille_.getState()==QString("fixed"))

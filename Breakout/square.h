@@ -24,6 +24,7 @@ public:
     void setX(double X){center_[0]=X;}
     void setY(double Y){center_[1]=Y;}
     void setZ(double Z){center_[2]=Z;}
+    void setWidth(double width){width_=width;}
 };
 
 #endif // SQUARE_H

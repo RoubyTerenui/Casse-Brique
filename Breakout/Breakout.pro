@@ -52,7 +52,8 @@ SOURCES += \
     myglwidget.cpp \
     palette.cpp \
     player.cpp \
-    square.cpp
+    square.cpp \
+    opencvwidget.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -61,7 +62,8 @@ HEADERS += \
     myglwidget.h \
     palette.h \
     player.h \
-    square.h
+    square.h \
+    opencvwidget.h
 
 FORMS += \
     mainwindow.ui \

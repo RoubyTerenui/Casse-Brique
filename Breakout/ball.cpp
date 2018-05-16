@@ -26,7 +26,7 @@ double *Ball::getDirection(){
 
     return(direction);
 }
-void Ball::reinitialiser(double x,double y,double z)
+void Ball::reinitialiser(double x,double y,double z)//Fonctions de réinitialisation pour repositionner la balle lors d'une défaite
 {
     directionX_=0;
     directionY_=1;

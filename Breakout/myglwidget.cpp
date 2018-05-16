@@ -25,7 +25,6 @@ MyGLWidget::MyGLWidget(QWidget * parent) : QGLWidget(parent)
         game.updateNbWin();
         updateGL();
     });
-
     m_AnimationTimer.setInterval(10);
     m_AnimationTimer.start();
 
@@ -48,7 +47,7 @@ void MyGLWidget::initializeGL()
     QImage Background3 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 3.jpg"));
     QImage Background4 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 4.jpg"));
     QImage Background5 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 5.jpg"));
-    QImage brickT = QGLWidget::convertToGLFormat(QImage(":/Images/Brick.png"));
+    QImage brickT = QGLWidget::convertToGLFormat(QImage(":/Images/brick g1.png"));
     QImage paletteT = QGLWidget::convertToGLFormat(QImage(":/Images/palette.jpg"));
     QImage billeT = QGLWidget::convertToGLFormat(QImage(":/Images/lune.jpg"));
 
@@ -182,10 +181,10 @@ void MyGLWidget::dessineCube(double centerX,double centerY,double centerZ,double
     glTexCoord2d(0,1); glVertex3f(centerX-width/2, centerY+height/2,centerZ - 1.25);
 
     // Face avant
-    glTexCoord2d(0,0);glVertex3f(centerX+width/2, centerY+height/2,centerZ + 1.25f);
-    glTexCoord2d(1,0);glVertex3f( centerX+width/2, centerY-height/2,centerZ + 1.25f);
-    glTexCoord2d(1,1);glVertex3f(centerX-width/2, centerY-height/2,centerZ + 1.25f);
-    glTexCoord2d(0,1);glVertex3f(centerX-width/2, centerY+height/2,centerZ + 1.25);
+    glTexCoord2d(1,1);glVertex3f(centerX+width/2, centerY+height/2,centerZ + 1.25f);
+    glTexCoord2d(0,1);glVertex3f( centerX+width/2, centerY-height/2,centerZ + 1.25f);
+    glTexCoord2d(0,0);glVertex3f(centerX-width/2, centerY-height/2,centerZ + 1.25f);
+    glTexCoord2d(1,0);glVertex3f(centerX-width/2, centerY+height/2,centerZ + 1.25);
     //Face dessous
     glTexCoord2d(0,0);glVertex3f(centerX+width/2, centerY+height/2,centerZ + 1.25f);
     glTexCoord2d(1,0);glVertex3f( centerX+width/2, centerY+height/2,centerZ- 1.25f);
