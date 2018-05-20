@@ -35,17 +35,38 @@ void MyGLWidget::initializeGL()
 
 
     // Chargement des images
-    QImage Background1 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 11.jpg"));
+    QImage Background1 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 1.jpg"));
     QImage Background2 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 2.jpg"));
     QImage Background3 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 3.jpg"));
     QImage Background4 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 4.jpg"));
     QImage Background5 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 5.jpg"));
-    QImage brickT = QGLWidget::convertToGLFormat(QImage(":/Images/brick g1.png"));
+
     QImage paletteT = QGLWidget::convertToGLFormat(QImage(":/Images/palette.jpg"));
     QImage billeT = QGLWidget::convertToGLFormat(QImage(":/Images/lune.jpg"));
 
+    QImage bricka1 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick b1.jpg"));
+
+//    QImage brickb1 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick b1.jpg"));
+//    QImage brickb2 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick b2.jpg"));
+
+//    QImage brickc1 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick c1.jpg"));
+//    QImage brickc2 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick c2.jpg"));
+//    QImage brickc3 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick c3.jpg"));
+
+//    QImage brickd1 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick d1.jpg"));
+//    QImage brickd2 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick d2.jpg"));
+//    QImage brickd3 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick d3.jpg"));
+//    QImage brickd4 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick d4.jpg"));
+
+//    QImage bricke1 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick e1.jpg"));
+//    QImage bricke2 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick e2.jpg"));
+//    QImage bricke3 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick e3.jpg"));
+//    QImage bricke4 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick e4.jpg"));
+//    QImage bricke5 = QGLWidget::convertToGLFormat(QImage(":/Images/Brick e5.jpg"));
+
+
     // Application des textures
-    glGenTextures(8, tab_text);
+    glGenTextures(22, tab_text);
 
 
     glBindTexture(GL_TEXTURE_2D, tab_text[0]);
@@ -74,17 +95,17 @@ void MyGLWidget::initializeGL()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     glBindTexture(GL_TEXTURE_2D, tab_text[5]);
-    glTexImage2D( GL_TEXTURE_2D, 0, 4, brickT.width(), brickT.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, brickT.bits() );
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    glBindTexture(GL_TEXTURE_2D, tab_text[6]);
     glTexImage2D( GL_TEXTURE_2D, 0, 4, paletteT.width(), paletteT.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, paletteT.bits() );
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    glBindTexture(GL_TEXTURE_2D, tab_text[7]);
+    glBindTexture(GL_TEXTURE_2D, tab_text[6]);
     glTexImage2D( GL_TEXTURE_2D, 0, 4, billeT.width(), billeT.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, billeT.bits() );
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glBindTexture(GL_TEXTURE_2D, tab_text[7]);
+    glTexImage2D( GL_TEXTURE_2D, 0, 4, bricka1.width(), bricka1.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, bricka1.bits() );
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
@@ -142,7 +163,7 @@ void MyGLWidget::paintGL()
     glClear(GL_DEPTH_BUFFER_BIT);
 
 
-    glBindTexture(GL_TEXTURE_2D, tab_text[5]);
+    glBindTexture(GL_TEXTURE_2D, tab_text[7]);
 
     //Affichage du texte
     this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-1,-20,"life Point : " +QString::number(game.getPlayer().getLifePoint()),QFont());
@@ -156,7 +177,7 @@ void MyGLWidget::paintGL()
             dessineCube(game.getBrickI(i).getX(),game.getBrickI(i).getY(),game.getBrickI(i).getZ(),game.getBrickI(i).getWidth(),game.getBrickI(i).getHeight());
         }
     }
-    glBindTexture(GL_TEXTURE_2D, tab_text[6]);
+    glBindTexture(GL_TEXTURE_2D, tab_text[5]);
     dessineCube(game.getStick().getX(),game.getStick().getY(),game.getStick().getZ(),game.getStick().getWidth(),game.getStick().getHeight());
 
     drawBall();
@@ -175,9 +196,9 @@ void MyGLWidget::dessineCube(double centerX,double centerY,double centerZ,double
 
     // Face avant
     glTexCoord2d(1,1);glVertex3f(centerX+width/2, centerY+height/2,centerZ + 1.25f);
-    glTexCoord2d(0,1);glVertex3f( centerX+width/2, centerY-height/2,centerZ + 1.25f);
+    glTexCoord2d(1,0);glVertex3f( centerX+width/2, centerY-height/2,centerZ + 1.25f);
     glTexCoord2d(0,0);glVertex3f(centerX-width/2, centerY-height/2,centerZ + 1.25f);
-    glTexCoord2d(1,0);glVertex3f(centerX-width/2, centerY+height/2,centerZ + 1.25);
+    glTexCoord2d(0,1);glVertex3f(centerX-width/2, centerY+height/2,centerZ + 1.25);
     //Face dessous
     glTexCoord2d(0,0);glVertex3f(centerX+width/2, centerY+height/2,centerZ + 1.25f);
     glTexCoord2d(1,0);glVertex3f( centerX+width/2, centerY+height/2,centerZ- 1.25f);
@@ -208,7 +229,7 @@ void MyGLWidget::drawBall(){//Dessin de la bille
 
     glEnable(GL_FRONT);
     glPushMatrix();
-    glBindTexture(GL_TEXTURE_2D, tab_text[7]);
+    glBindTexture(GL_TEXTURE_2D, tab_text[6]);
     GLUquadric* quadrique2=gluNewQuadric();
     gluQuadricDrawStyle(quadrique2, GLU_LINE);
     gluQuadricNormals(quadrique2, GLU_SMOOTH);
