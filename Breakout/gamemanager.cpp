@@ -5,7 +5,7 @@ GameManager::GameManager()//Constructeur par défaut de la classe
     nbwin_=0;
     for (int i=0;i<10;i++){
         for (int j=0;j<7;j++){//7 lignes de bricks maximum
-            int viebrick=rand()%2;//Pour le niveau 1 les points de vies sont entre 0 et 1
+            int viebrick=rand()%(2+nbwin_);//Pour le niveau 1 les points de vies sont entre 0 et 1
             listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,-50,viebrick);//Rapport 1/3 Hauteur/Largeur
         }
     }
@@ -27,7 +27,7 @@ void GameManager::reinitialiserBricks(){
             }
             else
             {
-                viebrick=rand()%7;//à 5 le nombre de points de vie des bricks ne change plus
+                viebrick=rand()%6;//à 4 le nombre de points de vie des bricks ne change plus
             }
             //Rajoute la Brick à la liste des 70 Bricks du jeu
             listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,55,viebrick);

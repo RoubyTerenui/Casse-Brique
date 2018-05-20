@@ -35,14 +35,14 @@ protected:
 
     void drawBall();
     void drawPallet();
-    void dessineCube(double centerX,double centerY,double centerZ,double width,double height);
+    void dessineCube(double centerX,double centerY,double centerZ,double width,double height,int lpTot, int lp);
 private:
     // Timer d'animation
 //    QTimer m_AnimationTimer;
 
     // Quelques variables a definir
     bool hide = TRUE;
-    GLuint tab_text[9];
+    GLuint tab_text[23];
 
 };
 
