@@ -1,5 +1,5 @@
 #include "gamemanager.h"
-
+#include <QDebug>
 GameManager::GameManager()//Constructeur par défaut de la classe
 {
     nbwin_=0;
@@ -9,8 +9,8 @@ GameManager::GameManager()//Constructeur par défaut de la classe
             listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,-50,viebrick);//Rapport 1/3 Hauteur/Largeur
         }
     }
-    stick_=Palette(9,1.25,0,-18,55,5);//Palette par défaut de taille 9 d'épaisseur.Situé au milieu de l'axe X
-    bille_=Ball(0.6,0,-18+1.225,55,0.3);// Rayon 0.6 positionné au centre de la palette
+    stick_=Palette(9,1.25,0,-18,55,0);//Palette par défaut de taille 9 d'épaisseur.Situé au milieu de l'axe X
+    bille_=Ball(0.6,0,-18+1.225,55,0.5);// Rayon 0.6 positionné au centre de la palette
     player=Player();//Nouveau Joueur
     state_=QString("In_Game");//Début d'une partie
 
@@ -20,15 +20,16 @@ void GameManager::reinitialiserBricks(){
 
     for (int i=0;i<10;i++){
         for (int j=0;j<7;j++){
-            int viebrick=1;
+            int viebrick=0;
             if (nbwin_<=5)
             {
-                viebrick=rand()%(nbwin_+2);//Vie des bricks dépendant du nombre de victoire (à 5 le nombre de points de vie des bricks ne change plus
+                viebrick=rand()%(nbwin_+2);//Vie des bricks dépendant du nombre de victoire
             }
             else
             {
-                viebrick=rand()%7;
+                viebrick=rand()%7;//à 5 le nombre de points de vie des bricks ne change plus
             }
+            //Rajoute la Brick à la liste des 70 Bricks du jeu
             listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,55,viebrick);
         }
     }
@@ -40,7 +41,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
     // Collision avec les bricks
 
     QString statut=QString("untouched");
-    for (int i=0;i<120;i++)
+    for (int i=0;i<70;i++)
     {
         if(collisionBrick(listbricks_[i])!=0 && listbricks_[i].getLife()>0)
         {
@@ -65,7 +66,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
                     bille_.setDirectionY(-1/sqrt(2));
                 }
                 if (direction==6 || direction==8){// Coins du haut
-                        if (direction==5){
+                        if (direction==6){
                             bille_.setDirectionX(-1/sqrt(2));
                         }
                         else{
@@ -100,8 +101,25 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
             bille_.setDirectionX(bille_.getDirectionX()*(-1));
         }
         if (direction >4){// Les coins
-            bille_.setDirectionX(bille_.getDirectionX()*(-1));
-            bille_.setDirectionY(bille_.getDirectionY()*(-1));
+            if (direction==5 || direction==7){//Coins du bas // Lors de l'impact avec un coin renvoie à 45 degré dans le sens du coin
+                    if (direction==5){
+                        bille_.setDirectionX(1/sqrt(2));
+                    }
+                    else{
+                        bille_.setDirectionX(-1/sqrt(2));
+                    }
+                bille_.setDirectionY(-1/sqrt(2));
+            }
+            if (direction==6 || direction==8){// Coins du haut
+                    if (direction==6){
+                        bille_.setDirectionX(-1/sqrt(2));
+                    }
+                    else
+                    {
+                        bille_.setDirectionX(1/sqrt(2));
+                    }
+                bille_.setDirectionY(1/sqrt(2));
+            }
         }
     }
     //Collision avec les murs
@@ -153,7 +171,13 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
 
 }
 
-
+void GameManager::updatePositionPalette(){
+    qDebug()<<QString::number(stick_.getX()+stick_.getSpeed());
+    stick_.setX(stick_.getX()+stick_.getSpeed());
+    if (bille_.getState()=="fixed"){
+        bille_.setX(stick_.getX());
+    }
+}
 void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nombre de victoire
 {
 
@@ -252,13 +276,13 @@ int GameManager::collisionBrick(Square brick)//Application des fonctions de coll
     if (bille_.getState()==QString("fixed"))
     {    }
     else{
-        double  H = brick.height_/2;
-        double W = brick.width_/2;
+        double  H = brick.getHeight()/2;
+        double W = brick.getWidth()/2;
         //4 Coordonnées pour definir les bords
-        double Gx = brick.center_[0]-W;//Gauche sur l'axe X
-        double Dx = brick.center_[0]+W;//Droite sur l'axe X
-        double By=brick.center_[1]-H;//Bas sur l'axe Y
-        double Hy=brick.center_[1]+H;//Haut sur l'axe Y
+        double Gx = brick.getX()-W;//Gauche sur l'axe X
+        double Dx = brick.getX()+W;//Droite sur l'axe X
+        double By=brick.getY()-H;//Bas sur l'axe Y
+        double Hy=brick.getY()+H;//Haut sur l'axe Y
 
 
         //On test d'abord le bas

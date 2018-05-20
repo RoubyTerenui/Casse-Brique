@@ -4,12 +4,14 @@
 
 class Palette: public Square
 {
-public:
+private:
     double speed_;
 
 public:
     Palette(double width,double height,double x ,double y,double z,double speed);
     Palette();
+    double getSpeed(){return(speed_);}
+    void setSpeed(double sp){speed_=sp;}
 };
 
 #endif // PALETTE_H

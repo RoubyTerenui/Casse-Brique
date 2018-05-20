@@ -9,12 +9,10 @@
 #include <iostream>
 using namespace cv;
 using namespace std;
-
 class OpenCvWidget
 {
 public:
     OpenCvWidget();
-    QPixmap drawQPixMap();
 public:
     int frameWidth;
     int frameHeight;
@@ -22,7 +20,6 @@ public:
     int subImageHeight;
     int templateWidth;
     int templateHeight;
-    Mat frame1,frame2,frameRect1,frameRect2;
     bool state;
     Rect workingRect_;
     Rect templateRect_;

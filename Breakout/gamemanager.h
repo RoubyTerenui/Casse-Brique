@@ -27,7 +27,15 @@ public:
     int collisionWall(double dimensionMax,double width,double height);//Renvoie un entier entre 0 et 8 indiquant la collision avec les bords du plateau
     void updateBille_Score();//Position de la Bille et Direction/Vie des briques et scores
     void updateNbWin();//Level sur lequel on se situe et comptage du nombre de victoire
+    void updatePositionPalette();
     double searchPositionImpact(Square brick);
+    //Getter et Setter
+    Ball getBille(){return(bille_);}
+    Palette getStick(){return(stick_);}
+    Player getPlayer(){return(player);}
+    int getNbWin(){return(nbwin_);}
+    QString getState(){return(state_);}
+    Square getBrickI(int i){return(listbricks_[i]);}
 };
 
 #endif // GAMEMANAGER_H

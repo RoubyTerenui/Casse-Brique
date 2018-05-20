@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <gamemanager.h>
 #include <QDebug>
+#include <math.h>
 
 // Declaration des constantes
 const unsigned int WIN_WIDTH  = 1200;
@@ -19,14 +20,6 @@ MyGLWidget::MyGLWidget(QWidget * parent) : QGLWidget(parent)
     move(QApplication::desktop()->screen()->rect().center() - rect().center());
     this->setMouseTracking(true);
     game=GameManager();
-    //Boucle d'animation
-    connect(&m_AnimationTimer,  &QTimer::timeout, [&] {
-        game.updateBille_Score();
-        game.updateNbWin();
-        updateGL();
-    });
-    m_AnimationTimer.setInterval(10);
-    m_AnimationTimer.start();
 
 }
 
@@ -134,7 +127,7 @@ void MyGLWidget::paintGL()
     // Nettoyage
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Effacer le buffer de couleur
 
-    glBindTexture(GL_TEXTURE_2D, tab_text[game.nbwin_ % 5]);
+    glBindTexture(GL_TEXTURE_2D, tab_text[game.getNbWin() % 5]);
 
     // Affichage du cube du background
     glBegin(GL_QUADS);
@@ -152,19 +145,19 @@ void MyGLWidget::paintGL()
     glBindTexture(GL_TEXTURE_2D, tab_text[5]);
 
     //Affichage du texte
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-1,-49,"life Point : " +QString::number(game.player.getLifePoint()),QFont());
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-2,-49,"score : "+QString::number(game.player.getScore()),QFont());
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-3,-49,"Level : " +QString::number(game.nbwin_+1),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-1,-20,"life Point : " +QString::number(game.getPlayer().getLifePoint()),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-2,-20,"score : "+QString::number(game.getPlayer().getScore()),QFont());
+    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-3,-20,"Level : " +QString::number(game.getNbWin()+1),QFont());
 
     // Affichage du terrain de la partie initiale
     for (int i=0;i<70;i++){
-        if (game.listbricks_[i].getLife()>0)
+        if (game.getBrickI(i).getLife()>0)
         {
-            dessineCube(game.listbricks_[i].getX(),game.listbricks_[i].getY(),game.listbricks_[i].getZ(),game.listbricks_[i].getWidth(),game.listbricks_[i].getHeight());
+            dessineCube(game.getBrickI(i).getX(),game.getBrickI(i).getY(),game.getBrickI(i).getZ(),game.getBrickI(i).getWidth(),game.getBrickI(i).getHeight());
         }
     }
     glBindTexture(GL_TEXTURE_2D, tab_text[6]);
-    dessineCube(game.stick_.getX(),game.stick_.getY(),game.stick_.getZ(),game.stick_.getWidth(),game.stick_.getHeight());
+    dessineCube(game.getStick().getX(),game.getStick().getY(),game.getStick().getZ(),game.getStick().getWidth(),game.getStick().getHeight());
 
     drawBall();
 
@@ -220,28 +213,46 @@ void MyGLWidget::drawBall(){//Dessin de la bille
     gluQuadricDrawStyle(quadrique2, GLU_LINE);
     gluQuadricNormals(quadrique2, GLU_SMOOTH);
     gluQuadricTexture(quadrique2,GL_TRUE);
-    glTranslatef(game.bille_.getX(),game.bille_.getY(),game.bille_.getZ());
-    gluSphere(quadrique2, game.bille_.getRadius(), 20, 50);//Definition du Rayon
+    glTranslatef(game.getBille().getX(),game.getBille().getY(),game.getBille().getZ());
+    gluSphere(quadrique2, game.getBille().getRadius(), 20, 50);//Definition du Rayon
     glPopMatrix();
 
 }
 
-void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
-{
-    this->setMouseTracking(true);
-    if (event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION+game.stick_.getWidth()/2<=MAX_DIMENSION && event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION-game.stick_.getWidth()/2>= -MAX_DIMENSION )
-    {
-        game.stick_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
-        //Detecter la position de la souris
-        qDebug() << "x::"<<QString::number(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
-        qDebug() << "y::"<< QString::number(-event->pos().y()*2*MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH/WIN_HEIGHT+MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH);
-        //
-        if(game.bille_.getState()==QString("fixed"))
-        {
-            game.bille_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
-        }
+void MyGLWidget::updateCamMoveEvent(int vectX,int vectY){
+    qDebug()<< "X"<< QString::number(vectX) ;
+    qDebug()<< "Y"<< QString::number(vectY) ;
+    if (vectY>=10 || vectY<=-10){
+        game.stick_.setSpeed(0);
     }
+    else {
+        if (vectX>=10){
+            game.stick_.setSpeed(0.7);
+        }
+        if (vectX<=-10){
+            game.stick_.setSpeed(-0.7);
+        }
+
+    }
+
 }
+
+//void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
+//{
+//    this->setMouseTracking(true);
+//    if (event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION+game.getStick().getWidth()/2<=MAX_DIMENSION && event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION-game.getStick().getWidth()/2>= -MAX_DIMENSION )
+//    {
+//        game.stick_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+//        //Detecter la position de la souris
+////        qDebug() << "x::"<<QString::number(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+////        qDebug() << "y::"<< QString::number(-event->pos().y()*2*MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH/WIN_HEIGHT+MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH);
+////
+//        if(game.getBille().getState()==QString("fixed"))
+//        {
+//            game.bille_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+//        }
+//    }
+//}
 
 
 

@@ -4,7 +4,7 @@
 
 class Square
 {
-public://(juste width height on suppose la profondeur constante on ne la précisera donc pas)
+private://(juste width height on suppose la profondeur constante on ne la précisera donc pas)
     double center_[3];
     double width_;
     double height_;
