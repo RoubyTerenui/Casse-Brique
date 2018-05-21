@@ -91,8 +91,6 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
             double res=2*(position-stick_.getX())/stick_.getWidth();
             double ang=(res*80);
             double angr=(ang*3.14)/180;
-            double a=sin(angr);
-            double b=fabs(cos(angr));
             bille_.setDirectionX(sin(angr));
             bille_.setDirectionY(fabs(cos(angr)));//Calcul de la direction dependant de la position ou l'impact à eu lieu sur la palette
 
@@ -257,7 +255,7 @@ bool GameManager::collisionSegmentCercle(double aX, double aY,double bX,double b
     return false;
 }
 
-double GameManager::searchPositionImpact(Square brick)//Permet de détécter le point impacte selon X avec une brick
+double GameManager::searchPositionImpact(Palette brick)//Permet de détécter le point impacte selon X avec une brick
 {
     double ecartgauche=brick.getX()-brick.getWidth()/2-bille_.getX();
     if(ecartgauche>=0){

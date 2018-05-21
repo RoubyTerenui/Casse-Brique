@@ -1,0 +1,15 @@
+INPUT(
+./release\mainwindow.o
+./release\gamemanager.o
+./release\ball.o
+./release\main.o
+./release\myglwidget.o
+./release\palette.o
+./release\player.o
+./release\square.o
+./release\opencvwidget.o
+./release\listplayer.o
+./release\qrc_textures.o
+./release\moc_mainwindow.o
+./release\moc_myglwidget.o
+);

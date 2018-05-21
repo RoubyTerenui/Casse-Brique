@@ -48,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->openGLWidget->game.updateNbWin();
         ui->openGLWidget->updateGL();
         if (count==0){// Counter pour réduire la fréquence d'affichage de la vidéo (diminue le temps CPU assigné à la tache)
-            updateF();
+            updateCamera();
 
         }
         count-=1;
@@ -100,43 +100,8 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
     }
 }
 
-void MainWindow::on_pushButton_2_clicked()//Changement de la taille de la Palette (Poser peut-être des tailles limites?)
-{
-    ui->openGLWidget->game.stick_.setWidth(ui->slider->value());
-}
 
-void MainWindow::on_pushButton_3_clicked()
-{
-    ui->openGLWidget->game=GameManager();
-}
-
-void MainWindow::on_pushButton_clicked()
-{
-    remove("outputCasseBrique.txt");
-    std::ofstream file;
-    file.open("outputCasseBrique.txt");
-    Player topPl=Player(ui->openGLWidget->game.player);
-    topPl.setNbWin(ui->openGLWidget->game.nbwin_);
-    if(ui->lineEdit_2->text()!=""){
-        topPl.setName(ui->lineEdit_2->text().toStdString());
-    }
-    topPlayers.push_back(topPl);
-    topPlayers.triList();
-    topPlayers.sauver(file);
-    file.close();
-    updateTabList();
-}
-
-void MainWindow::updateTabList(){
-    qDebug(""+topPlayers.size());
-    for (ListPlayer::iterator it=topPlayers.begin();
-         it!=topPlayers.end();it++)
-    {
-        ui->topPlayers->addItem(
-                    "Pseudo:"+QString::fromStdString(it->getName())+" Score: "+QString::number(it->getScore())+" NiveauMax:  "+QString::number(it->getNbWin()));
-    }
-}
-void MainWindow::updateF(){
+void MainWindow::updateCamera(){
     //Réinitialise le counteur régulant la fréquence d'affichage
     count=5;
 
@@ -195,13 +160,55 @@ void MainWindow::updateF(){
     ui->label->setPixmap(QPixmap::fromImage(actu));
 }
 
-void MainWindow::on_pushButton_4_clicked()
+
+
+void MainWindow::on_restart_Button_clicked()
+{
+    ui->openGLWidget->game=GameManager();
+    ui->slider->setValue(9);
+}
+
+
+void MainWindow::on_changeSizeStick_Button_clicked()
+{
+    ui->openGLWidget->game.stick_.setWidth(ui->slider->value());
+}
+void MainWindow::updateTabList(){
+    qDebug(""+topPlayers.size());
+    for (ListPlayer::iterator it=topPlayers.begin();
+         it!=topPlayers.end();it++)
+    {
+        ui->topPlayers->addItem(
+                    "Pseudo:"+QString::fromStdString(it->getName())+" Score: "+QString::number(it->getScore())+" NiveauMax:  "+QString::number(it->getNbWin()));
+    }
+
+
+}
+void MainWindow::on_saveTopPlayersButton_clicked()
+{
+    remove("outputCasseBrique.txt");
+    std::ofstream file;
+    file.open("outputCasseBrique.txt");
+    Player topPl=Player(ui->openGLWidget->game.player);
+    topPl.setNbWin(ui->openGLWidget->game.nbwin_);
+    if(ui->lineEdit_2->text()!=""){
+        topPl.setName(ui->lineEdit_2->text().toStdString());
+    }
+    topPlayers.push_back(topPl);
+    topPlayers.triList();
+    topPlayers.sauver(file);
+    file.close();
+    updateTabList();
+}
+
+void MainWindow::on_changeModeButton_clicked()
 {
     ui->openGLWidget->game.changeMode();
     if(ui->openGLWidget->game.mouseEventAct){
-        ui->pushButton_4->setText("Passer en mode Caméra");
+        ui->changeModeButton->setText("Passer en mode Caméra");
     }
     else{
-        ui->pushButton_4->setText("Passer en mode Souris");
+        ui->changeModeButton->setText("Passer en mode Souris");
     }
+
 }
