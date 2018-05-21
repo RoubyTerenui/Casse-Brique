@@ -20,8 +20,8 @@ public:
     // Constructeur
     MyGLWidget(QWidget * parent = nullptr);
     GameManager game;
-public:/*
-    void mouseMoveEvent(QMouseEvent *event);*/
+public:
+    void mouseMoveEvent(QMouseEvent *event);
     void updateCamMoveEvent(int vectX,int vectY);
 protected:
     // Fonction d'initialisation
@@ -37,8 +37,6 @@ protected:
     void drawPallet();
     void dessineCube(double centerX,double centerY,double centerZ,double width,double height,int lpTot, int lp);
 private:
-    // Timer d'animation
-//    QTimer m_AnimationTimer;
 
     // Quelques variables a definir
     bool hide = TRUE;

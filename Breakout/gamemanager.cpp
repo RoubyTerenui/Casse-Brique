@@ -57,21 +57,21 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
                     bille_.setDirectionX(bille_.getDirectionX()*(-1));
                 }
                 if (direction==5 || direction==7){//Coins du bas // Lors de l'impact avec un coin renvoie à 45 degré dans le sens du coin
-                        if (direction==5){
-                            bille_.setDirectionX(-1/sqrt(2));
-                        }
-                        else{
-                            bille_.setDirectionX(1/sqrt(2));
-                        }
+                    if (direction==5){
+                        bille_.setDirectionX(-1/sqrt(2));
+                    }
+                    else{
+                        bille_.setDirectionX(1/sqrt(2));
+                    }
                     bille_.setDirectionY(-1/sqrt(2));
                 }
                 if (direction==6 || direction==8){// Coins du haut
-                        if (direction==6){
-                            bille_.setDirectionX(-1/sqrt(2));
-                        }
-                        else{
-                            bille_.setDirectionX(1/sqrt(2));
-                        }
+                    if (direction==6){
+                        bille_.setDirectionX(-1/sqrt(2));
+                    }
+                    else{
+                        bille_.setDirectionX(1/sqrt(2));
+                    }
                     bille_.setDirectionY(1/sqrt(2));
                 }
             }
@@ -102,22 +102,22 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
         }
         if (direction >4){// Les coins
             if (direction==5 || direction==7){//Coins du bas // Lors de l'impact avec un coin renvoie à 45 degré dans le sens du coin
-                    if (direction==5){
-                        bille_.setDirectionX(1/sqrt(2));
-                    }
-                    else{
-                        bille_.setDirectionX(-1/sqrt(2));
-                    }
+                if (direction==5){
+                    bille_.setDirectionX(1/sqrt(2));
+                }
+                else{
+                    bille_.setDirectionX(-1/sqrt(2));
+                }
                 bille_.setDirectionY(-1/sqrt(2));
             }
             if (direction==6 || direction==8){// Coins du haut
-                    if (direction==6){
-                        bille_.setDirectionX(-1/sqrt(2));
-                    }
-                    else
-                    {
-                        bille_.setDirectionX(1/sqrt(2));
-                    }
+                if (direction==6){
+                    bille_.setDirectionX(-1/sqrt(2));
+                }
+                else
+                {
+                    bille_.setDirectionX(1/sqrt(2));
+                }
                 bille_.setDirectionY(1/sqrt(2));
             }
         }
@@ -130,7 +130,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
                 player.setLifePoint(player.getLifePoint()-1);
                 bille_.reinitialiser(stick_.getX(),-18+1.225,55);
             }
-            else{//TO DO Faire un écran Game over
+            else{
                 state_=QString("Game Over");
             }
         }
@@ -141,21 +141,21 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
             bille_.setDirectionX(bille_.getDirectionX()*(-1));
         }
         if (direction==5 || direction==7){//Coins du bas // Lors de l'impact avec un coin renvoie à 45 degré dans le sens du coin
-                if (direction==5){
-                    bille_.setDirectionX(-1/sqrt(2));
-                }
-                else{
-                    bille_.setDirectionX(1/sqrt(2));
-                }
+            if (direction==5){
+                bille_.setDirectionX(-1/sqrt(2));
+            }
+            else{
+                bille_.setDirectionX(1/sqrt(2));
+            }
             bille_.setDirectionY(-1/sqrt(2));
         }
         if (direction==6 || direction==8){// Coins du haut
-                if (direction==5){
-                    bille_.setDirectionX(-1/sqrt(2));
-                }
-                else{
-                    bille_.setDirectionX(1/sqrt(2));
-                }
+            if (direction==5){
+                bille_.setDirectionX(-1/sqrt(2));
+            }
+            else{
+                bille_.setDirectionX(1/sqrt(2));
+            }
             bille_.setDirectionY(1/sqrt(2));
         }
     }
@@ -171,13 +171,14 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
 
 }
 
-void GameManager::updatePositionPalette(){
-    qDebug()<<QString::number(stick_.getX()+stick_.getSpeed());
+void GameManager::updatePositionPalette(){/*
+    qDebug()<<QString::number(stick_.getX()+stick_.getSpeed());*/
     stick_.setX(stick_.getX()+stick_.getSpeed());
     if (bille_.getState()=="fixed"){
         bille_.setX(stick_.getX());
     }
 }
+
 void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nombre de victoire
 {
 
@@ -193,7 +194,7 @@ void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nom
     }
     if (cleared){
         nbwin_+=1;
-        bille_.setSpeed(bille_.getspeed()+0.05);
+        bille_.setSpeed(bille_.getspeed()+0.1);
         reinitialiserBricks();
         bille_.reinitialiser(stick_.getX(),-18+1.225,55);
     }
@@ -255,6 +256,7 @@ bool GameManager::collisionSegmentCercle(double aX, double aY,double bX,double b
     }
     return false;
 }
+
 double GameManager::searchPositionImpact(Square brick)//Permet de détécter le point impacte selon X avec une brick
 {
     double ecartgauche=brick.getX()-brick.getWidth()/2-bille_.getX();
@@ -270,6 +272,7 @@ double GameManager::searchPositionImpact(Square brick)//Permet de détécter le 
         }
     }
 }
+
 int GameManager::collisionBrick(Square brick)//Application des fonctions de collisions définies aux bricks
 {
     int zoneImpact=0;
@@ -314,6 +317,7 @@ int GameManager::collisionBrick(Square brick)//Application des fonctions de coll
     return zoneImpact;
 
 }
+
 int GameManager::collisionWall(double dimensionMax,double width,double height)// Application des fonctions de collisions définies précédement aux murs
 {
     int zoneImpact=0;

@@ -40,6 +40,7 @@ void MyGLWidget::initializeGL()
     QImage Background3 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 3.jpg"));
     QImage Background4 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 4.jpg"));
     QImage Background5 = QGLWidget::convertToGLFormat(QImage(":/Images/Background 5.jpg"));
+    QImage BackgroundGO = QGLWidget::convertToGLFormat(QImage(":/Images/GameOver.jpg"));
 
     QImage paletteT = QGLWidget::convertToGLFormat(QImage(":/Images/palette.jpg"));
     QImage billeT = QGLWidget::convertToGLFormat(QImage(":/Images/lune.jpg"));
@@ -66,7 +67,7 @@ void MyGLWidget::initializeGL()
 
 
     // Application des textures
-    glGenTextures(22, tab_text);
+    glGenTextures(23, tab_text);
 
 
     glBindTexture(GL_TEXTURE_2D, tab_text[0]);
@@ -179,6 +180,11 @@ void MyGLWidget::initializeGL()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
+    glBindTexture(GL_TEXTURE_2D, tab_text[22]);
+    glTexImage2D( GL_TEXTURE_2D, 0, 4, BackgroundGO.width(), BackgroundGO.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, BackgroundGO.bits() );
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
 
 }
 
@@ -193,7 +199,7 @@ void MyGLWidget::resizeGL(int width, int height)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     if(width != 0)
-       glOrtho(-MAX_DIMENSION, MAX_DIMENSION, -MAX_DIMENSION * height / static_cast<float>(width)+(MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH), MAX_DIMENSION * height / static_cast<float>(width)+(MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH), -MAX_DIMENSION * 2.0f, MAX_DIMENSION);
+        glOrtho(-MAX_DIMENSION, MAX_DIMENSION, -MAX_DIMENSION * height / static_cast<float>(width)+(MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH), MAX_DIMENSION * height / static_cast<float>(width)+(MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH), -MAX_DIMENSION * 2.0f, MAX_DIMENSION);
     // Centre de l'image (0,0)
 
     // Definition de la matrice de modele
@@ -214,43 +220,63 @@ void MyGLWidget::paintGL()
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    gluLookAt(0,0,50,0,0,0,0,1,0);//On se positionne on -80 (sur z)
+    gluLookAt(0,1,50,0,0,0,0,1,0);//On se positionne on -50 (sur z)
     // Nettoyage
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Effacer le buffer de couleur
 
-    glBindTexture(GL_TEXTURE_2D, tab_text[game.getNbWin() % 5]);
+    if(game.getState()!="Game Over")
+    {
+        glBindTexture(GL_TEXTURE_2D, tab_text[game.getNbWin() % 5]);
 
-    // Affichage du cube du background
-    glBegin(GL_QUADS);
-    glTexCoord2d(0,0); glVertex3f(MAX_DIMENSION,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
-    glTexCoord2d(1,0); glVertex3f(-MAX_DIMENSION, MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
-    glTexCoord2d(1,1); glVertex3f(-MAX_DIMENSION, -MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
-    glTexCoord2d(0,1); glVertex3f(MAX_DIMENSION, -MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
-    glEnd();
-
-
-
-    glClear(GL_DEPTH_BUFFER_BIT);
+        // Affichage du cube du background
+        glBegin(GL_QUADS);
+        glTexCoord2d(0,0); glVertex3f(MAX_DIMENSION,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+        glTexCoord2d(1,0); glVertex3f(-MAX_DIMENSION, MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+        glTexCoord2d(1,1); glVertex3f(-MAX_DIMENSION, -MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+        glTexCoord2d(0,1); glVertex3f(MAX_DIMENSION, -MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+        glEnd();
 
 
 
+        glClear(GL_DEPTH_BUFFER_BIT);
 
-    //Affichage du texte
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-1,-20,"life Point : " +QString::number(game.getPlayer().getLifePoint()),QFont());
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-2,-20,"score : "+QString::number(game.getPlayer().getScore()),QFont());
-    this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-3,-20,"Level : " +QString::number(game.getNbWin()+1),QFont());
 
-    // Affichage du terrain de la partie initiale
-    for (int i=0;i<70;i++){
-        if (game.getBrickI(i).getLife()>0)
-        {
-            dessineCube(game.getBrickI(i).getX(),game.getBrickI(i).getY(),game.getBrickI(i).getZ(),game.getBrickI(i).getWidth(),game.getBrickI(i).getHeight(),game.getBrickI(i).getScore(),game.getBrickI(i).getLife());
+
+        //Affichage du texte
+        this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-1,-20,"life Point : " +QString::number(game.getPlayer().getLifePoint()),QFont());
+        this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-2,-20,"score : "+QString::number(game.getPlayer().getScore()),QFont());
+        this->renderText(-MAX_DIMENSION+0.5,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH-3,-20,"Level : " +QString::number(game.getNbWin()+1),QFont());
+
+
+
+        // Affichage du terrain de la partie initiale
+        for (int i=0;i<70;i++){
+            if (game.getBrickI(i).getLife()>0)
+            {
+                dessineCube(game.getBrickI(i).getX(),game.getBrickI(i).getY(),game.getBrickI(i).getZ(),game.getBrickI(i).getWidth(),game.getBrickI(i).getHeight(),game.getBrickI(i).getScore(),game.getBrickI(i).getLife());
+            }
         }
+        dessineCube(game.getStick().getX(),game.getStick().getY(),game.getStick().getZ(),game.getStick().getWidth(),game.getStick().getHeight(),0,0);
+        drawBall();
     }
-    dessineCube(game.getStick().getX(),game.getStick().getY(),game.getStick().getZ(),game.getStick().getWidth(),game.getStick().getHeight(),0,0);
-    drawBall();
+    else{
+        glBindTexture(GL_TEXTURE_2D, tab_text[22]);
+
+        // Affichage du cube du background
+        glBegin(GL_QUADS);
+        glTexCoord2d(1,1); glVertex3f(MAX_DIMENSION,MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+        glTexCoord2d(0,1); glVertex3f(-MAX_DIMENSION, MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+        glTexCoord2d(0,0); glVertex3f(-MAX_DIMENSION, -MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+        glTexCoord2d(1,0); glVertex3f(MAX_DIMENSION, -MAX_DIMENSION*WIN_HEIGHT/WIN_WIDTH, -20.0f);
+        glEnd();
+
+        //Affichage du texte
+        this->renderText(-3,10,-20,"life Point : " +QString::number(game.getPlayer().getLifePoint()),QFont());
+        this->renderText(-3,11,-20,"score : "+QString::number(game.getPlayer().getScore()),QFont());
+        this->renderText(-3,12,-20,"Level : " +QString::number(game.getNbWin()+1),QFont());
 
 
+    }
 
 }
 
@@ -258,69 +284,69 @@ void MyGLWidget::dessineCube(double centerX,double centerY,double centerZ,double
 
     switch (lpTot) {
 
-        case 0 :
-            glBindTexture(GL_TEXTURE_2D, tab_text[5]);
+    case 0 :
+        glBindTexture(GL_TEXTURE_2D, tab_text[5]);
         break;
 
-        case 1 :
-            glBindTexture(GL_TEXTURE_2D, tab_text[7]);
+    case 1 :
+        glBindTexture(GL_TEXTURE_2D, tab_text[7]);
         break;
 
+    case 2 :
+        switch (lp) {
         case 2 :
-        switch (lp) {
-            case 2 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[8]);
+            glBindTexture(GL_TEXTURE_2D, tab_text[8]);
             break;
-            case 1 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[9]);
+        case 1 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[9]);
             break; }
         break;
 
+    case 3 :
+        switch (lp) {
         case 3 :
-        switch (lp) {
-            case 3 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[10]);
+            glBindTexture(GL_TEXTURE_2D, tab_text[10]);
             break;
-            case 2 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[11]);
+        case 2 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[11]);
             break;
-            case 1 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[12]);
+        case 1 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[12]);
             break; }
         break;
 
+    case 4 :
+        switch (lp) {
         case 4 :
-        switch (lp) {
-            case 4 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[13]);
+            glBindTexture(GL_TEXTURE_2D, tab_text[13]);
             break;
-            case 3 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[14]);
+        case 3 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[14]);
             break;
-            case 2 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[15]);
+        case 2 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[15]);
             break;
-            case 1 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[16]);
+        case 1 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[16]);
             break; }
         break;
 
-        case 5 :
+    case 5 :
         switch (lp) {
-            case 5 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[17]);
+        case 5 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[17]);
             break;
-            case 4 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[18]);
+        case 4 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[18]);
             break;
-            case 3 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[19]);
+        case 3 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[19]);
             break;
-            case 2 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[20]);
+        case 2 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[20]);
             break;
-            case 1 :
-                glBindTexture(GL_TEXTURE_2D, tab_text[21]);
+        case 1 :
+            glBindTexture(GL_TEXTURE_2D, tab_text[21]);
             break; }
         break;
     }
@@ -343,9 +369,9 @@ void MyGLWidget::dessineCube(double centerX,double centerY,double centerZ,double
     glTexCoord2d(1,0);glVertex3f( centerX+width/2, centerY+height/2,centerZ- 1.25f);
     glTexCoord2d(1,1);glVertex3f(centerX-width/2, centerY+height/2,centerZ - 1.25f);
     glTexCoord2d(0,1);glVertex3f(centerX-width/2, centerY+height/2,centerZ + 1.25);
-     //Face dessus
+    //Face dessus
     glTexCoord2d(0,0);glVertex3f(centerX+width/2, centerY-height/2,centerZ + 1.25f);
-     glTexCoord2d(1,0);glVertex3f( centerX+width/2, centerY-height/2,centerZ- 1.25f);
+    glTexCoord2d(1,0);glVertex3f( centerX+width/2, centerY-height/2,centerZ- 1.25f);
     glTexCoord2d(1,1);glVertex3f(centerX-width/2, centerY-height/2,centerZ - 1.25f);
     glTexCoord2d(0,1);glVertex3f(centerX-width/2, centerY-height/2,centerZ + 1.25);
     //Faces coté gauche et droite
@@ -356,7 +382,7 @@ void MyGLWidget::dessineCube(double centerX,double centerY,double centerZ,double
 
     glTexCoord2d(0,0);glVertex3f(centerX+width/2, centerY-height/2,centerZ + 1.25f);
     glTexCoord2d(1,0);glVertex3f( centerX+width/2, centerY-height/2,centerZ- 1.25f);
-   glTexCoord2d(1,1);glVertex3f(centerX+width/2, centerY+height/2,centerZ - 1.25f);
+    glTexCoord2d(1,1);glVertex3f(centerX+width/2, centerY+height/2,centerZ - 1.25f);
     glTexCoord2d(0,1);glVertex3f(centerX+width/2, centerY+height/2,centerZ + 1.25);
 
     glEnd();
@@ -380,8 +406,6 @@ void MyGLWidget::drawBall(){//Dessin de la bille
 }
 
 void MyGLWidget::updateCamMoveEvent(int vectX,int vectY){
-    qDebug()<< "X"<< QString::number(vectX) ;
-    qDebug()<< "Y"<< QString::number(vectY) ;
     if (vectY>=10 || vectY<=-10){
         game.stick_.setSpeed(0);
     }
@@ -397,22 +421,24 @@ void MyGLWidget::updateCamMoveEvent(int vectX,int vectY){
 
 }
 
-//void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
-//{
-//    this->setMouseTracking(true);
-//    if (event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION+game.getStick().getWidth()/2<=MAX_DIMENSION && event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION-game.getStick().getWidth()/2>= -MAX_DIMENSION )
-//    {
-//        game.stick_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
-//        //Detecter la position de la souris
-////        qDebug() << "x::"<<QString::number(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
-////        qDebug() << "y::"<< QString::number(-event->pos().y()*2*MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH/WIN_HEIGHT+MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH);
-////
-//        if(game.getBille().getState()==QString("fixed"))
-//        {
-//            game.bille_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
-//        }
-//    }
-//}
+void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
+{
+    if(game.mouseEventAct){
+        this->setMouseTracking(true);
+        if (event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION+game.getStick().getWidth()/2<=MAX_DIMENSION && event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION-game.getStick().getWidth()/2>= -MAX_DIMENSION )
+        {
+            game.stick_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+            //Detecter la position de la souris
+            //        qDebug() << "x::"<<QString::number(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+            //        qDebug() << "y::"<< QString::number(-event->pos().y()*2*MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH/WIN_HEIGHT+MAX_DIMENSION * WIN_HEIGHT / WIN_WIDTH);
+            //
+            if(game.getBille().getState()==QString("fixed"))
+            {
+                game.bille_.setX(event->pos().x()*2*MAX_DIMENSION/WIN_WIDTH-MAX_DIMENSION);
+            }
+        }
+    }
+}
 
 
 

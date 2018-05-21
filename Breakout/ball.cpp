@@ -18,6 +18,7 @@ Ball::Ball(double radius,double x ,double y,double z,double speed)
     directionZ_=0;
     state_=QString("fixed");// A l'initialisation la bille est collé
 }
+
 double *Ball::getDirection(){
     double direction[3];
     direction[0]=directionX_;
@@ -26,6 +27,7 @@ double *Ball::getDirection(){
 
     return(direction);
 }
+
 void Ball::reinitialiser(double x,double y,double z)//Fonctions de réinitialisation pour repositionner la balle lors d'une défaite
 {
     directionX_=0;

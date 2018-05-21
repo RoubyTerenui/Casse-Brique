@@ -10,38 +10,60 @@ const float MAX_DIMENSION     = 45.0f;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
-{   count=0;
+{
+    ui->setupUi(this);
+    //Taille de la fenêtre
     resize( QSize(2000,1000));
+
+    // MouseTracking Pour le mode de jeu souris
+    setMouseTracking(true);
+    ui->centralWidget->setMouseTracking(true);
+    ui->openGLWidget->setMouseTracking(true);
+
+
+    // verification de l'ouverture de la Webcam
+
     this->moveDetection=OpenCvWidget();
-    if(!moveDetection.cap.isOpened())  // verification de l'ouverture de la Webcam
+    if(!moveDetection.cap.isOpened())
     {
         ui->label->setText("Error openning the default camera");
         moveDetection.state=false;
         return;
+
+
     }
-    ui->setupUi(this);
-    setMouseTracking(true);
-    ui->centralWidget->setMouseTracking(true);
-    ui->openGLWidget->setMouseTracking(true);
+
+
+
+
+
+    // Boucle de jeu
+    count=0;
     connect(&tmrTimer,  &QTimer::timeout, [&] {
-        if ((ui->openGLWidget->game.stick_.getX()+ui->openGLWidget->game.stick_.getSpeed())+ui->openGLWidget->game.stick_.getWidth()/2<=MAX_DIMENSION+1 && (ui->openGLWidget->game.stick_.getX()+ui->openGLWidget->game.stick_.getSpeed())-ui->openGLWidget->game.getStick().getWidth()/2>= -MAX_DIMENSION-1 )
+        if ((!ui->openGLWidget->game.mouseEventAct) &&((ui->openGLWidget->game.stick_.getX()+ui->openGLWidget->game.stick_.getSpeed())+ui->openGLWidget->game.stick_.getWidth()/2<=MAX_DIMENSION+1 && (ui->openGLWidget->game.stick_.getX()+ui->openGLWidget->game.stick_.getSpeed())-ui->openGLWidget->game.getStick().getWidth()/2>= -MAX_DIMENSION-1) )
         {
             ui->openGLWidget->game.updatePositionPalette();
         }
         ui->openGLWidget->game.updateBille_Score();
         ui->openGLWidget->game.updateNbWin();
         ui->openGLWidget->updateGL();
-
         if (count==0){// Counter pour réduire la fréquence d'affichage de la vidéo (diminue le temps CPU assigné à la tache)
             updateF();
 
         }
-
         count-=1;
-
     });
     tmrTimer.setInterval(20);
     tmrTimer.start();
+
+    //Initialisation du tableau des scores et des fichiers textes de sauvegarde
+    ifstream file2("outputCasseBrique.txt",ios::in);
+    if(file2.is_open()){
+        topPlayers.charger(file2);
+        updateTabList();
+        file2.close();
+    }
+
 
 }
 
@@ -56,31 +78,31 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
 {
     switch(event->key())
     {
-        // Activation/Arret de l'animation
-        case Qt::Key_Alt:
+    // Activation/Arret de l'animation
+    case Qt::Key_Alt:
+    {
+        if(ui->openGLWidget->game.bille_.getState()==QString("fixed"))
         {
-            if(ui->openGLWidget->game.bille_.getState()==QString("fixed"))
-            {
-               ui->openGLWidget->game.bille_.setState(QString("unfixed"));
+            ui->openGLWidget->game.bille_.setState(QString("unfixed"));
 
-            }
-
-
-            break;
         }
+
+
+        break;
+    }
         // Cas par defaut
-        default:
-        {
-            // Ignorer l'evenement
-            event->ignore();
-            return;
-        }
+    default:
+    {
+        // Ignorer l'evenement
+        event->ignore();
+        return;
+    }
     }
 }
 
 void MainWindow::on_pushButton_2_clicked()//Changement de la taille de la Palette (Poser peut-être des tailles limites?)
 {
-    ui->openGLWidget->game.stick_.setWidth(ui->lineEdit->text().toDouble());
+    ui->openGLWidget->game.stick_.setWidth(ui->slider->value());
 }
 
 void MainWindow::on_pushButton_3_clicked()
@@ -90,16 +112,30 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QFile file("outputCasseBrique.txt");
-    if (!file.open(QIODevice::Append | QIODevice::Text))
-       return;
-
-    QTextStream out(&file);
-    out << ui->lineEdit_2->text() + " :  " + QString::number(ui->openGLWidget->game.getNbWin())+ " : " + QString::number(ui->openGLWidget->game.getPlayer().getScore())+"\r\n" ;
-
+    remove("outputCasseBrique.txt");
+    std::ofstream file;
+    file.open("outputCasseBrique.txt");
+    Player topPl=Player(ui->openGLWidget->game.player);
+    topPl.setNbWin(ui->openGLWidget->game.nbwin_);
+    if(ui->lineEdit_2->text()!=""){
+        topPl.setName(ui->lineEdit_2->text().toStdString());
+    }
+    topPlayers.push_back(topPl);
+    topPlayers.triList();
+    topPlayers.sauver(file);
+    file.close();
+    updateTabList();
 }
 
-
+void MainWindow::updateTabList(){
+    qDebug(""+topPlayers.size());
+    for (ListPlayer::iterator it=topPlayers.begin();
+         it!=topPlayers.end();it++)
+    {
+        ui->topPlayers->addItem(
+                    "Pseudo:"+QString::fromStdString(it->getName())+" Score: "+QString::number(it->getScore())+" NiveauMax:  "+QString::number(it->getNbWin()));
+    }
+}
 void MainWindow::updateF(){
     //Réinitialise le counteur régulant la fréquence d'affichage
     count=5;
@@ -157,4 +193,15 @@ void MainWindow::updateF(){
     ui->openGLWidget->updateCamMoveEvent(vect.x,vect.y);
     //Affiche l'image actuelle dans le Label
     ui->label->setPixmap(QPixmap::fromImage(actu));
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    ui->openGLWidget->game.changeMode();
+    if(ui->openGLWidget->game.mouseEventAct){
+        ui->pushButton_4->setText("Passer en mode Caméra");
+    }
+    else{
+        ui->pushButton_4->setText("Passer en mode Souris");
+    }
 }

@@ -53,7 +53,8 @@ SOURCES += \
     palette.cpp \
     player.cpp \
     square.cpp \
-    opencvwidget.cpp
+    opencvwidget.cpp \
+    listplayer.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -63,7 +64,8 @@ HEADERS += \
     palette.h \
     player.h \
     square.h \
-    opencvwidget.h
+    opencvwidget.h \
+    listplayer.h
 
 FORMS += \
     mainwindow.ui \

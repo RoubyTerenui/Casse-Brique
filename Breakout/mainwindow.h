@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include<opencvwidget.h>
+#include <listplayer.h>
 #include <QTimer>
 #include <QMainWindow>
 
@@ -26,9 +27,14 @@ private slots:
 
     void updateF();
 
+    void updateTabList();
+
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     OpenCvWidget moveDetection;
+    ListPlayer topPlayers;
     int count;
     QTimer tmrTimer;
 };

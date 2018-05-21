@@ -15,12 +15,14 @@ public:
     Player player;
     QString state_;
     int nbwin_;
+    bool mouseEventAct=false;
 private:
     bool collisionPointCercle(double x,double y,Ball b);
     bool collisionDroite(double aX,double aY,double bX,double bY,Ball C);
     bool collisionSegmentCercle(double aX,double aY,double bX,double bY,Ball C);
 public:
     GameManager();
+    void changeMode(){mouseEventAct=!mouseEventAct;}
     void reinitialiserBricks();
     void initializeNbWin(){nbwin_=0;}
     int collisionBrick(Square brick);//Renvoie un entier entre 0 et 8 indiquant la collision avec une brick et met à jour sa vie
