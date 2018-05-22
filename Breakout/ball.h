@@ -1,5 +1,6 @@
 #ifndef BALL_H
 #define BALL_H
+
 /*!
   *\file Ball.h
   *\brief Gestionnaire de Balle

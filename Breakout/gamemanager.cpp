@@ -2,7 +2,7 @@
 #include <QDebug>
 GameManager::GameManager()//Constructeur par défaut de la classe
 {
-    nbwin_=4;
+    nbwin_=0;
     for (int i=0;i<10;i++){
         for (int j=0;j<7;j++){//7 lignes de bricks maximum
             int viebrick=rand()%(2+nbwin_);//Pour le niveau 1 les points de vies sont entre 0 et 1
@@ -21,7 +21,7 @@ void GameManager::reinitialiserBricks(){
     for (int i=0;i<10;i++){
         for (int j=0;j<7;j++){
             int viebrick=0;
-            if (nbwin_<=5)
+            if (nbwin_<=4)
             {
                 viebrick=rand()%(nbwin_+2);//Vie des bricks dépendant du nombre de victoire
             }
@@ -30,7 +30,7 @@ void GameManager::reinitialiserBricks(){
                 viebrick=rand()%6;//à 4 le nombre de points de vie des bricks ne change plus
             }
             //Rajoute la Brick à la liste des 70 Bricks du jeu
-            listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,55,viebrick);
+            listbricks_[i*7+j]=Square(9,3,-40.5+(i)*9,17.2-(j)*3,-50,viebrick);
         }
     }
 
