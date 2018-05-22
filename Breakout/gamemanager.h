@@ -1,5 +1,6 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
+
 /*!
   *\file GameManager.h
   *\brief Gestionnaire de Jeu

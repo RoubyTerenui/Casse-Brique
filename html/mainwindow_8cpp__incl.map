@@ -1,0 +1,12 @@
+<map id="Breakout/mainwindow.cpp" name="Breakout/mainwindow.cpp">
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="Gestionnaire de Jeu. " alt="" coords="749,155,852,181"/>
+<area shape="rect" id="node17" href="$ui__mainwindow_8h.html" title="ui_mainwindow.h" alt="" coords="2287,80,2407,107"/>
+<area shape="rect" id="node3" href="$opencvwidget_8h.html" title="Utiliser OpenCV Réutilisation d&#39;une classe donnée comme point de départ dans le cadre du projet qui a..." alt="" coords="616,229,727,256"/>
+<area shape="rect" id="node10" href="$listplayer_8h.html" title="ListPlayer utilisé pour le tableau de score. " alt="" coords="887,229,973,256"/>
+<area shape="rect" id="node13" href="$player_8h.html" title="Gestionnaire de joueur. " alt="" coords="1032,304,1100,331"/>
+<area shape="rect" id="node35" href="$myglwidget_8h.html" title="Gestionnaire du widget OpenGL. " alt="" coords="3873,155,3971,181"/>
+<area shape="rect" id="node41" href="$gamemanager_8h.html" title="Gestionnaire de Jeu. " alt="" coords="4085,229,4199,256"/>
+<area shape="rect" id="node42" href="$ball_8h.html" title="Gestionnaire de Balle. " alt="" coords="4014,304,4067,331"/>
+<area shape="rect" id="node44" href="$square_8h.html" title="Gestionnaire de brique. " alt="" coords="4119,379,4191,405"/>
+<area shape="rect" id="node45" href="$palette_8h.html" title="Gestionnaire de palette. " alt="" coords="4142,304,4214,331"/>
+</map>

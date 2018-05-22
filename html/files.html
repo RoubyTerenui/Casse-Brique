@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +57,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('files.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,31 +92,47 @@ $(function() {
 <div class="title">File List</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all documented files with brief descriptions:</div><div class="directory">
-<div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span><span onclick="javascript:toggleLevel(3);">3</span><span onclick="javascript:toggleLevel(4);">4</span><span onclick="javascript:toggleLevel(5);">5</span><span onclick="javascript:toggleLevel(6);">6</span><span onclick="javascript:toggleLevel(7);">7</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span id="img_0_" class="iconfopen" onclick="toggleFolder('0_')">&#160;</span><a class="el" href="dir_a56ab63fb11deaf18c9a6994678cf830.html" target="_self">TravailEtudiant</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_0_" class="arrow" onclick="toggleFolder('0_0_')">&#9660;</span><span id="img_0_0_" class="iconfopen" onclick="toggleFolder('0_0_')">&#160;</span><a class="el" href="dir_15660f86b57a08b6e1fa98fcae0dc3f5.html" target="_self">fise2-sem2</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span id="arr_0_0_0_" class="arrow" onclick="toggleFolder('0_0_0_')">&#9660;</span><span id="img_0_0_0_" class="iconfopen" onclick="toggleFolder('0_0_0_')">&#160;</span><a class="el" href="dir_cf6e5e9e2161ea277b4319d7fcb22848.html" target="_self">QTCreator</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span id="arr_0_0_0_0_" class="arrow" onclick="toggleFolder('0_0_0_0_')">&#9660;</span><span id="img_0_0_0_0_" class="iconfopen" onclick="toggleFolder('0_0_0_0_')">&#160;</span><a class="el" href="dir_27cb712ded06803cb453676004fe3183.html" target="_self">Developpement projet</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_" class="even"><td class="entry"><span style="width:64px;display:inline-block;">&#160;</span><span id="arr_0_0_0_0_0_" class="arrow" onclick="toggleFolder('0_0_0_0_0_')">&#9660;</span><span id="img_0_0_0_0_0_" class="iconfopen" onclick="toggleFolder('0_0_0_0_0_')">&#160;</span><a class="el" href="dir_7bbaaf3cb608a8ef86f6631ebb0b5164.html" target="_self">Casse-Brique</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_"><td class="entry"><span style="width:80px;display:inline-block;">&#160;</span><span id="arr_0_0_0_0_0_0_" class="arrow" onclick="toggleFolder('0_0_0_0_0_0_')">&#9660;</span><span id="img_0_0_0_0_0_0_" class="iconfopen" onclick="toggleFolder('0_0_0_0_0_0_')">&#160;</span><a class="el" href="dir_87e78ab7016d7742b8c69e1b4d9da264.html" target="_self">Breakout</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_0_" class="even"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="ball_8h_source.html"><span class="icondoc"></span></a><b>ball.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_1_"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="gamemanager_8h_source.html"><span class="icondoc"></span></a><a class="el" href="gamemanager_8h.html" target="_self">gamemanager.h</a></td><td class="desc">Gestionnaire de Jeu </td></tr>
-<tr id="row_0_0_0_0_0_0_2_" class="even"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="listplayer_8h_source.html"><span class="icondoc"></span></a><b>listplayer.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_3_"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="mainwindow_8h_source.html"><span class="icondoc"></span></a><b>mainwindow.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_4_" class="even"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="myglwidget_8h_source.html"><span class="icondoc"></span></a><b>myglwidget.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_5_"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="opencvwidget_8h_source.html"><span class="icondoc"></span></a><b>opencvwidget.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_6_" class="even"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="palette_8h_source.html"><span class="icondoc"></span></a><b>palette.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_7_"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="player_8h_source.html"><span class="icondoc"></span></a><b>player.h</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_0_0_0_8_" class="even"><td class="entry"><span style="width:112px;display:inline-block;">&#160;</span><a href="square_8h_source.html"><span class="icondoc"></span></a><b>square.h</b></td><td class="desc"></td></tr>
+<div class="textblock">Here is a list of all files with brief descriptions:</div><div class="directory">
+<div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span><span onclick="javascript:toggleLevel(3);">3</span>]</div><table class="directory">
+<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span id="img_0_" class="iconfopen" onclick="toggleFolder('0_')">&#160;</span><a class="el" href="dir_fdd8476826cbf2ff84558f4700e5891b.html" target="_self">Breakout</a></td><td class="desc"></td></tr>
+<tr id="row_0_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="ball_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="ball_8cpp.html" target="_self">ball.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="ball_8h_source.html"><span class="icondoc"></span></a><a class="el" href="ball_8h.html" target="_self">ball.h</a></td><td class="desc">Gestionnaire de Balle </td></tr>
+<tr id="row_0_2_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="gamemanager_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="gamemanager_8cpp.html" target="_self">gamemanager.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="gamemanager_8h_source.html"><span class="icondoc"></span></a><a class="el" href="gamemanager_8h.html" target="_self">gamemanager.h</a></td><td class="desc">Gestionnaire de Jeu </td></tr>
+<tr id="row_0_4_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="listplayer_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="listplayer_8cpp.html" target="_self">listplayer.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="listplayer_8h_source.html"><span class="icondoc"></span></a><a class="el" href="listplayer_8h.html" target="_self">listplayer.h</a></td><td class="desc"><a class="el" href="class_list_player.html" title="Liste des meilleurs joueurs (hérite de list&lt;Player&gt;) ">ListPlayer</a> utilisé pour le tableau de score </td></tr>
+<tr id="row_0_6_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="main_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="main_8cpp.html" target="_self">main.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="mainwindow_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="mainwindow_8cpp.html" target="_self">mainwindow.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_8_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="mainwindow_8h_source.html"><span class="icondoc"></span></a><a class="el" href="mainwindow_8h.html" target="_self">mainwindow.h</a></td><td class="desc">Gestionnaire de Jeu </td></tr>
+<tr id="row_0_9_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="myglwidget_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="myglwidget_8cpp.html" target="_self">myglwidget.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_10_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="myglwidget_8h_source.html"><span class="icondoc"></span></a><a class="el" href="myglwidget_8h.html" target="_self">myglwidget.h</a></td><td class="desc">Gestionnaire du widget OpenGL </td></tr>
+<tr id="row_0_11_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="opencvwidget_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="opencvwidget_8cpp.html" target="_self">opencvwidget.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_12_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="opencvwidget_8h_source.html"><span class="icondoc"></span></a><a class="el" href="opencvwidget_8h.html" target="_self">opencvwidget.h</a></td><td class="desc">Utiliser OpenCV Réutilisation d'une classe donnée comme point de départ dans le cadre du projet qui a été adapté pour l'utilisation dans ce projet </td></tr>
+<tr id="row_0_13_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="palette_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="palette_8cpp.html" target="_self">palette.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_14_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="palette_8h_source.html"><span class="icondoc"></span></a><a class="el" href="palette_8h.html" target="_self">palette.h</a></td><td class="desc">Gestionnaire de palette </td></tr>
+<tr id="row_0_15_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="player_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="player_8cpp.html" target="_self">player.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_16_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="player_8h_source.html"><span class="icondoc"></span></a><a class="el" href="player_8h.html" target="_self">player.h</a></td><td class="desc">Gestionnaire de joueur </td></tr>
+<tr id="row_0_17_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="square_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="square_8cpp.html" target="_self">square.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_0_18_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="square_8h_source.html"><span class="icondoc"></span></a><a class="el" href="square_8h.html" target="_self">square.h</a></td><td class="desc">Gestionnaire de brique </td></tr>
+<tr id="row_0_19_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="test__detectmotion_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="test__detectmotion_8cpp.html" target="_self">test_detectmotion.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_1_"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="toggleFolder('1_')">&#9660;</span><span id="img_1_" class="iconfopen" onclick="toggleFolder('1_')">&#160;</span><a class="el" href="dir_0c466cc922464f4dbc02d4cb9986c939.html" target="_self">build-Breakout-Desktop_Qt_5_10_1_MinGW_32bit-Debug</a></td><td class="desc"></td></tr>
+<tr id="row_1_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_1_0_" class="arrow" onclick="toggleFolder('1_0_')">&#9660;</span><span id="img_1_0_" class="iconfopen" onclick="toggleFolder('1_0_')">&#160;</span><a class="el" href="dir_e5dbcfa87b1f424e0026062fca308dc4.html" target="_self">debug</a></td><td class="desc"></td></tr>
+<tr id="row_1_0_0_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="moc__mainwindow_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="moc__mainwindow_8cpp.html" target="_self">moc_mainwindow.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_1_0_1_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="moc__myglwidget_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="moc__myglwidget_8cpp.html" target="_self">moc_myglwidget.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_1_0_2_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="moc__predefs_8h_source.html"><span class="icondoc"></span></a><a class="el" href="moc__predefs_8h.html" target="_self">moc_predefs.h</a></td><td class="desc"></td></tr>
+<tr id="row_1_0_3_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="qrc__textures_8cpp_source.html"><span class="icondoc"></span></a><a class="el" href="qrc__textures_8cpp.html" target="_self">qrc_textures.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_1_1_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="ui__mainwindow_8h_source.html"><span class="icondoc"></span></a><a class="el" href="ui__mainwindow_8h.html" target="_self">ui_mainwindow.h</a></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

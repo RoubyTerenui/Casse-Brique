@@ -1,0 +1,33 @@
+<map id="GameManager::updateBille_Score" name="GameManager::updateBille_Score">
+<area shape="rect" id="node2" href="$class_game_manager.html#a2bd2b0363ac1c5c6026029fba4d41e38" title="collisionBrick " alt="" coords="237,250,429,277"/>
+<area shape="rect" id="node3" href="$class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="538,98,639,125"/>
+<area shape="rect" id="node5" href="$class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="527,418,650,445"/>
+<area shape="rect" id="node6" href="$class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="541,317,637,344"/>
+<area shape="rect" id="node10" href="$class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="1005,274,1082,301"/>
+<area shape="rect" id="node11" href="$class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="1004,132,1083,158"/>
+<area shape="rect" id="node14" href="$class_ball.html#a7758c0e5b90900b8984e602797798d12" title="setDirectionY " alt="" coords="267,520,398,546"/>
+<area shape="rect" id="node15" href="$class_ball.html#a791c67c6112d626112b09e43420089a6" title="getDirectionY " alt="" coords="267,570,398,597"/>
+<area shape="rect" id="node16" href="$class_ball.html#a51f2f0f1e6aa3b1cee878c1713f31fbb" title="setDirectionX " alt="" coords="269,621,397,648"/>
+<area shape="rect" id="node17" href="$class_ball.html#a3b36da76a1ea6c1e30ffa4ed60ccd446" title="getDirectionX " alt="" coords="269,672,397,698"/>
+<area shape="rect" id="node18" href="$class_square.html#a115fdac881e80628eca323b22d5a0280" title="setLife " alt="" coords="278,722,387,749"/>
+<area shape="rect" id="node19" href="$class_player.html#a23c9b25aeb8dd1ff86d03d993e07a73d" title="setScore " alt="" coords="273,773,392,800"/>
+<area shape="rect" id="node20" href="$class_player.html#a97e5447778ae6c384eedc532dcd8431d" title="getScore " alt="" coords="273,824,392,850"/>
+<area shape="rect" id="node21" href="$class_square.html#a5a52ced157d32d3fe038c3674dc7c975" title="getScore " alt="" coords="271,874,394,901"/>
+<area shape="rect" id="node22" href="$class_game_manager.html#ab6b2748c5280bc20cbed15f32a18deb9" title="searchPositionImpact Cherche la position de l&#39;impact entre la bille et la palette ..." alt="" coords="232,352,433,394"/>
+<area shape="rect" id="node23" href="$class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4" title="collisionWall " alt="" coords="239,157,427,184"/>
+<area shape="rect" id="node24" href="$class_player.html#ac3ad5e51b95a604a27c6f8ac6ecc6f90" title="getLifePoint " alt="" coords="265,925,400,952"/>
+<area shape="rect" id="node25" href="$class_player.html#a3fc95cf72792aad03d73c58998ab2643" title="setLifePoint " alt="" coords="265,976,400,1002"/>
+<area shape="rect" id="node26" href="$class_ball.html#ae639c8f2030279739228019198021e99" title="reinitialiser Replacement de la balle " alt="" coords="275,1026,390,1053"/>
+<area shape="rect" id="node27" href="$class_ball.html#a0d566e6196748ba2ff4c48e42b0ca7b1" title="getSpeed " alt="" coords="280,1077,385,1104"/>
+<area shape="rect" id="node28" href="$class_ball.html#a7d6e946cfe6310088e938258cb9e88f1" title="getDirectionZ " alt="" coords="269,1128,397,1154"/>
+<area shape="rect" id="node29" href="$class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359" title="getZ " alt="" coords="294,1178,371,1205"/>
+<area shape="rect" id="node30" href="$class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389" title="setX " alt="" coords="294,1229,371,1256"/>
+<area shape="rect" id="node31" href="$class_ball.html#a074c539ee788dda3edcd3dbafe46c6b1" title="setY " alt="" coords="293,1280,372,1306"/>
+<area shape="rect" id="node32" href="$class_ball.html#ae58e925566371743c7fe20af87d007f9" title="setZ " alt="" coords="294,1330,371,1357"/>
+<area shape="rect" id="node4" href="$class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f" title="getHeight " alt="" coords="525,216,652,242"/>
+<area shape="rect" id="node7" href="$class_square.html#a466213e529d0623f27dd59baa5fd425c" title="getY " alt="" coords="539,266,638,293"/>
+<area shape="rect" id="node8" href="$class_game_manager.html#acedcd837373ddcab758627071bfaa0e1" title="collisionSegmentCercle " alt="" coords="481,150,696,191"/>
+<area shape="rect" id="node9" href="$class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f" title="collisionDroite " alt="" coords="744,157,940,184"/>
+<area shape="rect" id="node13" href="$class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192" title="collisionPointCercle " alt="" coords="746,208,938,250"/>
+<area shape="rect" id="node12" href="$class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="988,200,1099,226"/>
+</map>

@@ -1,5 +1,6 @@
 #ifndef OPENCVWIDGET_H
 #define OPENCVWIDGET_H
+
 /*!
   *\file OpenCvWidget.h
   *\brief Utiliser OpenCV
@@ -7,13 +8,14 @@
   * qui a été adapté pour l'utilisation dans ce projet
   *\author TSE,Rouby Terenui,Ansart Valentin
 */
+
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include <QWidget>
 #include <cstdio>
 #include <iostream>
-/*! \namespace ui
+/*! \namespace cv
  *
  * espace de nommage permettant d'utiliser la librairie openCV
  */

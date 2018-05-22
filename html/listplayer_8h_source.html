@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Casse-Brique: D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/listplayer.h Source File</title>
+<title>Casse-Brique: Breakout/listplayer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('listplayer_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,23 +87,27 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_a56ab63fb11deaf18c9a6994678cf830.html">TravailEtudiant</a></li><li class="navelem"><a class="el" href="dir_15660f86b57a08b6e1fa98fcae0dc3f5.html">fise2-sem2</a></li><li class="navelem"><a class="el" href="dir_cf6e5e9e2161ea277b4319d7fcb22848.html">QTCreator</a></li><li class="navelem"><a class="el" href="dir_27cb712ded06803cb453676004fe3183.html">Developpement projet</a></li><li class="navelem"><a class="el" href="dir_7bbaaf3cb608a8ef86f6631ebb0b5164.html">Casse-Brique</a></li><li class="navelem"><a class="el" href="dir_87e78ab7016d7742b8c69e1b4d9da264.html">Breakout</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">listplayer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LISTPLAYER_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LISTPLAYER_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&lt;list&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include&lt;fstream&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;player.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_list_player.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_list_player.html">ListPlayer</a> : <span class="keyword">public</span> list&lt;Player&gt;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_list_player.html">ListPlayer</a>();</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> charger(std::ifstream &amp;is);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> sauver(std::ofstream &amp;os);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> triList();</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif // LISTPLAYER_H</span></div><div class="ttc" id="class_list_player_html"><div class="ttname"><a href="class_list_player.html">ListPlayer</a></div><div class="ttdef"><b>Definition:</b> listplayer.h:9</div></div>
+<a href="listplayer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LISTPLAYER_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LISTPLAYER_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&lt;list&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include&lt;fstream&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="player_8h.html">player.h</a>&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_list_player.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_list_player.html">ListPlayer</a> : <span class="keyword">public</span> list&lt;Player&gt;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_list_player.html#a55308a1803c8006e908e3c05c97d4e3d">ListPlayer</a>();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_list_player.html#a51419d9b0d08358b6384e13c462247b4">charger</a>(std::ifstream &amp;is);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_list_player.html#ad350875939b59a7a0203b7e7c4cc6602">sauver</a>(std::ofstream &amp;os);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_list_player.html#a5b8f02efc75e1bafd2300ac2d308eda5">triList</a>();</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif // LISTPLAYER_H</span></div><div class="ttc" id="class_list_player_html_a55308a1803c8006e908e3c05c97d4e3d"><div class="ttname"><a href="class_list_player.html#a55308a1803c8006e908e3c05c97d4e3d">ListPlayer::ListPlayer</a></div><div class="ttdeci">ListPlayer()</div><div class="ttdoc">ListPlayer. </div><div class="ttdef"><b>Definition:</b> <a href="listplayer_8cpp_source.html#l00005">listplayer.cpp:5</a></div></div>
+<div class="ttc" id="class_list_player_html_a5b8f02efc75e1bafd2300ac2d308eda5"><div class="ttname"><a href="class_list_player.html#a5b8f02efc75e1bafd2300ac2d308eda5">ListPlayer::triList</a></div><div class="ttdeci">void triList()</div><div class="ttdoc">triList Fonction permettant de trier la liste en fonction du score et du nombre de victoire ...</div><div class="ttdef"><b>Definition:</b> <a href="listplayer_8cpp_source.html#l00034">listplayer.cpp:34</a></div></div>
+<div class="ttc" id="player_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div><div class="ttdoc">Gestionnaire de joueur. </div></div>
+<div class="ttc" id="class_list_player_html_a51419d9b0d08358b6384e13c462247b4"><div class="ttname"><a href="class_list_player.html#a51419d9b0d08358b6384e13c462247b4">ListPlayer::charger</a></div><div class="ttdeci">void charger(std::ifstream &amp;is)</div><div class="ttdoc">charger Fonction permettant de charger la liste dans un fichier texte </div><div class="ttdef"><b>Definition:</b> <a href="listplayer_8cpp_source.html#l00011">listplayer.cpp:11</a></div></div>
+<div class="ttc" id="class_list_player_html"><div class="ttname"><a href="class_list_player.html">ListPlayer</a></div><div class="ttdoc">Liste des meilleurs joueurs (hérite de list&lt;Player&gt;) </div><div class="ttdef"><b>Definition:</b> <a href="listplayer_8h_source.html#l00014">listplayer.h:14</a></div></div>
+<div class="ttc" id="class_list_player_html_ad350875939b59a7a0203b7e7c4cc6602"><div class="ttname"><a href="class_list_player.html#ad350875939b59a7a0203b7e7c4cc6602">ListPlayer::sauver</a></div><div class="ttdeci">void sauver(std::ofstream &amp;os)</div><div class="ttdoc">sauver Fonction permettant de sauvegarder la liste dans un fichier texte </div><div class="ttdef"><b>Definition:</b> <a href="listplayer_8cpp_source.html#l00025">listplayer.cpp:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_fdd8476826cbf2ff84558f4700e5891b.html">Breakout</a></li><li class="navelem"><a class="el" href="listplayer_8h.html">listplayer.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,7 @@
+<map id="MyGLWidget::drawBall" name="MyGLWidget::drawBall">
+<area shape="rect" id="node2" href="$class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392" title="getBille " alt="" coords="208,5,367,32"/>
+<area shape="rect" id="node3" href="$class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="249,56,326,83"/>
+<area shape="rect" id="node4" href="$class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="248,107,327,133"/>
+<area shape="rect" id="node5" href="$class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359" title="getZ " alt="" coords="249,157,326,184"/>
+<area shape="rect" id="node6" href="$class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="232,208,343,235"/>
+</map>

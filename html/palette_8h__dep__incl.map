@@ -1,0 +1,10 @@
+<map id="Breakout/palette.h" name="Breakout/palette.h">
+<area shape="rect" id="node2" href="$gamemanager_8h.html" title="Gestionnaire de Jeu. " alt="" coords="143,80,314,107"/>
+<area shape="rect" id="node9" href="$palette_8cpp.html" title="Breakout/palette.cpp" alt="" coords="339,80,481,107"/>
+<area shape="rect" id="node3" href="$gamemanager_8cpp.html" title="Breakout/gamemanager.cpp" alt="" coords="5,155,191,181"/>
+<area shape="rect" id="node4" href="$myglwidget_8h.html" title="Gestionnaire du widget OpenGL. " alt="" coords="293,155,447,181"/>
+<area shape="rect" id="node5" href="$myglwidget_8cpp.html" title="Breakout/myglwidget.cpp" alt="" coords="91,244,259,271"/>
+<area shape="rect" id="node6" href="$moc__myglwidget_8cpp.html" title="build&#45;Breakout&#45;Desktop\l_Qt_5_10_1_MinGW_32bit\l&#45;Debug/debug/moc_myglwidget.cpp" alt="" coords="284,229,512,285"/>
+<area shape="rect" id="node7" href="$ui__mainwindow_8h.html" title="build&#45;Breakout&#45;Desktop\l_Qt_5_10_1_MinGW_32bit\l&#45;Debug/ui_mainwindow.h" alt="" coords="537,229,715,285"/>
+<area shape="rect" id="node8" href="$mainwindow_8cpp.html" title="Breakout/mainwindow.cpp" alt="" coords="539,333,713,360"/>
+</map>

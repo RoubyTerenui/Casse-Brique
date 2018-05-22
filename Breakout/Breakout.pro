@@ -74,8 +74,7 @@ FORMS += \
 SUBDIRS += \
     Breakout.pro
 
-DISTFILES += \
-    Breakout.pro.user
+DISTFILES +=
 
 RESOURCES += \
     textures.qrc

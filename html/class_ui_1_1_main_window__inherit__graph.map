@@ -1,0 +1,3 @@
+<map id="Ui::MainWindow" name="Ui::MainWindow">
+<area shape="rect" id="node2" href="$class_ui___main_window.html" title="{Ui_MainWindow\n|+ centralWidget\l+ verticalLayoutWidget\l+ verticalLayout_10\l+ openGLWidget\l+ restart_Button\l+ horizontalLayout_10\l+ label_2\l+ slider\l+ changeSizeStick_Button\l+ horizontalLayout_11\l+ label_4\l+ lineEdit_2\l+ saveTopPlayersButton\l+ label\l+ topPlayers\l+ changeModeButton\l+ menuBar\l+ mainToolBar\l+ statusBar\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="5,5,183,361"/>
+</map>

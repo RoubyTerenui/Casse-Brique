@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -49,6 +57,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_func.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -64,16 +88,55 @@ $(function() {
 </div>
 
 <div class="contents">
-&#160;<ul>
+&#160;
+
+<h3><a id="index_b"></a>- b -</h3><ul>
+<li>Ball()
+: <a class="el" href="class_ball.html#a86a144d3dad6c953e422e32435923bbb">Ball</a>
+</li>
+</ul>
+
+
+<h3><a id="index_c"></a>- c -</h3><ul>
 <li>changeMode()
 : <a class="el" href="class_game_manager.html#a707019231d8892afbe87da17dc31ae9e">GameManager</a>
+</li>
+<li>charger()
+: <a class="el" href="class_list_player.html#a51419d9b0d08358b6384e13c462247b4">ListPlayer</a>
+, <a class="el" href="class_player.html#aef7ebb7b9d9e1bd5383f30f74e4accf2">Player</a>
 </li>
 <li>collisionBrick()
 : <a class="el" href="class_game_manager.html#a2bd2b0363ac1c5c6026029fba4d41e38">GameManager</a>
 </li>
+<li>collisionDroite()
+: <a class="el" href="class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f">GameManager</a>
+</li>
+<li>collisionPointCercle()
+: <a class="el" href="class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192">GameManager</a>
+</li>
+<li>collisionSegmentCercle()
+: <a class="el" href="class_game_manager.html#acedcd837373ddcab758627071bfaa0e1">GameManager</a>
+</li>
 <li>collisionWall()
 : <a class="el" href="class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4">GameManager</a>
 </li>
+</ul>
+
+
+<h3><a id="index_d"></a>- d -</h3><ul>
+<li>dessineCube()
+: <a class="el" href="class_my_g_l_widget.html#a493775e718c254eb669f75548eb7d870">MyGLWidget</a>
+</li>
+<li>drawBall()
+: <a class="el" href="class_my_g_l_widget.html#a170905e3688320a2286d3c19a3c4d83a">MyGLWidget</a>
+</li>
+<li>drawPallet()
+: <a class="el" href="class_my_g_l_widget.html#a895664084af28911b896b43335da71d0">MyGLWidget</a>
+</li>
+</ul>
+
+
+<h3><a id="index_g"></a>- g -</h3><ul>
 <li>GameManager()
 : <a class="el" href="class_game_manager.html#aa0e2424dc1a39d380e5b6605b179bf05">GameManager</a>
 </li>
@@ -83,29 +146,245 @@ $(function() {
 <li>getBrickI()
 : <a class="el" href="class_game_manager.html#ac3efa1f197bd8d0869b41bd969e02fd0">GameManager</a>
 </li>
+<li>getDirection()
+: <a class="el" href="class_ball.html#af17cd3a404b572e9a87e7589ea7bd8f7">Ball</a>
+</li>
+<li>getDirectionX()
+: <a class="el" href="class_ball.html#a3b36da76a1ea6c1e30ffa4ed60ccd446">Ball</a>
+</li>
+<li>getDirectionY()
+: <a class="el" href="class_ball.html#a791c67c6112d626112b09e43420089a6">Ball</a>
+</li>
+<li>getDirectionZ()
+: <a class="el" href="class_ball.html#a7d6e946cfe6310088e938258cb9e88f1">Ball</a>
+</li>
+<li>getHeight()
+: <a class="el" href="class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f">Square</a>
+</li>
+<li>getLife()
+: <a class="el" href="class_square.html#a8a9dc441b3a1108c52024d5adf25fa80">Square</a>
+</li>
+<li>getLifePoint()
+: <a class="el" href="class_player.html#ac3ad5e51b95a604a27c6f8ac6ecc6f90">Player</a>
+</li>
+<li>getName()
+: <a class="el" href="class_player.html#af9a6045fa96f736664c4eab4caa5e8e5">Player</a>
+</li>
 <li>getNbWin()
 : <a class="el" href="class_game_manager.html#a8b770addd88c3e9dba5691e38ec59a2b">GameManager</a>
+, <a class="el" href="class_player.html#a47147bc978d0f5e89db3a6c40b9215db">Player</a>
 </li>
 <li>getPlayer()
 : <a class="el" href="class_game_manager.html#aebb883b6b25f5e017d315f692d5cd5a1">GameManager</a>
 </li>
+<li>getRadius()
+: <a class="el" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c">Ball</a>
+</li>
+<li>getScore()
+: <a class="el" href="class_player.html#a97e5447778ae6c384eedc532dcd8431d">Player</a>
+, <a class="el" href="class_square.html#a5a52ced157d32d3fe038c3674dc7c975">Square</a>
+</li>
+<li>getspeed()
+: <a class="el" href="class_ball.html#a0d566e6196748ba2ff4c48e42b0ca7b1">Ball</a>
+</li>
+<li>getSpeed()
+: <a class="el" href="class_palette.html#a3668970bbba4c28104443ff68a682da9">Palette</a>
+</li>
 <li>getState()
-: <a class="el" href="class_game_manager.html#a0eb6a90c2608f741f37d870a7b90255c">GameManager</a>
+: <a class="el" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1">Ball</a>
+, <a class="el" href="class_game_manager.html#a0eb6a90c2608f741f37d870a7b90255c">GameManager</a>
 </li>
 <li>getStick()
 : <a class="el" href="class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543">GameManager</a>
 </li>
+<li>getWidth()
+: <a class="el" href="class_square.html#a3e8803173f2c9c75df15689760a7db68">Square</a>
+</li>
+<li>getX()
+: <a class="el" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc">Ball</a>
+, <a class="el" href="class_square.html#abca130ad5c32ded493bc56851de84974">Square</a>
+</li>
+<li>getY()
+: <a class="el" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b">Ball</a>
+, <a class="el" href="class_square.html#a466213e529d0623f27dd59baa5fd425c">Square</a>
+</li>
+<li>getZ()
+: <a class="el" href="class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359">Ball</a>
+, <a class="el" href="class_square.html#add85982817300e975f00d982c2944fd3">Square</a>
+</li>
+</ul>
+
+
+<h3><a id="index_i"></a>- i -</h3><ul>
+<li>initializeGL()
+: <a class="el" href="class_my_g_l_widget.html#a5c536c2ebab76533eb16eac0a9830c8e">MyGLWidget</a>
+</li>
 <li>initializeNbWin()
 : <a class="el" href="class_game_manager.html#aec56f391111fb15f43711719da20e407">GameManager</a>
+</li>
+</ul>
+
+
+<h3><a id="index_k"></a>- k -</h3><ul>
+<li>keyPressEvent()
+: <a class="el" href="class_main_window.html#a9c4f542263838b9ecd06eae839a42a34">MainWindow</a>
+</li>
+</ul>
+
+
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>ListPlayer()
+: <a class="el" href="class_list_player.html#a55308a1803c8006e908e3c05c97d4e3d">ListPlayer</a>
+</li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
+<li>MainWindow()
+: <a class="el" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a>
+</li>
+<li>mouseMoveEvent()
+: <a class="el" href="class_my_g_l_widget.html#a519efceb466527b8730d82ee1a0da8fb">MyGLWidget</a>
+</li>
+<li>MyGLWidget()
+: <a class="el" href="class_my_g_l_widget.html#a50dfc5ed9f6874956b09378e82265fda">MyGLWidget</a>
+</li>
+</ul>
+
+
+<h3><a id="index_o"></a>- o -</h3><ul>
+<li>on_changeModeButton_clicked()
+: <a class="el" href="class_main_window.html#aba62782e85cc205ad7011b129b6dd09b">MainWindow</a>
+</li>
+<li>on_changeSizeStick_Button_clicked()
+: <a class="el" href="class_main_window.html#a81faa99ba7deb0ee567510229ef2392e">MainWindow</a>
+</li>
+<li>on_restart_Button_clicked()
+: <a class="el" href="class_main_window.html#a18cd5bd8e34fa0ab191c84b3ab2132ae">MainWindow</a>
+</li>
+<li>on_saveTopPlayersButton_clicked()
+: <a class="el" href="class_main_window.html#a233e589f3d2a7bd3361148c44f4e0693">MainWindow</a>
+</li>
+<li>OpenCvWidget()
+: <a class="el" href="class_open_cv_widget.html#aa20c89c2b5aaac94cd0031479457f98b">OpenCvWidget</a>
+</li>
+<li>operator&lt;()
+: <a class="el" href="class_player.html#af1a5f90edb6b0705a4ad4c6d23b79d95">Player</a>
+</li>
+</ul>
+
+
+<h3><a id="index_p"></a>- p -</h3><ul>
+<li>paintGL()
+: <a class="el" href="class_my_g_l_widget.html#ad0e4171fab09ad54d4e2d23e7d6541eb">MyGLWidget</a>
+</li>
+<li>Palette()
+: <a class="el" href="class_palette.html#aba73583ea3ed774a01dc91768c06b136">Palette</a>
+</li>
+<li>Player()
+: <a class="el" href="class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8">Player</a>
+</li>
+</ul>
+
+
+<h3><a id="index_r"></a>- r -</h3><ul>
+<li>reinitialiser()
+: <a class="el" href="class_ball.html#ae639c8f2030279739228019198021e99">Ball</a>
 </li>
 <li>reinitialiserBricks()
 : <a class="el" href="class_game_manager.html#a982951601283ec375c115cd3f19b64a2">GameManager</a>
 </li>
+<li>resizeGL()
+: <a class="el" href="class_my_g_l_widget.html#a9717968e75b8a7fc358b947f31eb2690">MyGLWidget</a>
+</li>
+<li>retranslateUi()
+: <a class="el" href="class_ui___main_window.html#a097dd160c3534a204904cb374412c618">Ui_MainWindow</a>
+</li>
+</ul>
+
+
+<h3><a id="index_s"></a>- s -</h3><ul>
+<li>sauver()
+: <a class="el" href="class_list_player.html#ad350875939b59a7a0203b7e7c4cc6602">ListPlayer</a>
+, <a class="el" href="class_player.html#ab5e7a54f06ca7caf4fa48860d67f9dc6">Player</a>
+</li>
 <li>searchPositionImpact()
 : <a class="el" href="class_game_manager.html#ab6b2748c5280bc20cbed15f32a18deb9">GameManager</a>
 </li>
+<li>setDirectionX()
+: <a class="el" href="class_ball.html#a51f2f0f1e6aa3b1cee878c1713f31fbb">Ball</a>
+</li>
+<li>setDirectionY()
+: <a class="el" href="class_ball.html#a7758c0e5b90900b8984e602797798d12">Ball</a>
+</li>
+<li>setDirectionZ()
+: <a class="el" href="class_ball.html#a1f44da15c5d258b37d7e349f04e78890">Ball</a>
+</li>
+<li>setLife()
+: <a class="el" href="class_square.html#a115fdac881e80628eca323b22d5a0280">Square</a>
+</li>
+<li>setLifePoint()
+: <a class="el" href="class_player.html#a3fc95cf72792aad03d73c58998ab2643">Player</a>
+</li>
+<li>setName()
+: <a class="el" href="class_player.html#aa9728db5b22d438505b4694c5ea03f75">Player</a>
+</li>
+<li>setNbWin()
+: <a class="el" href="class_player.html#a6072dd0a4fe43d4f4bd418b612c96f7c">Player</a>
+</li>
+<li>setRadius()
+: <a class="el" href="class_ball.html#a991945691ac284db8cdd5b216f7f8223">Ball</a>
+</li>
+<li>setScore()
+: <a class="el" href="class_player.html#a23c9b25aeb8dd1ff86d03d993e07a73d">Player</a>
+</li>
+<li>setSpeed()
+: <a class="el" href="class_ball.html#acf8c22e5244ca7ab3d1d7af9aa6f3f18">Ball</a>
+, <a class="el" href="class_palette.html#ad8d5e54600152a30732b766f8a1d7739">Palette</a>
+</li>
+<li>setState()
+: <a class="el" href="class_ball.html#a697519c70a27af56967b88a1c69bd92a">Ball</a>
+</li>
+<li>setupUi()
+: <a class="el" href="class_ui___main_window.html#acf4a0872c4c77d8f43a2ec66ed849b58">Ui_MainWindow</a>
+</li>
+<li>setWidth()
+: <a class="el" href="class_square.html#ad1d24f2813f78e5052d8085473d222b9">Square</a>
+</li>
+<li>setX()
+: <a class="el" href="class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389">Ball</a>
+, <a class="el" href="class_square.html#a9c14b2ee20078f70e313c1cb62965106">Square</a>
+</li>
+<li>setY()
+: <a class="el" href="class_ball.html#a074c539ee788dda3edcd3dbafe46c6b1">Ball</a>
+, <a class="el" href="class_square.html#a9346b7fc5a92f4ffce92e59d3d9b22b8">Square</a>
+</li>
+<li>setZ()
+: <a class="el" href="class_ball.html#ae58e925566371743c7fe20af87d007f9">Ball</a>
+, <a class="el" href="class_square.html#aa54150595cc276766eab4e251dafd33e">Square</a>
+</li>
+<li>Square()
+: <a class="el" href="class_square.html#a27551dfdcf961cba100f79bc3441ead3">Square</a>
+</li>
+</ul>
+
+
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>triList()
+: <a class="el" href="class_list_player.html#a5b8f02efc75e1bafd2300ac2d308eda5">ListPlayer</a>
+</li>
+</ul>
+
+
+<h3><a id="index_u"></a>- u -</h3><ul>
 <li>updateBille_Score()
 : <a class="el" href="class_game_manager.html#af72705118801e4011c3343ac9a8b5335">GameManager</a>
+</li>
+<li>updateCamera()
+: <a class="el" href="class_main_window.html#aa92694042c7f07a45fa3c01d15799de9">MainWindow</a>
+</li>
+<li>updateCamMoveEvent()
+: <a class="el" href="class_my_g_l_widget.html#a3e963e10932c45bd4f95813bfa533bfc">MyGLWidget</a>
 </li>
 <li>updateNbWin()
 : <a class="el" href="class_game_manager.html#a10193620d465e7e17285be2533e03f78">GameManager</a>
@@ -113,13 +392,26 @@ $(function() {
 <li>updatePositionPalette()
 : <a class="el" href="class_game_manager.html#aba55e5cb8867a408fc2492d732446ab8">GameManager</a>
 </li>
+<li>updateTabList()
+: <a class="el" href="class_main_window.html#a5a444abd5763c22a236c4028921cf010">MainWindow</a>
+</li>
+</ul>
+
+
+<h3><a id="index_0x7e"></a>- ~ -</h3><ul>
+<li>~MainWindow()
+: <a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow</a>
+</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

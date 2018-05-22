@@ -1,0 +1,6 @@
+<map id="Breakout/gamemanager.h" name="Breakout/gamemanager.h">
+<area shape="rect" id="node2" href="$ball_8h.html" title="Gestionnaire de Balle. " alt="" coords="12,80,65,107"/>
+<area shape="rect" id="node4" href="$square_8h.html" title="Gestionnaire de brique. " alt="" coords="117,155,189,181"/>
+<area shape="rect" id="node5" href="$palette_8h.html" title="Gestionnaire de palette. " alt="" coords="140,80,212,107"/>
+<area shape="rect" id="node6" href="$player_8h.html" title="Gestionnaire de joueur. " alt="" coords="237,80,305,107"/>
+</map>

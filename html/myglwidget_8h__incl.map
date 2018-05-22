@@ -1,0 +1,7 @@
+<map id="Breakout/myglwidget.h" name="Breakout/myglwidget.h">
+<area shape="rect" id="node7" href="$gamemanager_8h.html" title="Gestionnaire de Jeu. " alt="" coords="524,80,639,107"/>
+<area shape="rect" id="node8" href="$ball_8h.html" title="Gestionnaire de Balle. " alt="" coords="417,155,471,181"/>
+<area shape="rect" id="node10" href="$square_8h.html" title="Gestionnaire de brique. " alt="" coords="523,229,595,256"/>
+<area shape="rect" id="node11" href="$palette_8h.html" title="Gestionnaire de palette. " alt="" coords="545,155,617,181"/>
+<area shape="rect" id="node12" href="$player_8h.html" title="Gestionnaire de joueur. " alt="" coords="642,155,710,181"/>
+</map>

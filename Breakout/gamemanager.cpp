@@ -2,7 +2,7 @@
 #include <QDebug>
 GameManager::GameManager()//Constructeur par défaut de la classe
 {
-    nbwin_=0;
+    nbwin_=4;
     for (int i=0;i<10;i++){
         for (int j=0;j<7;j++){//7 lignes de bricks maximum
             int viebrick=rand()%(2+nbwin_);//Pour le niveau 1 les points de vies sont entre 0 et 1
@@ -10,7 +10,7 @@ GameManager::GameManager()//Constructeur par défaut de la classe
         }
     }
     stick_=Palette(9,1.25,0,-18,55,0);//Palette par défaut de taille 9 d'épaisseur.Situé au milieu de l'axe X
-    bille_=Ball(0.6,0,-18+1.225,55,0.5);// Rayon 0.6 positionné au centre de la palette
+    bille_=Ball(0.6,0,-18+1.225,55,1);// Rayon 0.6 positionné au centre de la palette
     player=Player();//Nouveau Joueur
     state_=QString("In_Game");//Début d'une partie
 
@@ -169,8 +169,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
 
 }
 
-void GameManager::updatePositionPalette(){/*
-    qDebug()<<QString::number(stick_.getX()+stick_.getSpeed());*/
+void GameManager::updatePositionPalette(){
     stick_.setX(stick_.getX()+stick_.getSpeed());
     if (bille_.getState()=="fixed"){
         bille_.setX(stick_.getX());
@@ -179,7 +178,6 @@ void GameManager::updatePositionPalette(){/*
 
 void GameManager::updateNbWin()//Level sur lequel on se situe et comptage du nombre de victoire
 {
-
     int i=0;
     bool cleared=true;
     while (i<70 && cleared==true){//Parcours de toute la liste de bricks pour tester si la partie est terminé

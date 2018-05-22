@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_open_cv_widget.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,62 +87,283 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_open_cv_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">OpenCvWidget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Regroupe les éléments utilisés pour l'affichage de la caméra et la detection de mouvement.  
+ <a href="class_open_cv_widget.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for OpenCvWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_open_cv_widget__coll__graph.jpg" border="0" usemap="#_open_cv_widget_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa20c89c2b5aaac94cd0031479457f98b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#aa20c89c2b5aaac94cd0031479457f98b">OpenCvWidget</a> ()</td></tr>
+<tr class="memdesc:aa20c89c2b5aaac94cd0031479457f98b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_open_cv_widget.html" title="Regroupe les éléments utilisés pour l&#39;affichage de la caméra et la detection de mouvement. ">OpenCvWidget</a> Constructeur.  <a href="#aa20c89c2b5aaac94cd0031479457f98b">More...</a><br /></td></tr>
+<tr class="separator:aa20c89c2b5aaac94cd0031479457f98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a95a6faa37072434e852d626f0a3ee5a9"><td class="memItemLeft" align="right" valign="top"><a id="a95a6faa37072434e852d626f0a3ee5a9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>frameWidth</b></td></tr>
+<tr class="memitem:a95a6faa37072434e852d626f0a3ee5a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#a95a6faa37072434e852d626f0a3ee5a9">frameWidth</a></td></tr>
 <tr class="separator:a95a6faa37072434e852d626f0a3ee5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dd41b76affe4c4a37b9502bf7ed9dda"><td class="memItemLeft" align="right" valign="top"><a id="a5dd41b76affe4c4a37b9502bf7ed9dda"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>frameHeight</b></td></tr>
+<tr class="memitem:a5dd41b76affe4c4a37b9502bf7ed9dda"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#a5dd41b76affe4c4a37b9502bf7ed9dda">frameHeight</a></td></tr>
 <tr class="separator:a5dd41b76affe4c4a37b9502bf7ed9dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedde6affb6c0d453f563195013800d9e"><td class="memItemLeft" align="right" valign="top"><a id="aedde6affb6c0d453f563195013800d9e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>subImageWidth</b></td></tr>
+<tr class="memitem:aedde6affb6c0d453f563195013800d9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#aedde6affb6c0d453f563195013800d9e">subImageWidth</a></td></tr>
 <tr class="separator:aedde6affb6c0d453f563195013800d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cb6b03a5d6ef68a55ff2aaae6a12465"><td class="memItemLeft" align="right" valign="top"><a id="a6cb6b03a5d6ef68a55ff2aaae6a12465"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>subImageHeight</b></td></tr>
+<tr class="memitem:a6cb6b03a5d6ef68a55ff2aaae6a12465"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#a6cb6b03a5d6ef68a55ff2aaae6a12465">subImageHeight</a></td></tr>
 <tr class="separator:a6cb6b03a5d6ef68a55ff2aaae6a12465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcfddda69b2bc5752751d8df8ee27691"><td class="memItemLeft" align="right" valign="top"><a id="abcfddda69b2bc5752751d8df8ee27691"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>templateWidth</b></td></tr>
+<tr class="memitem:abcfddda69b2bc5752751d8df8ee27691"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#abcfddda69b2bc5752751d8df8ee27691">templateWidth</a></td></tr>
 <tr class="separator:abcfddda69b2bc5752751d8df8ee27691"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d3122dccb9094d5fea1ca8bbc439954"><td class="memItemLeft" align="right" valign="top"><a id="a2d3122dccb9094d5fea1ca8bbc439954"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>templateHeight</b></td></tr>
+<tr class="memitem:a2d3122dccb9094d5fea1ca8bbc439954"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#a2d3122dccb9094d5fea1ca8bbc439954">templateHeight</a></td></tr>
 <tr class="separator:a2d3122dccb9094d5fea1ca8bbc439954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa241205fdfbc332e7bc40974a4bc5667"><td class="memItemLeft" align="right" valign="top"><a id="aa241205fdfbc332e7bc40974a4bc5667"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>state</b></td></tr>
+<tr class="memitem:aa241205fdfbc332e7bc40974a4bc5667"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#aa241205fdfbc332e7bc40974a4bc5667">state</a></td></tr>
 <tr class="separator:aa241205fdfbc332e7bc40974a4bc5667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0cb1cbe57dd17e340461a6f60f743cf"><td class="memItemLeft" align="right" valign="top"><a id="ad0cb1cbe57dd17e340461a6f60f743cf"></a>
-Rect&#160;</td><td class="memItemRight" valign="bottom"><b>workingRect_</b></td></tr>
+<tr class="memitem:ad0cb1cbe57dd17e340461a6f60f743cf"><td class="memItemLeft" align="right" valign="top">Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#ad0cb1cbe57dd17e340461a6f60f743cf">workingRect_</a></td></tr>
 <tr class="separator:ad0cb1cbe57dd17e340461a6f60f743cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81c8a710b09fa082c8288f5781030fb0"><td class="memItemLeft" align="right" valign="top"><a id="a81c8a710b09fa082c8288f5781030fb0"></a>
-Rect&#160;</td><td class="memItemRight" valign="bottom"><b>templateRect_</b></td></tr>
+<tr class="memitem:a81c8a710b09fa082c8288f5781030fb0"><td class="memItemLeft" align="right" valign="top">Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#a81c8a710b09fa082c8288f5781030fb0">templateRect_</a></td></tr>
 <tr class="separator:a81c8a710b09fa082c8288f5781030fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf9445696f65d650ae8ee576dc303eaf"><td class="memItemLeft" align="right" valign="top"><a id="aaf9445696f65d650ae8ee576dc303eaf"></a>
-Point&#160;</td><td class="memItemRight" valign="bottom"><b>workingCenter_</b></td></tr>
+<tr class="memitem:aaf9445696f65d650ae8ee576dc303eaf"><td class="memItemLeft" align="right" valign="top">Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#aaf9445696f65d650ae8ee576dc303eaf">workingCenter_</a></td></tr>
 <tr class="separator:aaf9445696f65d650ae8ee576dc303eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ede2abdfc5042232566cb2eec7844ee"><td class="memItemLeft" align="right" valign="top"><a id="a1ede2abdfc5042232566cb2eec7844ee"></a>
-VideoCapture&#160;</td><td class="memItemRight" valign="bottom"><b>cap</b></td></tr>
+<tr class="memitem:a1ede2abdfc5042232566cb2eec7844ee"><td class="memItemLeft" align="right" valign="top">VideoCapture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_cv_widget.html#a1ede2abdfc5042232566cb2eec7844ee">cap</a></td></tr>
 <tr class="separator:a1ede2abdfc5042232566cb2eec7844ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Regroupe les éléments utilisés pour l'affichage de la caméra et la detection de mouvement. </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00024">24</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa20c89c2b5aaac94cd0031479457f98b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa20c89c2b5aaac94cd0031479457f98b">&#9670;&nbsp;</a></span>OpenCvWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OpenCvWidget::OpenCvWidget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_open_cv_widget.html" title="Regroupe les éléments utilisés pour l&#39;affichage de la caméra et la detection de mouvement. ">OpenCvWidget</a> Constructeur. </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8cpp_source.html#l00003">3</a> of file <a class="el" href="opencvwidget_8cpp_source.html">opencvwidget.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1ede2abdfc5042232566cb2eec7844ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ede2abdfc5042232566cb2eec7844ee">&#9670;&nbsp;</a></span>cap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VideoCapture OpenCvWidget::cap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Caméra </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00046">46</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a5dd41b76affe4c4a37b9502bf7ed9dda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dd41b76affe4c4a37b9502bf7ed9dda">&#9670;&nbsp;</a></span>frameHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenCvWidget::frameHeight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00037">37</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a95a6faa37072434e852d626f0a3ee5a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a6faa37072434e852d626f0a3ee5a9">&#9670;&nbsp;</a></span>frameWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenCvWidget::frameWidth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00036">36</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="aa241205fdfbc332e7bc40974a4bc5667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa241205fdfbc332e7bc40974a4bc5667">&#9670;&nbsp;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OpenCvWidget::state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>état de la caméra </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00042">42</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a6cb6b03a5d6ef68a55ff2aaae6a12465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb6b03a5d6ef68a55ff2aaae6a12465">&#9670;&nbsp;</a></span>subImageHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenCvWidget::subImageHeight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Hauteur de la zone où l'on souhaite faire la detection de mouvement </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00039">39</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="aedde6affb6c0d453f563195013800d9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedde6affb6c0d453f563195013800d9e">&#9670;&nbsp;</a></span>subImageWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenCvWidget::subImageWidth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Largeur de la zone où l'on souhaite faire la detection de mouvement </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00038">38</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a2d3122dccb9094d5fea1ca8bbc439954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d3122dccb9094d5fea1ca8bbc439954">&#9670;&nbsp;</a></span>templateHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenCvWidget::templateHeight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Hauteur du rectangle template </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00041">41</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a81c8a710b09fa082c8288f5781030fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c8a710b09fa082c8288f5781030fb0">&#9670;&nbsp;</a></span>templateRect_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rect OpenCvWidget::templateRect_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Rectangle utilisé pour la comparaison avec le working rect sur 2 frames différentes </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00044">44</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="abcfddda69b2bc5752751d8df8ee27691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcfddda69b2bc5752751d8df8ee27691">&#9670;&nbsp;</a></span>templateWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OpenCvWidget::templateWidth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Largeur du rectangle template </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00040">40</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf9445696f65d650ae8ee576dc303eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf9445696f65d650ae8ee576dc303eaf">&#9670;&nbsp;</a></span>workingCenter_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Point OpenCvWidget::workingCenter_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Centre de Working Rect </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00045">45</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="ad0cb1cbe57dd17e340461a6f60f743cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0cb1cbe57dd17e340461a6f60f743cf">&#9670;&nbsp;</a></span>workingRect_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rect OpenCvWidget::workingRect_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Rectangle correspondant à la zone dans laquel la detection de mouvement sera effectué </p>
+
+<p class="definition">Definition at line <a class="el" href="opencvwidget_8h_source.html#l00043">43</a> of file <a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/<a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a></li>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/opencvwidget.cpp</li>
+<li>Breakout/<a class="el" href="opencvwidget_8h_source.html">opencvwidget.h</a></li>
+<li>Breakout/<a class="el" href="opencvwidget_8cpp_source.html">opencvwidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_open_cv_widget.html">OpenCvWidget</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

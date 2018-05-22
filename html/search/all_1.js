@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['changemode',['changeMode',['../class_game_manager.html#a707019231d8892afbe87da17dc31ae9e',1,'GameManager']]],
-  ['collisionbrick',['collisionBrick',['../class_game_manager.html#a2bd2b0363ac1c5c6026029fba4d41e38',1,'GameManager']]],
-  ['collisionwall',['collisionWall',['../class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4',1,'GameManager']]]
+  ['ball',['Ball',['../class_ball.html',1,'Ball'],['../class_ball.html#a86a144d3dad6c953e422e32435923bbb',1,'Ball::Ball()'],['../class_ball.html#a522a66cf500f94275cceb49b1635e962',1,'Ball::Ball(double radius, double x, double y, double z, double speed)']]],
+  ['ball_2ecpp',['ball.cpp',['../ball_8cpp.html',1,'']]],
+  ['ball_2eh',['ball.h',['../ball_8h.html',1,'']]],
+  ['bille_5f',['bille_',['../class_game_manager.html#a3c6413d0d78b839784ed4960d82d8501',1,'GameManager']]]
 ];

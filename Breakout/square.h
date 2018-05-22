@@ -1,5 +1,6 @@
 #ifndef SQUARE_H
 #define SQUARE_H
+
 /*!
   *\file Square.h
   *\brief Gestionnaire de brique

@@ -1,0 +1,8 @@
+<map id="Ui_MainWindow" name="Ui_MainWindow">
+<area shape="rect" id="node2" href="$class_my_g_l_widget.html" title="Classe gérant les caractéristiques du widget OpenGL. " alt="" coords="82,1351,253,1545"/>
+<area shape="rect" id="node4" href="$class_game_manager.html" title="Classe regroupant et gérant les éléments du jeu. " alt="" coords="188,917,363,1288"/>
+<area shape="rect" id="node5" href="$class_palette.html" title="Classe gérant les caractéristiques de la palette. " alt="" coords="151,557,248,679"/>
+<area shape="rect" id="node6" href="$class_square.html" title="Classe gérant les caractéristiques des briques. " alt="" coords="50,5,147,332"/>
+<area shape="rect" id="node7" href="$class_player.html" title="Classe gérant les caractéristiques du joueur. " alt="" coords="272,469,383,767"/>
+<area shape="rect" id="node8" href="$class_ball.html" title="Classe gérant les caractéristiques des balles. " alt="" coords="408,381,528,855"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="GameManager::collisionSegmentCercle" name="GameManager::collisionSegmentCercle">
+<area shape="rect" id="node2" href="$class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f" title="collisionDroite " alt="" coords="268,27,464,53"/>
+<area shape="rect" id="node3" href="$class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="529,5,606,32"/>
+<area shape="rect" id="node4" href="$class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="528,107,607,133"/>
+<area shape="rect" id="node6" href="$class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192" title="collisionPointCercle " alt="" coords="270,78,462,119"/>
+<area shape="rect" id="node5" href="$class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="512,56,623,83"/>
+</map>

@@ -3,7 +3,7 @@
 /*!
   *\file Ball.h
   *\brief Gestionnaire de Balle
-  *\author Rouby Terenui
+  *\author Valentin Ansart
 */
 #include <QString>
 
@@ -25,7 +25,7 @@ private:
 public:
     /*!
      * \brief Ball
-     * Constructeur Ball
+     * Constructeur Ball par défaut
      */
     Ball();
     /*!

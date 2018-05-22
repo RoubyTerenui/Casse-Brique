@@ -1,0 +1,7 @@
+<map id="GameManager::updatePositionPalette" name="GameManager::updatePositionPalette">
+<area shape="rect" id="node2" href="$class_square.html#a9c14b2ee20078f70e313c1cb62965106" title="setX " alt="" coords="270,5,366,32"/>
+<area shape="rect" id="node3" href="$class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="270,56,366,83"/>
+<area shape="rect" id="node4" href="$class_palette.html#a3668970bbba4c28104443ff68a682da9" title="getSpeed " alt="" coords="255,107,381,133"/>
+<area shape="rect" id="node5" href="$class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="267,157,369,184"/>
+<area shape="rect" id="node6" href="$class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389" title="setX " alt="" coords="279,208,357,235"/>
+</map>

@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_game_manager.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +87,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">GameManager Member List</div>  </div>
@@ -74,32 +98,38 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a3c6413d0d78b839784ed4960d82d8501">bille_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_game_manager.html#a707019231d8892afbe87da17dc31ae9e">changeMode</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a2bd2b0363ac1c5c6026029fba4d41e38">collisionBrick</a>(Square brick)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4">collisionWall</a>(double dimensionMax, double width, double height)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#aa0e2424dc1a39d380e5b6605b179bf05">GameManager</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392">getBille</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#ac3efa1f197bd8d0869b41bd969e02fd0">getBrickI</a>(int i)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#a8b770addd88c3e9dba5691e38ec59a2b">getNbWin</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#aebb883b6b25f5e017d315f692d5cd5a1">getPlayer</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#a0eb6a90c2608f741f37d870a7b90255c">getState</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543">getStick</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#aec56f391111fb15f43711719da20e407">initializeNbWin</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a1f4d4e5f73f424ba4d04492e2b38cb88">listbricks_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>mouseEventAct</b> (defined in <a class="el" href="class_game_manager.html">GameManager</a>)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#ac69eb2bd39346ff2c5304c6af93a6406">nbwin_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#af93b2a683a681a346d22577cd75a9dd5">player</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a982951601283ec375c115cd3f19b64a2">reinitialiserBricks</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#ab6b2748c5280bc20cbed15f32a18deb9">searchPositionImpact</a>(Palette brick)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#ade8777ca190763f4314035f7ee5905c2">state_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#a086b81b6572ee3e4505143e284c2d503">stick_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#af72705118801e4011c3343ac9a8b5335">updateBille_Score</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_manager.html#a10193620d465e7e17285be2533e03f78">updateNbWin</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#aba55e5cb8867a408fc2492d732446ab8">updatePositionPalette</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f">collisionDroite</a>(double aX, double aY, double bX, double bY, Ball C)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192">collisionPointCercle</a>(double x, double y, Ball b)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#acedcd837373ddcab758627071bfaa0e1">collisionSegmentCercle</a>(double aX, double aY, double bX, double bY, Ball C)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4">collisionWall</a>(double dimensionMax, double width, double height)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#aa0e2424dc1a39d380e5b6605b179bf05">GameManager</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392">getBille</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#ac3efa1f197bd8d0869b41bd969e02fd0">getBrickI</a>(int i)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a8b770addd88c3e9dba5691e38ec59a2b">getNbWin</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#aebb883b6b25f5e017d315f692d5cd5a1">getPlayer</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a0eb6a90c2608f741f37d870a7b90255c">getState</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543">getStick</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#aec56f391111fb15f43711719da20e407">initializeNbWin</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#a1f4d4e5f73f424ba4d04492e2b38cb88">listbricks_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a04e5a46806b4c6199a688f1e91ff2d0f">mouseEventAct</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#ac69eb2bd39346ff2c5304c6af93a6406">nbwin_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#af93b2a683a681a346d22577cd75a9dd5">player</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#a982951601283ec375c115cd3f19b64a2">reinitialiserBricks</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#ab6b2748c5280bc20cbed15f32a18deb9">searchPositionImpact</a>(Palette brick)</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#ade8777ca190763f4314035f7ee5905c2">state_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a086b81b6572ee3e4505143e284c2d503">stick_</a></td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#af72705118801e4011c3343ac9a8b5335">updateBille_Score</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_manager.html#a10193620d465e7e17285be2533e03f78">updateNbWin</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_manager.html#aba55e5cb8867a408fc2492d732446ab8">updatePositionPalette</a>()</td><td class="entry"><a class="el" href="class_game_manager.html">GameManager</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

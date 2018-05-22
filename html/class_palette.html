@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_palette.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,87 +87,301 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_palette-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Palette Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe gérant les caractéristiques de la palette.  
+ <a href="class_palette.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="palette_8h_source.html">palette.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Palette:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_palette.png" usemap="#Palette_map" alt=""/>
-  <map id="Palette_map" name="Palette_map">
-<area href="class_square.html" alt="Square" shape="rect" coords="0,0,52,24"/>
+<div class="center"><img src="class_palette__inherit__graph.jpg" border="0" usemap="#_palette_inherit__map" alt="Inheritance graph"/></div>
+<map name="_palette_inherit__map" id="_palette_inherit__map">
+<area shape="rect" id="node2" href="class_square.html" title="Classe gérant les caractéristiques des briques. " alt="" coords="5,5,103,332"/>
 </map>
- </div></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for Palette:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_palette__coll__graph.jpg" border="0" usemap="#_palette_coll__map" alt="Collaboration graph"/></div>
+<map name="_palette_coll__map" id="_palette_coll__map">
+<area shape="rect" id="node2" href="class_square.html" title="Classe gérant les caractéristiques des briques. " alt="" coords="5,5,103,332"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aba73583ea3ed774a01dc91768c06b136"><td class="memItemLeft" align="right" valign="top"><a id="aba73583ea3ed774a01dc91768c06b136"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Palette</b> (double width, double height, double x, double y, double z, double speed)</td></tr>
+<tr class="memitem:aba73583ea3ed774a01dc91768c06b136"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_palette.html#aba73583ea3ed774a01dc91768c06b136">Palette</a> (double width, double height, double x, double y, double z, double speed)</td></tr>
+<tr class="memdesc:aba73583ea3ed774a01dc91768c06b136"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. ">Palette</a> Constructeur.  <a href="#aba73583ea3ed774a01dc91768c06b136">More...</a><br /></td></tr>
 <tr class="separator:aba73583ea3ed774a01dc91768c06b136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3668970bbba4c28104443ff68a682da9"><td class="memItemLeft" align="right" valign="top"><a id="a3668970bbba4c28104443ff68a682da9"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getSpeed</b> ()</td></tr>
+<tr class="memitem:a6eb6cac583a840b5251897e3403eac5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_palette.html#a6eb6cac583a840b5251897e3403eac5a">Palette</a> ()</td></tr>
+<tr class="memdesc:a6eb6cac583a840b5251897e3403eac5a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. ">Palette</a> Constructeur.  <a href="#a6eb6cac583a840b5251897e3403eac5a">More...</a><br /></td></tr>
+<tr class="separator:a6eb6cac583a840b5251897e3403eac5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3668970bbba4c28104443ff68a682da9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_palette.html#a3668970bbba4c28104443ff68a682da9">getSpeed</a> ()</td></tr>
+<tr class="memdesc:a3668970bbba4c28104443ff68a682da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">getSpeed  <a href="#a3668970bbba4c28104443ff68a682da9">More...</a><br /></td></tr>
 <tr class="separator:a3668970bbba4c28104443ff68a682da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8d5e54600152a30732b766f8a1d7739"><td class="memItemLeft" align="right" valign="top"><a id="ad8d5e54600152a30732b766f8a1d7739"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSpeed</b> (double sp)</td></tr>
+<tr class="memitem:ad8d5e54600152a30732b766f8a1d7739"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_palette.html#ad8d5e54600152a30732b766f8a1d7739">setSpeed</a> (double sp)</td></tr>
+<tr class="memdesc:ad8d5e54600152a30732b766f8a1d7739"><td class="mdescLeft">&#160;</td><td class="mdescRight">setSpeed  <a href="#ad8d5e54600152a30732b766f8a1d7739">More...</a><br /></td></tr>
 <tr class="separator:ad8d5e54600152a30732b766f8a1d7739"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_square"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_square')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_square.html">Square</a></td></tr>
-<tr class="memitem:a27551dfdcf961cba100f79bc3441ead3 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a27551dfdcf961cba100f79bc3441ead3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Square</b> (double width, double height, double X, double Y, double Z, int life)</td></tr>
+<tr class="memitem:a3dc7ff9aefc2725172b5d3153973d243 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a3dc7ff9aefc2725172b5d3153973d243">Square</a> ()</td></tr>
+<tr class="memdesc:a3dc7ff9aefc2725172b5d3153973d243 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_square.html" title="Classe gérant les caractéristiques des briques. ">Square</a> Constructeur.  <a href="class_square.html#a3dc7ff9aefc2725172b5d3153973d243">More...</a><br /></td></tr>
+<tr class="separator:a3dc7ff9aefc2725172b5d3153973d243 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27551dfdcf961cba100f79bc3441ead3 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a27551dfdcf961cba100f79bc3441ead3">Square</a> (double width, double height, double X, double Y, double Z, int life)</td></tr>
+<tr class="memdesc:a27551dfdcf961cba100f79bc3441ead3 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_square.html" title="Classe gérant les caractéristiques des briques. ">Square</a> Constructeur.  <a href="class_square.html#a27551dfdcf961cba100f79bc3441ead3">More...</a><br /></td></tr>
 <tr class="separator:a27551dfdcf961cba100f79bc3441ead3 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca130ad5c32ded493bc56851de84974 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="abca130ad5c32ded493bc56851de84974"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getX</b> ()</td></tr>
+<tr class="memitem:abca130ad5c32ded493bc56851de84974 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#abca130ad5c32ded493bc56851de84974">getX</a> ()</td></tr>
+<tr class="memdesc:abca130ad5c32ded493bc56851de84974 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">getX  <a href="class_square.html#abca130ad5c32ded493bc56851de84974">More...</a><br /></td></tr>
 <tr class="separator:abca130ad5c32ded493bc56851de84974 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a466213e529d0623f27dd59baa5fd425c inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a466213e529d0623f27dd59baa5fd425c"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getY</b> ()</td></tr>
+<tr class="memitem:a466213e529d0623f27dd59baa5fd425c inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a466213e529d0623f27dd59baa5fd425c">getY</a> ()</td></tr>
+<tr class="memdesc:a466213e529d0623f27dd59baa5fd425c inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">getY  <a href="class_square.html#a466213e529d0623f27dd59baa5fd425c">More...</a><br /></td></tr>
 <tr class="separator:a466213e529d0623f27dd59baa5fd425c inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add85982817300e975f00d982c2944fd3 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="add85982817300e975f00d982c2944fd3"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getZ</b> ()</td></tr>
+<tr class="memitem:add85982817300e975f00d982c2944fd3 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#add85982817300e975f00d982c2944fd3">getZ</a> ()</td></tr>
+<tr class="memdesc:add85982817300e975f00d982c2944fd3 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">getZ  <a href="class_square.html#add85982817300e975f00d982c2944fd3">More...</a><br /></td></tr>
 <tr class="separator:add85982817300e975f00d982c2944fd3 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a52ced157d32d3fe038c3674dc7c975 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a5a52ced157d32d3fe038c3674dc7c975"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getScore</b> ()</td></tr>
+<tr class="memitem:a5a52ced157d32d3fe038c3674dc7c975 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a5a52ced157d32d3fe038c3674dc7c975">getScore</a> ()</td></tr>
+<tr class="memdesc:a5a52ced157d32d3fe038c3674dc7c975 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">getScore  <a href="class_square.html#a5a52ced157d32d3fe038c3674dc7c975">More...</a><br /></td></tr>
 <tr class="separator:a5a52ced157d32d3fe038c3674dc7c975 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e8803173f2c9c75df15689760a7db68 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a3e8803173f2c9c75df15689760a7db68"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> ()</td></tr>
+<tr class="memitem:a3e8803173f2c9c75df15689760a7db68 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a3e8803173f2c9c75df15689760a7db68">getWidth</a> ()</td></tr>
+<tr class="memdesc:a3e8803173f2c9c75df15689760a7db68 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">getWidth  <a href="class_square.html#a3e8803173f2c9c75df15689760a7db68">More...</a><br /></td></tr>
 <tr class="separator:a3e8803173f2c9c75df15689760a7db68 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2759b76cb77ad8310d37e5f8464f6d0f inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a2759b76cb77ad8310d37e5f8464f6d0f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> ()</td></tr>
+<tr class="memitem:a2759b76cb77ad8310d37e5f8464f6d0f inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f">getHeight</a> ()</td></tr>
+<tr class="memdesc:a2759b76cb77ad8310d37e5f8464f6d0f inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">getHeight  <a href="class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f">More...</a><br /></td></tr>
 <tr class="separator:a2759b76cb77ad8310d37e5f8464f6d0f inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a9dc441b3a1108c52024d5adf25fa80 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a8a9dc441b3a1108c52024d5adf25fa80"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getLife</b> ()</td></tr>
+<tr class="memitem:a8a9dc441b3a1108c52024d5adf25fa80 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a8a9dc441b3a1108c52024d5adf25fa80">getLife</a> ()</td></tr>
+<tr class="memdesc:a8a9dc441b3a1108c52024d5adf25fa80 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLife  <a href="class_square.html#a8a9dc441b3a1108c52024d5adf25fa80">More...</a><br /></td></tr>
 <tr class="separator:a8a9dc441b3a1108c52024d5adf25fa80 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a115fdac881e80628eca323b22d5a0280 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a115fdac881e80628eca323b22d5a0280"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setLife</b> (int life)</td></tr>
+<tr class="memitem:a115fdac881e80628eca323b22d5a0280 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a115fdac881e80628eca323b22d5a0280">setLife</a> (int life)</td></tr>
+<tr class="memdesc:a115fdac881e80628eca323b22d5a0280 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">setLife  <a href="class_square.html#a115fdac881e80628eca323b22d5a0280">More...</a><br /></td></tr>
 <tr class="separator:a115fdac881e80628eca323b22d5a0280 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c14b2ee20078f70e313c1cb62965106 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a9c14b2ee20078f70e313c1cb62965106"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setX</b> (double X)</td></tr>
+<tr class="memitem:a9c14b2ee20078f70e313c1cb62965106 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a9c14b2ee20078f70e313c1cb62965106">setX</a> (double X)</td></tr>
+<tr class="memdesc:a9c14b2ee20078f70e313c1cb62965106 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">setX  <a href="class_square.html#a9c14b2ee20078f70e313c1cb62965106">More...</a><br /></td></tr>
 <tr class="separator:a9c14b2ee20078f70e313c1cb62965106 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9346b7fc5a92f4ffce92e59d3d9b22b8 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="a9346b7fc5a92f4ffce92e59d3d9b22b8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setY</b> (double Y)</td></tr>
+<tr class="memitem:a9346b7fc5a92f4ffce92e59d3d9b22b8 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a9346b7fc5a92f4ffce92e59d3d9b22b8">setY</a> (double Y)</td></tr>
+<tr class="memdesc:a9346b7fc5a92f4ffce92e59d3d9b22b8 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">setY  <a href="class_square.html#a9346b7fc5a92f4ffce92e59d3d9b22b8">More...</a><br /></td></tr>
 <tr class="separator:a9346b7fc5a92f4ffce92e59d3d9b22b8 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa54150595cc276766eab4e251dafd33e inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="aa54150595cc276766eab4e251dafd33e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setZ</b> (double Z)</td></tr>
+<tr class="memitem:aa54150595cc276766eab4e251dafd33e inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#aa54150595cc276766eab4e251dafd33e">setZ</a> (double Z)</td></tr>
+<tr class="memdesc:aa54150595cc276766eab4e251dafd33e inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">setZ  <a href="class_square.html#aa54150595cc276766eab4e251dafd33e">More...</a><br /></td></tr>
 <tr class="separator:aa54150595cc276766eab4e251dafd33e inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d24f2813f78e5052d8085473d222b9 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top"><a id="ad1d24f2813f78e5052d8085473d222b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setWidth</b> (double width)</td></tr>
+<tr class="memitem:ad1d24f2813f78e5052d8085473d222b9 inherit pub_methods_class_square"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#ad1d24f2813f78e5052d8085473d222b9">setWidth</a> (double width)</td></tr>
+<tr class="memdesc:ad1d24f2813f78e5052d8085473d222b9 inherit pub_methods_class_square"><td class="mdescLeft">&#160;</td><td class="mdescRight">setWidth  <a href="class_square.html#ad1d24f2813f78e5052d8085473d222b9">More...</a><br /></td></tr>
 <tr class="separator:ad1d24f2813f78e5052d8085473d222b9 inherit pub_methods_class_square"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7357fb6a4f7bbfe2a7f84499aa3a4f68"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_palette.html#a7357fb6a4f7bbfe2a7f84499aa3a4f68">speed_</a></td></tr>
+<tr class="separator:a7357fb6a4f7bbfe2a7f84499aa3a4f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe gérant les caractéristiques de la palette. </p>
+
+<p class="definition">Definition at line <a class="el" href="palette_8h_source.html#l00012">12</a> of file <a class="el" href="palette_8h_source.html">palette.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aba73583ea3ed774a01dc91768c06b136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba73583ea3ed774a01dc91768c06b136">&#9670;&nbsp;</a></span>Palette() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Palette::Palette </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>speed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. ">Palette</a> Constructeur. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Epaisseur de la palette </td></tr>
+    <tr><td class="paramname">height</td><td>Hauteur de la palette </td></tr>
+    <tr><td class="paramname">x</td><td>Position selon x </td></tr>
+    <tr><td class="paramname">y</td><td>Position selon y </td></tr>
+    <tr><td class="paramname">z</td><td>Position selon z </td></tr>
+    <tr><td class="paramname">speed</td><td>Vitesse de la palette </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="palette_8cpp_source.html#l00006">6</a> of file <a class="el" href="palette_8cpp_source.html">palette.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6eb6cac583a840b5251897e3403eac5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb6cac583a840b5251897e3403eac5a">&#9670;&nbsp;</a></span>Palette() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Palette::Palette </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. ">Palette</a> Constructeur. </p>
+
+<p class="definition">Definition at line <a class="el" href="palette_8cpp_source.html#l00002">2</a> of file <a class="el" href="palette_8cpp_source.html">palette.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3668970bbba4c28104443ff68a682da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3668970bbba4c28104443ff68a682da9">&#9670;&nbsp;</a></span>getSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Palette::getSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getSpeed </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="palette_8h_source.html#l00042">42</a> of file <a class="el" href="palette_8h_source.html">palette.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8d5e54600152a30732b766f8a1d7739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8d5e54600152a30732b766f8a1d7739">&#9670;&nbsp;</a></span>setSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Palette::setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setSpeed </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>Vitesse de la palette </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="palette_8h_source.html#l00048">48</a> of file <a class="el" href="palette_8h_source.html">palette.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7357fb6a4f7bbfe2a7f84499aa3a4f68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7357fb6a4f7bbfe2a7f84499aa3a4f68">&#9670;&nbsp;</a></span>speed_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Palette::speed_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Vitesse de la palette </p>
+
+<p class="definition">Definition at line <a class="el" href="palette_8h_source.html#l00019">19</a> of file <a class="el" href="palette_8h_source.html">palette.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/<a class="el" href="palette_8h_source.html">palette.h</a></li>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/palette.cpp</li>
+<li>Breakout/<a class="el" href="palette_8h_source.html">palette.h</a></li>
+<li>Breakout/<a class="el" href="palette_8cpp_source.html">palette.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_palette.html">Palette</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

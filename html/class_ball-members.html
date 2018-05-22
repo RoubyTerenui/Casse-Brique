@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_ball.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +87,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Ball Member List</div>  </div>
@@ -71,34 +95,44 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_ball.html">Ball</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Ball</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Ball</b>(double radius, double x, double y, double z, double speed) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getDirection</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getDirectionX</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getDirectionY</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getDirectionZ</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getRadius</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getspeed</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getState</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getX</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getY</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getZ</b>() (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>reinitialiser</b>(double x, double y, double z) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>setDirectionX</b>(double directionX) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setDirectionY</b>(double directionY) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>setDirectionZ</b>(double directionZ) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setRadius</b>(double radius) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>setSpeed</b>(double speed) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setState</b>(QString change) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>setX</b>(double X) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setY</b>(double Y) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>setZ</b>(double Z) (defined in <a class="el" href="class_ball.html">Ball</a>)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a86a144d3dad6c953e422e32435923bbb">Ball</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a522a66cf500f94275cceb49b1635e962">Ball</a>(double radius, double x, double y, double z, double speed)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a4ec84aaca3988fba91e49420ced6faf0">center_</a></td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a45521be8c9f5b16c2e9337287fc241d5">directionX_</a></td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a08abe8ca1731b9fc2b510757e44ddde1">directionY_</a></td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a40906eff0705089e966bd2a83067496c">directionZ_</a></td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#af17cd3a404b572e9a87e7589ea7bd8f7">getDirection</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a3b36da76a1ea6c1e30ffa4ed60ccd446">getDirectionX</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a791c67c6112d626112b09e43420089a6">getDirectionY</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a7d6e946cfe6310088e938258cb9e88f1">getDirectionZ</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c">getRadius</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a0d566e6196748ba2ff4c48e42b0ca7b1">getspeed</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1">getState</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc">getX</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b">getY</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359">getZ</a>()</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#ae62c1c020dd508db2269da6f1ec33037">radius_</a></td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#ae639c8f2030279739228019198021e99">reinitialiser</a>(double x, double y, double z)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a51f2f0f1e6aa3b1cee878c1713f31fbb">setDirectionX</a>(double directionX)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a7758c0e5b90900b8984e602797798d12">setDirectionY</a>(double directionY)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a1f44da15c5d258b37d7e349f04e78890">setDirectionZ</a>(double directionZ)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a991945691ac284db8cdd5b216f7f8223">setRadius</a>(double radius)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#acf8c22e5244ca7ab3d1d7af9aa6f3f18">setSpeed</a>(double speed)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a697519c70a27af56967b88a1c69bd92a">setState</a>(QString change)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389">setX</a>(double X)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a074c539ee788dda3edcd3dbafe46c6b1">setY</a>(double Y)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#ae58e925566371743c7fe20af87d007f9">setZ</a>(double Z)</td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_ball.html#a8f2d87b5f772010f108b52b690c1f81d">speed_</a></td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_ball.html#a9ed3165aaa539112beeec7eb4d1a7316">state_</a></td><td class="entry"><a class="el" href="class_ball.html">Ball</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

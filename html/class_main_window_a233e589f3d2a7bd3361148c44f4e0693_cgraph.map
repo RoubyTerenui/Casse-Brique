@@ -1,0 +1,7 @@
+<map id="MainWindow::on_saveTopPlayersButton_clicked" name="MainWindow::on_saveTopPlayersButton_clicked">
+<area shape="rect" id="node2" href="$class_player.html#a6072dd0a4fe43d4f4bd418b612c96f7c" title="setNbWin " alt="" coords="300,5,424,32"/>
+<area shape="rect" id="node3" href="$class_player.html#aa9728db5b22d438505b4694c5ea03f75" title="setName " alt="" coords="303,56,421,83"/>
+<area shape="rect" id="node4" href="$class_list_player.html#a5b8f02efc75e1bafd2300ac2d308eda5" title="triList Fonction permettant de trier la liste en fonction du score et du nombre de victoire ..." alt="" coords="302,107,422,133"/>
+<area shape="rect" id="node5" href="$class_list_player.html#ad350875939b59a7a0203b7e7c4cc6602" title="sauver Fonction permettant de sauvegarder la liste dans un fichier texte " alt="" coords="299,157,425,184"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a5a444abd5763c22a236c4028921cf010" title="updateTabList Mise à jour du tableau à afficher dans l&#39;interface " alt="" coords="269,208,455,235"/>
+</map>

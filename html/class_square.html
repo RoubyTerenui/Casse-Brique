@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_square.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,77 +87,723 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_square-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Square Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe gérant les caractéristiques des briques.  
+ <a href="class_square.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="square_8h_source.html">square.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Square:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_square.png" usemap="#Square_map" alt=""/>
-  <map id="Square_map" name="Square_map">
-<area href="class_palette.html" alt="Palette" shape="rect" coords="0,56,52,80"/>
+<div class="center"><img src="class_square__inherit__graph.jpg" border="0" usemap="#_square_inherit__map" alt="Inheritance graph"/></div>
+<map name="_square_inherit__map" id="_square_inherit__map">
+<area shape="rect" id="node2" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. " alt="" coords="5,380,103,501"/>
 </map>
- </div></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for Square:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_square__coll__graph.jpg" border="0" usemap="#_square_coll__map" alt="Collaboration graph"/></div>
+<map name="_square_coll__map" id="_square_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a27551dfdcf961cba100f79bc3441ead3"><td class="memItemLeft" align="right" valign="top"><a id="a27551dfdcf961cba100f79bc3441ead3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Square</b> (double width, double height, double X, double Y, double Z, int life)</td></tr>
+<tr class="memitem:a3dc7ff9aefc2725172b5d3153973d243"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a3dc7ff9aefc2725172b5d3153973d243">Square</a> ()</td></tr>
+<tr class="memdesc:a3dc7ff9aefc2725172b5d3153973d243"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_square.html" title="Classe gérant les caractéristiques des briques. ">Square</a> Constructeur.  <a href="#a3dc7ff9aefc2725172b5d3153973d243">More...</a><br /></td></tr>
+<tr class="separator:a3dc7ff9aefc2725172b5d3153973d243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27551dfdcf961cba100f79bc3441ead3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a27551dfdcf961cba100f79bc3441ead3">Square</a> (double width, double height, double X, double Y, double Z, int life)</td></tr>
+<tr class="memdesc:a27551dfdcf961cba100f79bc3441ead3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_square.html" title="Classe gérant les caractéristiques des briques. ">Square</a> Constructeur.  <a href="#a27551dfdcf961cba100f79bc3441ead3">More...</a><br /></td></tr>
 <tr class="separator:a27551dfdcf961cba100f79bc3441ead3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca130ad5c32ded493bc56851de84974"><td class="memItemLeft" align="right" valign="top"><a id="abca130ad5c32ded493bc56851de84974"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getX</b> ()</td></tr>
+<tr class="memitem:abca130ad5c32ded493bc56851de84974"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#abca130ad5c32ded493bc56851de84974">getX</a> ()</td></tr>
+<tr class="memdesc:abca130ad5c32ded493bc56851de84974"><td class="mdescLeft">&#160;</td><td class="mdescRight">getX  <a href="#abca130ad5c32ded493bc56851de84974">More...</a><br /></td></tr>
 <tr class="separator:abca130ad5c32ded493bc56851de84974"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a466213e529d0623f27dd59baa5fd425c"><td class="memItemLeft" align="right" valign="top"><a id="a466213e529d0623f27dd59baa5fd425c"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getY</b> ()</td></tr>
+<tr class="memitem:a466213e529d0623f27dd59baa5fd425c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a466213e529d0623f27dd59baa5fd425c">getY</a> ()</td></tr>
+<tr class="memdesc:a466213e529d0623f27dd59baa5fd425c"><td class="mdescLeft">&#160;</td><td class="mdescRight">getY  <a href="#a466213e529d0623f27dd59baa5fd425c">More...</a><br /></td></tr>
 <tr class="separator:a466213e529d0623f27dd59baa5fd425c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add85982817300e975f00d982c2944fd3"><td class="memItemLeft" align="right" valign="top"><a id="add85982817300e975f00d982c2944fd3"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getZ</b> ()</td></tr>
+<tr class="memitem:add85982817300e975f00d982c2944fd3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#add85982817300e975f00d982c2944fd3">getZ</a> ()</td></tr>
+<tr class="memdesc:add85982817300e975f00d982c2944fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">getZ  <a href="#add85982817300e975f00d982c2944fd3">More...</a><br /></td></tr>
 <tr class="separator:add85982817300e975f00d982c2944fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a52ced157d32d3fe038c3674dc7c975"><td class="memItemLeft" align="right" valign="top"><a id="a5a52ced157d32d3fe038c3674dc7c975"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getScore</b> ()</td></tr>
+<tr class="memitem:a5a52ced157d32d3fe038c3674dc7c975"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a5a52ced157d32d3fe038c3674dc7c975">getScore</a> ()</td></tr>
+<tr class="memdesc:a5a52ced157d32d3fe038c3674dc7c975"><td class="mdescLeft">&#160;</td><td class="mdescRight">getScore  <a href="#a5a52ced157d32d3fe038c3674dc7c975">More...</a><br /></td></tr>
 <tr class="separator:a5a52ced157d32d3fe038c3674dc7c975"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e8803173f2c9c75df15689760a7db68"><td class="memItemLeft" align="right" valign="top"><a id="a3e8803173f2c9c75df15689760a7db68"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> ()</td></tr>
+<tr class="memitem:a3e8803173f2c9c75df15689760a7db68"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a3e8803173f2c9c75df15689760a7db68">getWidth</a> ()</td></tr>
+<tr class="memdesc:a3e8803173f2c9c75df15689760a7db68"><td class="mdescLeft">&#160;</td><td class="mdescRight">getWidth  <a href="#a3e8803173f2c9c75df15689760a7db68">More...</a><br /></td></tr>
 <tr class="separator:a3e8803173f2c9c75df15689760a7db68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2759b76cb77ad8310d37e5f8464f6d0f"><td class="memItemLeft" align="right" valign="top"><a id="a2759b76cb77ad8310d37e5f8464f6d0f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> ()</td></tr>
+<tr class="memitem:a2759b76cb77ad8310d37e5f8464f6d0f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f">getHeight</a> ()</td></tr>
+<tr class="memdesc:a2759b76cb77ad8310d37e5f8464f6d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">getHeight  <a href="#a2759b76cb77ad8310d37e5f8464f6d0f">More...</a><br /></td></tr>
 <tr class="separator:a2759b76cb77ad8310d37e5f8464f6d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a9dc441b3a1108c52024d5adf25fa80"><td class="memItemLeft" align="right" valign="top"><a id="a8a9dc441b3a1108c52024d5adf25fa80"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getLife</b> ()</td></tr>
+<tr class="memitem:a8a9dc441b3a1108c52024d5adf25fa80"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a8a9dc441b3a1108c52024d5adf25fa80">getLife</a> ()</td></tr>
+<tr class="memdesc:a8a9dc441b3a1108c52024d5adf25fa80"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLife  <a href="#a8a9dc441b3a1108c52024d5adf25fa80">More...</a><br /></td></tr>
 <tr class="separator:a8a9dc441b3a1108c52024d5adf25fa80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a115fdac881e80628eca323b22d5a0280"><td class="memItemLeft" align="right" valign="top"><a id="a115fdac881e80628eca323b22d5a0280"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setLife</b> (int life)</td></tr>
+<tr class="memitem:a115fdac881e80628eca323b22d5a0280"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a115fdac881e80628eca323b22d5a0280">setLife</a> (int life)</td></tr>
+<tr class="memdesc:a115fdac881e80628eca323b22d5a0280"><td class="mdescLeft">&#160;</td><td class="mdescRight">setLife  <a href="#a115fdac881e80628eca323b22d5a0280">More...</a><br /></td></tr>
 <tr class="separator:a115fdac881e80628eca323b22d5a0280"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c14b2ee20078f70e313c1cb62965106"><td class="memItemLeft" align="right" valign="top"><a id="a9c14b2ee20078f70e313c1cb62965106"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setX</b> (double X)</td></tr>
+<tr class="memitem:a9c14b2ee20078f70e313c1cb62965106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a9c14b2ee20078f70e313c1cb62965106">setX</a> (double X)</td></tr>
+<tr class="memdesc:a9c14b2ee20078f70e313c1cb62965106"><td class="mdescLeft">&#160;</td><td class="mdescRight">setX  <a href="#a9c14b2ee20078f70e313c1cb62965106">More...</a><br /></td></tr>
 <tr class="separator:a9c14b2ee20078f70e313c1cb62965106"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9346b7fc5a92f4ffce92e59d3d9b22b8"><td class="memItemLeft" align="right" valign="top"><a id="a9346b7fc5a92f4ffce92e59d3d9b22b8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setY</b> (double Y)</td></tr>
+<tr class="memitem:a9346b7fc5a92f4ffce92e59d3d9b22b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a9346b7fc5a92f4ffce92e59d3d9b22b8">setY</a> (double Y)</td></tr>
+<tr class="memdesc:a9346b7fc5a92f4ffce92e59d3d9b22b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">setY  <a href="#a9346b7fc5a92f4ffce92e59d3d9b22b8">More...</a><br /></td></tr>
 <tr class="separator:a9346b7fc5a92f4ffce92e59d3d9b22b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa54150595cc276766eab4e251dafd33e"><td class="memItemLeft" align="right" valign="top"><a id="aa54150595cc276766eab4e251dafd33e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setZ</b> (double Z)</td></tr>
+<tr class="memitem:aa54150595cc276766eab4e251dafd33e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#aa54150595cc276766eab4e251dafd33e">setZ</a> (double Z)</td></tr>
+<tr class="memdesc:aa54150595cc276766eab4e251dafd33e"><td class="mdescLeft">&#160;</td><td class="mdescRight">setZ  <a href="#aa54150595cc276766eab4e251dafd33e">More...</a><br /></td></tr>
 <tr class="separator:aa54150595cc276766eab4e251dafd33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d24f2813f78e5052d8085473d222b9"><td class="memItemLeft" align="right" valign="top"><a id="ad1d24f2813f78e5052d8085473d222b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setWidth</b> (double width)</td></tr>
+<tr class="memitem:ad1d24f2813f78e5052d8085473d222b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#ad1d24f2813f78e5052d8085473d222b9">setWidth</a> (double width)</td></tr>
+<tr class="memdesc:ad1d24f2813f78e5052d8085473d222b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">setWidth  <a href="#ad1d24f2813f78e5052d8085473d222b9">More...</a><br /></td></tr>
 <tr class="separator:ad1d24f2813f78e5052d8085473d222b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad0093459f1f3e1e5e36c46f36f713320"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#ad0093459f1f3e1e5e36c46f36f713320">center_</a> [3]</td></tr>
+<tr class="separator:ad0093459f1f3e1e5e36c46f36f713320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0f84f7c5b905d5ada964cb87d6f78b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#ac0f84f7c5b905d5ada964cb87d6f78b3">width_</a></td></tr>
+<tr class="separator:ac0f84f7c5b905d5ada964cb87d6f78b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03f82b289e3085ae7852457a5665aa30"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a03f82b289e3085ae7852457a5665aa30">height_</a></td></tr>
+<tr class="separator:a03f82b289e3085ae7852457a5665aa30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a139810cc3c49544dcf80a1c95d41ea80"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a139810cc3c49544dcf80a1c95d41ea80">score</a></td></tr>
+<tr class="separator:a139810cc3c49544dcf80a1c95d41ea80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6afeca642d7640f70e038d2d3b2280"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_square.html#a0c6afeca642d7640f70e038d2d3b2280">life_</a></td></tr>
+<tr class="separator:a0c6afeca642d7640f70e038d2d3b2280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe gérant les caractéristiques des briques. </p>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00011">11</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3dc7ff9aefc2725172b5d3153973d243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc7ff9aefc2725172b5d3153973d243">&#9670;&nbsp;</a></span>Square() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Square::Square </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_square.html" title="Classe gérant les caractéristiques des briques. ">Square</a> Constructeur. </p>
+
+<p class="definition">Definition at line <a class="el" href="square_8cpp_source.html#l00002">2</a> of file <a class="el" href="square_8cpp_source.html">square.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a27551dfdcf961cba100f79bc3441ead3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27551dfdcf961cba100f79bc3441ead3">&#9670;&nbsp;</a></span>Square() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Square::Square </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>life</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_square.html" title="Classe gérant les caractéristiques des briques. ">Square</a> Constructeur. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Epaisseur </td></tr>
+    <tr><td class="paramname">height</td><td>Hauteur </td></tr>
+    <tr><td class="paramname">X</td><td>Position selon x </td></tr>
+    <tr><td class="paramname">Y</td><td>Position selon y </td></tr>
+    <tr><td class="paramname">Z</td><td>Positions selon z </td></tr>
+    <tr><td class="paramname">life</td><td>Vie de la brique </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8cpp_source.html#l00010">10</a> of file <a class="el" href="square_8cpp_source.html">square.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2759b76cb77ad8310d37e5f8464f6d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2759b76cb77ad8310d37e5f8464f6d0f">&#9670;&nbsp;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getHeight </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00069">69</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a9dc441b3a1108c52024d5adf25fa80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a9dc441b3a1108c52024d5adf25fa80">&#9670;&nbsp;</a></span>getLife()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Square::getLife </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getLife </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00074">74</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a52ced157d32d3fe038c3674dc7c975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a52ced157d32d3fe038c3674dc7c975">&#9670;&nbsp;</a></span>getScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::getScore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getScore </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00059">59</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e8803173f2c9c75df15689760a7db68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8803173f2c9c75df15689760a7db68">&#9670;&nbsp;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getWidth </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00064">64</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="abca130ad5c32ded493bc56851de84974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca130ad5c32ded493bc56851de84974">&#9670;&nbsp;</a></span>getX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::getX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getX </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00044">44</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a466213e529d0623f27dd59baa5fd425c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a466213e529d0623f27dd59baa5fd425c">&#9670;&nbsp;</a></span>getY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::getY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getY </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00049">49</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="add85982817300e975f00d982c2944fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add85982817300e975f00d982c2944fd3">&#9670;&nbsp;</a></span>getZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::getZ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getZ </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00054">54</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a115fdac881e80628eca323b22d5a0280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a115fdac881e80628eca323b22d5a0280">&#9670;&nbsp;</a></span>setLife()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Square::setLife </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>life</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setLife </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">life</td><td>PdV restants de la brique </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00080">80</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="ad1d24f2813f78e5052d8085473d222b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d24f2813f78e5052d8085473d222b9">&#9670;&nbsp;</a></span>setWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Square::setWidth </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setWidth </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Largeur de la brique </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00104">104</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a9c14b2ee20078f70e313c1cb62965106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c14b2ee20078f70e313c1cb62965106">&#9670;&nbsp;</a></span>setX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Square::setX </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>X</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setX </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">X</td><td>Position selon X </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00086">86</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a9346b7fc5a92f4ffce92e59d3d9b22b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9346b7fc5a92f4ffce92e59d3d9b22b8">&#9670;&nbsp;</a></span>setY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Square::setY </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setY </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Y</td><td>Position selon Y </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00092">92</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="aa54150595cc276766eab4e251dafd33e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa54150595cc276766eab4e251dafd33e">&#9670;&nbsp;</a></span>setZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Square::setZ </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Z</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setZ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Z</td><td>Position selon Z </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00098">98</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad0093459f1f3e1e5e36c46f36f713320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0093459f1f3e1e5e36c46f36f713320">&#9670;&nbsp;</a></span>center_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::center_[3]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Position de la brique </p>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00018">18</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a03f82b289e3085ae7852457a5665aa30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03f82b289e3085ae7852457a5665aa30">&#9670;&nbsp;</a></span>height_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::height_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Longueur de la brique </p>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00020">20</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c6afeca642d7640f70e038d2d3b2280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c6afeca642d7640f70e038d2d3b2280">&#9670;&nbsp;</a></span>life_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Square::life_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>PdV restants de la brique </p>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00022">22</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="a139810cc3c49544dcf80a1c95d41ea80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a139810cc3c49544dcf80a1c95d41ea80">&#9670;&nbsp;</a></span>score</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::score</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Score/PdV max de la brique </p>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00021">21</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
+<a id="ac0f84f7c5b905d5ada964cb87d6f78b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f84f7c5b905d5ada964cb87d6f78b3">&#9670;&nbsp;</a></span>width_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Square::width_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Largeur de la brique </p>
+
+<p class="definition">Definition at line <a class="el" href="square_8h_source.html#l00019">19</a> of file <a class="el" href="square_8h_source.html">square.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/<a class="el" href="square_8h_source.html">square.h</a></li>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/square.cpp</li>
+<li>Breakout/<a class="el" href="square_8h_source.html">square.h</a></li>
+<li>Breakout/<a class="el" href="square_8cpp_source.html">square.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_square.html">Square</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

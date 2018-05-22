@@ -5,6 +5,7 @@
   *\brief ListPlayer utilisé pour le tableau de score
   *\author Rouby Terenui
 */
+
 #include<list>
 #include<fstream>
 #include <player.h>

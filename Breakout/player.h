@@ -1,5 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+
 /*!
   *\file Player.h
   *\brief Gestionnaire de joueur
@@ -10,7 +11,10 @@
 #include <string>
 
 using namespace std;
-
+/*! \namespace std
+ *
+ * espace de nommage permettant d'utiliser les flux
+ */
 class Player
 {
     /*!
@@ -79,17 +83,19 @@ public:
     int getNbWin(){return(nbwin_);}
     /*!
      * \brief charger
-     * Permet de charger une partie sauvegardée
+     * Permet de charger un player
      */
     void charger(ifstream &is);
     /*!
      * \brief sauver
-     * Permet de sauvegarder une partie
+     * Permet de sauvegarder un player
      */
     void sauver(ofstream &os);
     /*!
-     * \brief Operator
-     * Operateur
+     * \brief operator <
+     * Operateur de comparaison (utiliser pour trier)
+     * \param p:Autre Player à qui l'on souhaite comparer this
+     * \return boolean vrai au faux
      */
     bool operator <(const Player &p)const;
 

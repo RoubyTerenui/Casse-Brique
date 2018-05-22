@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_main_window.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,43 +87,597 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_main_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MainWindow Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class gèrant la fenêtre principale et les élèments d'interfaces.  
+ <a href="class_main_window.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MainWindow:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_main_window.png" usemap="#MainWindow_map" alt=""/>
-  <map id="MainWindow_map" name="MainWindow_map">
+<div class="center"><img src="class_main_window__inherit__graph.jpg" border="0" usemap="#_main_window_inherit__map" alt="Inheritance graph"/></div>
+<map name="_main_window_inherit__map" id="_main_window_inherit__map">
 </map>
- </div></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for MainWindow:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_window__coll__graph.jpg" border="0" usemap="#_main_window_coll__map" alt="Collaboration graph"/></div>
+<map name="_main_window_coll__map" id="_main_window_coll__map">
+<area shape="rect" id="node3" href="class_open_cv_widget.html" title="Regroupe les éléments utilisés pour l&#39;affichage de la caméra et la detection de mouvement. " alt="" coords="136,1999,264,2223"/>
+<area shape="rect" id="node4" href="class_ui_1_1_main_window.html" title="{Ui::MainWindow\n||}" alt="" coords="289,2072,405,2149"/>
+<area shape="rect" id="node5" href="class_ui___main_window.html" title="{Ui_MainWindow\n|+ centralWidget\l+ verticalLayoutWidget\l+ verticalLayout_10\l+ restart_Button\l+ horizontalLayout_10\l+ label_2\l+ slider\l+ changeSizeStick_Button\l+ horizontalLayout_11\l+ label_4\l+ lineEdit_2\l+ saveTopPlayersButton\l+ label\l+ topPlayers\l+ changeModeButton\l+ menuBar\l+ mainToolBar\l+ statusBar\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="246,1608,423,1949"/>
+<area shape="rect" id="node6" href="class_my_g_l_widget.html" title="Classe gérant les caractéristiques du widget OpenGL. " alt="" coords="249,1351,420,1545"/>
+<area shape="rect" id="node8" href="class_game_manager.html" title="Classe regroupant et gérant les éléments du jeu. " alt="" coords="383,917,558,1288"/>
+<area shape="rect" id="node9" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. " alt="" coords="334,557,431,679"/>
+<area shape="rect" id="node10" href="class_square.html" title="Classe gérant les caractéristiques des briques. " alt="" coords="233,5,330,332"/>
+<area shape="rect" id="node11" href="class_player.html" title="Classe gérant les caractéristiques du joueur. " alt="" coords="455,469,566,767"/>
+<area shape="rect" id="node12" href="class_ball.html" title="Classe gérant les caractéristiques des balles. " alt="" coords="591,381,711,855"/>
+<area shape="rect" id="node13" href="class_list_player.html" title="Liste des meilleurs joueurs (hérite de list&lt;Player&gt;) " alt="" coords="443,2050,543,2171"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memItemLeft" align="right" valign="top"><a id="a8b244be8b7b7db1b08de2a2acb9409db"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MainWindow</b> (QWidget *parent=0)</td></tr>
+<tr class="memitem:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a> (QWidget *parent=0)</td></tr>
+<tr class="memdesc:a8b244be8b7b7db1b08de2a2acb9409db"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_main_window.html" title="Class gèrant la fenêtre principale et les élèments d&#39;interfaces. ">MainWindow</a> Constructeur.  <a href="#a8b244be8b7b7db1b08de2a2acb9409db">More...</a><br /></td></tr>
 <tr class="separator:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c4f542263838b9ecd06eae839a42a34"><td class="memItemLeft" align="right" valign="top"><a id="a9c4f542263838b9ecd06eae839a42a34"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>keyPressEvent</b> (QKeyEvent *event)</td></tr>
+<tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
+<tr class="memdesc:ae98d00a93bc118200eeef9f9bba1dba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">~MainWindow destructeur  <a href="#ae98d00a93bc118200eeef9f9bba1dba7">More...</a><br /></td></tr>
+<tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4f542263838b9ecd06eae839a42a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9c4f542263838b9ecd06eae839a42a34">keyPressEvent</a> (QKeyEvent *event)</td></tr>
+<tr class="memdesc:a9c4f542263838b9ecd06eae839a42a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyPressEvent Lancement de la boule  <a href="#a9c4f542263838b9ecd06eae839a42a34">More...</a><br /></td></tr>
 <tr class="separator:a9c4f542263838b9ecd06eae839a42a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:aa92694042c7f07a45fa3c01d15799de9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa92694042c7f07a45fa3c01d15799de9">updateCamera</a> ()</td></tr>
+<tr class="memdesc:aa92694042c7f07a45fa3c01d15799de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateF Mise à jour de l'image caméra pour qu'elle fonctionne de façon fluide  <a href="#aa92694042c7f07a45fa3c01d15799de9">More...</a><br /></td></tr>
+<tr class="separator:aa92694042c7f07a45fa3c01d15799de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a444abd5763c22a236c4028921cf010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5a444abd5763c22a236c4028921cf010">updateTabList</a> ()</td></tr>
+<tr class="memdesc:a5a444abd5763c22a236c4028921cf010"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateTabList Mise à jour du tableau à afficher dans l'interface  <a href="#a5a444abd5763c22a236c4028921cf010">More...</a><br /></td></tr>
+<tr class="separator:a5a444abd5763c22a236c4028921cf010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18cd5bd8e34fa0ab191c84b3ab2132ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a18cd5bd8e34fa0ab191c84b3ab2132ae">on_restart_Button_clicked</a> ()</td></tr>
+<tr class="memdesc:a18cd5bd8e34fa0ab191c84b3ab2132ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_restart_Button_clicked Réinitialisation du jeu et des paramètres par défaut  <a href="#a18cd5bd8e34fa0ab191c84b3ab2132ae">More...</a><br /></td></tr>
+<tr class="separator:a18cd5bd8e34fa0ab191c84b3ab2132ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81faa99ba7deb0ee567510229ef2392e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a81faa99ba7deb0ee567510229ef2392e">on_changeSizeStick_Button_clicked</a> ()</td></tr>
+<tr class="memdesc:a81faa99ba7deb0ee567510229ef2392e"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_changeSizeStick_Button_clicked Change la taille de la <a class="el" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. ">Palette</a> en fonction de la position du slider  <a href="#a81faa99ba7deb0ee567510229ef2392e">More...</a><br /></td></tr>
+<tr class="separator:a81faa99ba7deb0ee567510229ef2392e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233e589f3d2a7bd3361148c44f4e0693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a233e589f3d2a7bd3361148c44f4e0693">on_saveTopPlayersButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a233e589f3d2a7bd3361148c44f4e0693"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_saveTopPlayersButton_clicked Sauvegarde le score et les tries pour afficher les meilleures scores  <a href="#a233e589f3d2a7bd3361148c44f4e0693">More...</a><br /></td></tr>
+<tr class="separator:a233e589f3d2a7bd3361148c44f4e0693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba62782e85cc205ad7011b129b6dd09b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aba62782e85cc205ad7011b129b6dd09b">on_changeModeButton_clicked</a> ()</td></tr>
+<tr class="memdesc:aba62782e85cc205ad7011b129b6dd09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">on_changeModeButton_clicked Bouton pour changer de Mode(Mise à jour textuel du Boutton)  <a href="#aba62782e85cc205ad7011b129b6dd09b">More...</a><br /></td></tr>
+<tr class="separator:aba62782e85cc205ad7011b129b6dd09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a35466a70ed47252a0191168126a352a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ui_1_1_main_window.html">Ui::MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a></td></tr>
+<tr class="separator:a35466a70ed47252a0191168126a352a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5a5de2e49c8535d93aef8012db1cfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_open_cv_widget.html">OpenCvWidget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abf5a5de2e49c8535d93aef8012db1cfb">moveDetection</a></td></tr>
+<tr class="separator:abf5a5de2e49c8535d93aef8012db1cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03325919465b0b2900387de28728967b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_list_player.html">ListPlayer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a03325919465b0b2900387de28728967b">topPlayers</a></td></tr>
+<tr class="separator:a03325919465b0b2900387de28728967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56d8727651a8b002ebff58e79e5ef26f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a56d8727651a8b002ebff58e79e5ef26f">count</a></td></tr>
+<tr class="separator:a56d8727651a8b002ebff58e79e5ef26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26ae4603d9b7d92d71642576d8225ce"><td class="memItemLeft" align="right" valign="top">QTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac26ae4603d9b7d92d71642576d8225ce">tmrTimer</a></td></tr>
+<tr class="separator:ac26ae4603d9b7d92d71642576d8225ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class gèrant la fenêtre principale et les élèments d'interfaces. </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00023">23</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8b244be8b7b7db1b08de2a2acb9409db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b244be8b7b7db1b08de2a2acb9409db">&#9670;&nbsp;</a></span>MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::MainWindow </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_main_window.html" title="Class gèrant la fenêtre principale et les élèments d&#39;interfaces. ">MainWindow</a> Constructeur. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00010">10</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_window_a8b244be8b7b7db1b08de2a2acb9409db_cgraph.jpg" border="0" usemap="#class_main_window_a8b244be8b7b7db1b08de2a2acb9409db_cgraph" alt=""/></div>
+<map name="class_main_window_a8b244be8b7b7db1b08de2a2acb9409db_cgraph" id="class_main_window_a8b244be8b7b7db1b08de2a2acb9409db_cgraph">
+<area shape="rect" id="node2" href="class_ui___main_window.html#acf4a0872c4c77d8f43a2ec66ed849b58" title="Ui_MainWindow::setupUi" alt="" coords="249,17,416,44"/>
+<area shape="rect" id="node4" href="class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="791,1045,887,1072"/>
+<area shape="rect" id="node5" href="class_palette.html#a3668970bbba4c28104443ff68a682da9" title="getSpeed " alt="" coords="519,56,646,83"/>
+<area shape="rect" id="node6" href="class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="778,1411,901,1437"/>
+<area shape="rect" id="node7" href="class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543" title="getStick " alt="" coords="251,1768,414,1795"/>
+<area shape="rect" id="node8" href="class_game_manager.html#aba55e5cb8867a408fc2492d732446ab8" title="updatePositionPalette " alt="" coords="232,189,433,230"/>
+<area shape="rect" id="node12" href="class_game_manager.html#af72705118801e4011c3343ac9a8b5335" title="updateBille_Score Met à jour Position de la Bille,la Vie des briques et le score du joueur en fonctio..." alt="" coords="243,885,422,926"/>
+<area shape="rect" id="node40" href="class_game_manager.html#a10193620d465e7e17285be2533e03f78" title="updateNbWin " alt="" coords="236,1592,429,1619"/>
+<area shape="rect" id="node43" href="class_main_window.html#aa92694042c7f07a45fa3c01d15799de9" title="updateF Mise à jour de l&#39;image caméra pour qu&#39;elle fonctionne de façon fluide " alt="" coords="239,1819,427,1845"/>
+<area shape="rect" id="node46" href="class_list_player.html#a51419d9b0d08358b6384e13c462247b4" title="charger Fonction permettant de charger la liste dans un fichier texte " alt="" coords="267,1869,398,1896"/>
+<area shape="rect" id="node48" href="class_main_window.html#a5a444abd5763c22a236c4028921cf010" title="updateTabList Mise à jour du tableau à afficher dans l&#39;interface " alt="" coords="240,1920,425,1947"/>
+<area shape="rect" id="node3" href="class_ui___main_window.html#a097dd160c3534a204904cb374412c618" title="Ui_MainWindow::retranslateUi" alt="" coords="485,5,681,32"/>
+<area shape="rect" id="node9" href="class_square.html#a9c14b2ee20078f70e313c1cb62965106" title="setX " alt="" coords="535,107,631,133"/>
+<area shape="rect" id="node10" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="789,309,890,336"/>
+<area shape="rect" id="node11" href="class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389" title="setX " alt="" coords="544,208,621,235"/>
+<area shape="rect" id="node13" href="class_game_manager.html#a2bd2b0363ac1c5c6026029fba4d41e38" title="collisionBrick " alt="" coords="487,411,679,437"/>
+<area shape="rect" id="node18" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="1255,477,1333,504"/>
+<area shape="rect" id="node19" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="1255,339,1333,365"/>
+<area shape="rect" id="node22" href="class_ball.html#a7758c0e5b90900b8984e602797798d12" title="setDirectionY " alt="" coords="517,1019,648,1045"/>
+<area shape="rect" id="node23" href="class_ball.html#a791c67c6112d626112b09e43420089a6" title="getDirectionY " alt="" coords="517,1069,648,1096"/>
+<area shape="rect" id="node24" href="class_ball.html#a51f2f0f1e6aa3b1cee878c1713f31fbb" title="setDirectionX " alt="" coords="519,1120,647,1147"/>
+<area shape="rect" id="node25" href="class_ball.html#a3b36da76a1ea6c1e30ffa4ed60ccd446" title="getDirectionX " alt="" coords="519,1171,647,1197"/>
+<area shape="rect" id="node26" href="class_square.html#a115fdac881e80628eca323b22d5a0280" title="setLife " alt="" coords="528,1221,637,1248"/>
+<area shape="rect" id="node27" href="class_player.html#a23c9b25aeb8dd1ff86d03d993e07a73d" title="setScore " alt="" coords="523,512,642,539"/>
+<area shape="rect" id="node28" href="class_player.html#a97e5447778ae6c384eedc532dcd8431d" title="getScore " alt="" coords="523,563,642,589"/>
+<area shape="rect" id="node29" href="class_square.html#a5a52ced157d32d3fe038c3674dc7c975" title="getScore " alt="" coords="521,613,644,640"/>
+<area shape="rect" id="node30" href="class_game_manager.html#ab6b2748c5280bc20cbed15f32a18deb9" title="searchPositionImpact Cherche la position de l&#39;impact entre la bille et la palette ..." alt="" coords="482,1374,683,1415"/>
+<area shape="rect" id="node31" href="class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4" title="collisionWall " alt="" coords="489,360,677,387"/>
+<area shape="rect" id="node32" href="class_player.html#ac3ad5e51b95a604a27c6f8ac6ecc6f90" title="getLifePoint " alt="" coords="515,664,650,691"/>
+<area shape="rect" id="node33" href="class_player.html#a3fc95cf72792aad03d73c58998ab2643" title="setLifePoint " alt="" coords="515,715,650,741"/>
+<area shape="rect" id="node34" href="class_ball.html#ae639c8f2030279739228019198021e99" title="reinitialiser Replacement de la balle " alt="" coords="525,1592,640,1619"/>
+<area shape="rect" id="node35" href="class_ball.html#a0d566e6196748ba2ff4c48e42b0ca7b1" title="getSpeed " alt="" coords="530,1541,635,1568"/>
+<area shape="rect" id="node36" href="class_ball.html#a7d6e946cfe6310088e938258cb9e88f1" title="getDirectionZ " alt="" coords="519,765,647,792"/>
+<area shape="rect" id="node37" href="class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359" title="getZ " alt="" coords="544,816,621,843"/>
+<area shape="rect" id="node38" href="class_ball.html#a074c539ee788dda3edcd3dbafe46c6b1" title="setY " alt="" coords="543,867,622,893"/>
+<area shape="rect" id="node39" href="class_ball.html#ae58e925566371743c7fe20af87d007f9" title="setZ " alt="" coords="544,917,621,944"/>
+<area shape="rect" id="node14" href="class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f" title="getHeight " alt="" coords="776,477,903,504"/>
+<area shape="rect" id="node15" href="class_square.html#a466213e529d0623f27dd59baa5fd425c" title="getY " alt="" coords="790,427,889,453"/>
+<area shape="rect" id="node16" href="class_game_manager.html#acedcd837373ddcab758627071bfaa0e1" title="collisionSegmentCercle " alt="" coords="732,361,947,402"/>
+<area shape="rect" id="node17" href="class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f" title="collisionDroite " alt="" coords="995,427,1191,453"/>
+<area shape="rect" id="node21" href="class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192" title="collisionPointCercle " alt="" coords="997,361,1189,402"/>
+<area shape="rect" id="node20" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="1239,408,1349,435"/>
+<area shape="rect" id="node41" href="class_ball.html#acf8c22e5244ca7ab3d1d7af9aa6f3f18" title="setSpeed " alt="" coords="529,1709,636,1736"/>
+<area shape="rect" id="node42" href="class_game_manager.html#a982951601283ec375c115cd3f19b64a2" title="reinitialiserBricks " alt="" coords="494,1643,671,1685"/>
+<area shape="rect" id="node44" href="class_my_g_l_widget.html#a3e963e10932c45bd4f95813bfa533bfc" title="updateCamMoveEvent Detecte un mouvement dans la camera " alt="" coords="481,1811,684,1853"/>
+<area shape="rect" id="node45" href="class_palette.html#ad8d5e54600152a30732b766f8a1d7739" title="setSpeed " alt="" coords="776,1819,903,1845"/>
+<area shape="rect" id="node47" href="class_player.html#aef7ebb7b9d9e1bd5383f30f74e4accf2" title="charger Permet de charger un player " alt="" coords="527,1877,638,1904"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae98d00a93bc118200eeef9f9bba1dba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae98d00a93bc118200eeef9f9bba1dba7">&#9670;&nbsp;</a></span>~MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::~MainWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>~MainWindow destructeur </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00069">69</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9c4f542263838b9ecd06eae839a42a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4f542263838b9ecd06eae839a42a34">&#9670;&nbsp;</a></span>keyPressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>keyPressEvent Lancement de la boule </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event:déclenchement</td><td>touche alt </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00076">76</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_window_a9c4f542263838b9ecd06eae839a42a34_cgraph.jpg" border="0" usemap="#class_main_window_a9c4f542263838b9ecd06eae839a42a34_cgraph" alt=""/></div>
+<map name="class_main_window_a9c4f542263838b9ecd06eae839a42a34_cgraph" id="class_main_window_a9c4f542263838b9ecd06eae839a42a34_cgraph">
+<area shape="rect" id="node2" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="244,5,345,32"/>
+<area shape="rect" id="node3" href="class_ball.html#a697519c70a27af56967b88a1c69bd92a" title="Ball::setState" alt="" coords="244,56,345,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aba62782e85cc205ad7011b129b6dd09b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba62782e85cc205ad7011b129b6dd09b">&#9670;&nbsp;</a></span>on_changeModeButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_changeModeButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>on_changeModeButton_clicked Bouton pour changer de Mode(Mise à jour textuel du Boutton) </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00204">204</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_window_aba62782e85cc205ad7011b129b6dd09b_cgraph.jpg" border="0" usemap="#class_main_window_aba62782e85cc205ad7011b129b6dd09b_cgraph" alt=""/></div>
+<map name="class_main_window_aba62782e85cc205ad7011b129b6dd09b_cgraph" id="class_main_window_aba62782e85cc205ad7011b129b6dd09b_cgraph">
+<area shape="rect" id="node2" href="class_game_manager.html#a707019231d8892afbe87da17dc31ae9e" title="changeMode " alt="" coords="252,13,441,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a81faa99ba7deb0ee567510229ef2392e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81faa99ba7deb0ee567510229ef2392e">&#9670;&nbsp;</a></span>on_changeSizeStick_Button_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_changeSizeStick_Button_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>on_changeSizeStick_Button_clicked Change la taille de la <a class="el" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. ">Palette</a> en fonction de la position du slider </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00172">172</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_window_a81faa99ba7deb0ee567510229ef2392e_cgraph.jpg" border="0" usemap="#class_main_window_a81faa99ba7deb0ee567510229ef2392e_cgraph" alt=""/></div>
+<map name="class_main_window_a81faa99ba7deb0ee567510229ef2392e_cgraph" id="class_main_window_a81faa99ba7deb0ee567510229ef2392e_cgraph">
+<area shape="rect" id="node2" href="class_square.html#ad1d24f2813f78e5052d8085473d222b9" title="setWidth " alt="" coords="247,13,369,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a18cd5bd8e34fa0ab191c84b3ab2132ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18cd5bd8e34fa0ab191c84b3ab2132ae">&#9670;&nbsp;</a></span>on_restart_Button_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_restart_Button_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>on_restart_Button_clicked Réinitialisation du jeu et des paramètres par défaut </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00164">164</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a233e589f3d2a7bd3361148c44f4e0693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a233e589f3d2a7bd3361148c44f4e0693">&#9670;&nbsp;</a></span>on_saveTopPlayersButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_saveTopPlayersButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>on_saveTopPlayersButton_clicked Sauvegarde le score et les tries pour afficher les meilleures scores </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00187">187</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_window_a233e589f3d2a7bd3361148c44f4e0693_cgraph.jpg" border="0" usemap="#class_main_window_a233e589f3d2a7bd3361148c44f4e0693_cgraph" alt=""/></div>
+<map name="class_main_window_a233e589f3d2a7bd3361148c44f4e0693_cgraph" id="class_main_window_a233e589f3d2a7bd3361148c44f4e0693_cgraph">
+<area shape="rect" id="node2" href="class_player.html#a6072dd0a4fe43d4f4bd418b612c96f7c" title="setNbWin " alt="" coords="300,5,424,32"/>
+<area shape="rect" id="node3" href="class_player.html#aa9728db5b22d438505b4694c5ea03f75" title="setName " alt="" coords="303,56,421,83"/>
+<area shape="rect" id="node4" href="class_list_player.html#a5b8f02efc75e1bafd2300ac2d308eda5" title="triList Fonction permettant de trier la liste en fonction du score et du nombre de victoire ..." alt="" coords="302,107,422,133"/>
+<area shape="rect" id="node5" href="class_list_player.html#ad350875939b59a7a0203b7e7c4cc6602" title="sauver Fonction permettant de sauvegarder la liste dans un fichier texte " alt="" coords="299,157,425,184"/>
+<area shape="rect" id="node6" href="class_main_window.html#a5a444abd5763c22a236c4028921cf010" title="updateTabList Mise à jour du tableau à afficher dans l&#39;interface " alt="" coords="269,208,455,235"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa92694042c7f07a45fa3c01d15799de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92694042c7f07a45fa3c01d15799de9">&#9670;&nbsp;</a></span>updateCamera</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::updateCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>updateF Mise à jour de l'image caméra pour qu'elle fonctionne de façon fluide </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00103">103</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_window_aa92694042c7f07a45fa3c01d15799de9_cgraph.jpg" border="0" usemap="#class_main_window_aa92694042c7f07a45fa3c01d15799de9_cgraph" alt=""/></div>
+<map name="class_main_window_aa92694042c7f07a45fa3c01d15799de9_cgraph" id="class_main_window_aa92694042c7f07a45fa3c01d15799de9_cgraph">
+<area shape="rect" id="node2" href="class_my_g_l_widget.html#a3e963e10932c45bd4f95813bfa533bfc" title="updateCamMoveEvent Detecte un mouvement dans la camera " alt="" coords="241,5,444,47"/>
+<area shape="rect" id="node3" href="class_palette.html#ad8d5e54600152a30732b766f8a1d7739" title="setSpeed " alt="" coords="492,13,619,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5a444abd5763c22a236c4028921cf010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a444abd5763c22a236c4028921cf010">&#9670;&nbsp;</a></span>updateTabList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::updateTabList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>updateTabList Mise à jour du tableau à afficher dans l'interface </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00176">176</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a56d8727651a8b002ebff58e79e5ef26f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d8727651a8b002ebff58e79e5ef26f">&#9670;&nbsp;</a></span>count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MainWindow::count</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compteur utilisé pour diminuer la charge imposé par l'utilisation de la WebCam </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00083">83</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="abf5a5de2e49c8535d93aef8012db1cfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5a5de2e49c8535d93aef8012db1cfb">&#9670;&nbsp;</a></span>moveDetection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_open_cv_widget.html">OpenCvWidget</a> MainWindow::moveDetection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Classe contenant les paramétre utilisé pour l'utilisation de la caméra </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00081">81</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="ac26ae4603d9b7d92d71642576d8225ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26ae4603d9b7d92d71642576d8225ce">&#9670;&nbsp;</a></span>tmrTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer MainWindow::tmrTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Timer utilisé pour la boucle de jeu </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00084">84</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="a03325919465b0b2900387de28728967b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03325919465b0b2900387de28728967b">&#9670;&nbsp;</a></span>topPlayers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_list_player.html">ListPlayer</a> MainWindow::topPlayers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Liste des meilleurs joueurs </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00082">82</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="a35466a70ed47252a0191168126a352a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35466a70ed47252a0191168126a352a5">&#9670;&nbsp;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ui_1_1_main_window.html">Ui::MainWindow</a>* MainWindow::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ui contenant les éléments d'interfaces </p>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00080">80</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/mainwindow.cpp</li>
+<li>Breakout/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
+<li>Breakout/<a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_main_window.html">MainWindow</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

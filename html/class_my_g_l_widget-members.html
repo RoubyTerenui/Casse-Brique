@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_my_g_l_widget.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +87,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">MyGLWidget Member List</div>  </div>
@@ -71,22 +95,26 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>dessineCube</b>(double centerX, double centerY, double centerZ, double width, double height, int lpTot, int lp) (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>drawBall</b>() (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>drawPallet</b>() (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>game</b> (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>initializeGL</b>() (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>mouseMoveEvent</b>(QMouseEvent *event) (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>MyGLWidget</b>(QWidget *parent=nullptr) (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>paintGL</b>() (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>resizeGL</b>(int width, int height) (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>updateCamMoveEvent</b>(int vectX, int vectY) (defined in <a class="el" href="class_my_g_l_widget.html">MyGLWidget</a>)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_my_g_l_widget.html#a493775e718c254eb669f75548eb7d870">dessineCube</a>(double centerX, double centerY, double centerZ, double width, double height, int lpTot, int lp)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_my_g_l_widget.html#a170905e3688320a2286d3c19a3c4d83a">drawBall</a>()</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_my_g_l_widget.html#a895664084af28911b896b43335da71d0">drawPallet</a>()</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_my_g_l_widget.html#a10b11952a864dfa4827c97039f3313bf">game</a></td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_my_g_l_widget.html#a5c536c2ebab76533eb16eac0a9830c8e">initializeGL</a>()</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_my_g_l_widget.html#a519efceb466527b8730d82ee1a0da8fb">mouseMoveEvent</a>(QMouseEvent *event)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_my_g_l_widget.html#a50dfc5ed9f6874956b09378e82265fda">MyGLWidget</a>(QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_my_g_l_widget.html#ad0e4171fab09ad54d4e2d23e7d6541eb">paintGL</a>()</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_my_g_l_widget.html#a9717968e75b8a7fc358b947f31eb2690">resizeGL</a>(int width, int height)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_my_g_l_widget.html#a0145d024e6e020fc28c35c58fb5207ab">tab_text</a></td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_my_g_l_widget.html#a3e963e10932c45bd4f95813bfa533bfc">updateCamMoveEvent</a>(int vectX, int vectY)</td><td class="entry"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,5 +1,28 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]],
-  ['myglwidget',['MyGLWidget',['../class_my_g_l_widget.html',1,'']]]
+  ['game',['game',['../class_my_g_l_widget.html#a10b11952a864dfa4827c97039f3313bf',1,'MyGLWidget']]],
+  ['gamemanager',['GameManager',['../class_game_manager.html',1,'GameManager'],['../class_game_manager.html#aa0e2424dc1a39d380e5b6605b179bf05',1,'GameManager::GameManager()']]],
+  ['gamemanager_2ecpp',['gamemanager.cpp',['../gamemanager_8cpp.html',1,'']]],
+  ['gamemanager_2eh',['gamemanager.h',['../gamemanager_8h.html',1,'']]],
+  ['getbille',['getBille',['../class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392',1,'GameManager']]],
+  ['getbricki',['getBrickI',['../class_game_manager.html#ac3efa1f197bd8d0869b41bd969e02fd0',1,'GameManager']]],
+  ['getdirection',['getDirection',['../class_ball.html#af17cd3a404b572e9a87e7589ea7bd8f7',1,'Ball']]],
+  ['getdirectionx',['getDirectionX',['../class_ball.html#a3b36da76a1ea6c1e30ffa4ed60ccd446',1,'Ball']]],
+  ['getdirectiony',['getDirectionY',['../class_ball.html#a791c67c6112d626112b09e43420089a6',1,'Ball']]],
+  ['getdirectionz',['getDirectionZ',['../class_ball.html#a7d6e946cfe6310088e938258cb9e88f1',1,'Ball']]],
+  ['getheight',['getHeight',['../class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f',1,'Square']]],
+  ['getlife',['getLife',['../class_square.html#a8a9dc441b3a1108c52024d5adf25fa80',1,'Square']]],
+  ['getlifepoint',['getLifePoint',['../class_player.html#ac3ad5e51b95a604a27c6f8ac6ecc6f90',1,'Player']]],
+  ['getname',['getName',['../class_player.html#af9a6045fa96f736664c4eab4caa5e8e5',1,'Player']]],
+  ['getnbwin',['getNbWin',['../class_game_manager.html#a8b770addd88c3e9dba5691e38ec59a2b',1,'GameManager::getNbWin()'],['../class_player.html#a47147bc978d0f5e89db3a6c40b9215db',1,'Player::getNbWin()']]],
+  ['getplayer',['getPlayer',['../class_game_manager.html#aebb883b6b25f5e017d315f692d5cd5a1',1,'GameManager']]],
+  ['getradius',['getRadius',['../class_ball.html#a5c1bcd887f634369ed2b205199c3323c',1,'Ball']]],
+  ['getscore',['getScore',['../class_player.html#a97e5447778ae6c384eedc532dcd8431d',1,'Player::getScore()'],['../class_square.html#a5a52ced157d32d3fe038c3674dc7c975',1,'Square::getScore()']]],
+  ['getspeed',['getspeed',['../class_ball.html#a0d566e6196748ba2ff4c48e42b0ca7b1',1,'Ball::getspeed()'],['../class_palette.html#a3668970bbba4c28104443ff68a682da9',1,'Palette::getSpeed()']]],
+  ['getstate',['getState',['../class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1',1,'Ball::getState()'],['../class_game_manager.html#a0eb6a90c2608f741f37d870a7b90255c',1,'GameManager::getState()']]],
+  ['getstick',['getStick',['../class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543',1,'GameManager']]],
+  ['getwidth',['getWidth',['../class_square.html#a3e8803173f2c9c75df15689760a7db68',1,'Square']]],
+  ['getx',['getX',['../class_ball.html#a6806cba5442118acd06f48fd02cdd5cc',1,'Ball::getX()'],['../class_square.html#abca130ad5c32ded493bc56851de84974',1,'Square::getX()']]],
+  ['gety',['getY',['../class_ball.html#ac4e44551d59c3c09d28444b41e1c623b',1,'Ball::getY()'],['../class_square.html#a466213e529d0623f27dd59baa5fd425c',1,'Square::getY()']]],
+  ['getz',['getZ',['../class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359',1,'Ball::getZ()'],['../class_square.html#add85982817300e975f00d982c2944fd3',1,'Square::getZ()']]]
 ];

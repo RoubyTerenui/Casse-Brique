@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Casse-Brique: D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/opencvwidget.h Source File</title>
+<title>Casse-Brique: Breakout/opencvwidget.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('opencvwidget_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,25 +87,34 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_a56ab63fb11deaf18c9a6994678cf830.html">TravailEtudiant</a></li><li class="navelem"><a class="el" href="dir_15660f86b57a08b6e1fa98fcae0dc3f5.html">fise2-sem2</a></li><li class="navelem"><a class="el" href="dir_cf6e5e9e2161ea277b4319d7fcb22848.html">QTCreator</a></li><li class="navelem"><a class="el" href="dir_27cb712ded06803cb453676004fe3183.html">Developpement projet</a></li><li class="navelem"><a class="el" href="dir_7bbaaf3cb608a8ef86f6631ebb0b5164.html">Casse-Brique</a></li><li class="navelem"><a class="el" href="dir_87e78ab7016d7742b8c69e1b4d9da264.html">Breakout</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">opencvwidget.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OPENCVWIDGET_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define OPENCVWIDGET_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;opencv2/video/tracking.hpp&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;opencv2/imgproc/imgproc.hpp&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;opencv2/highgui/highgui.hpp&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacecv.html">cv</a>;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_open_cv_widget.html">OpenCvWidget</a></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_open_cv_widget.html">OpenCvWidget</a>();</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> frameWidth;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> frameHeight;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> subImageWidth;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> subImageHeight;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> templateWidth;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> templateHeight;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> state;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Rect workingRect_;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Rect templateRect_;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Point workingCenter_;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    VideoCapture cap;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif // OPENCVWIDGET_H</span></div><div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<a href="opencvwidget_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OPENCVWIDGET_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define OPENCVWIDGET_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;opencv2/video/tracking.hpp&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;opencv2/imgproc/imgproc.hpp&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;opencv2/highgui/highgui.hpp&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacecv.html">cv</a>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_open_cv_widget.html">OpenCvWidget</a></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_open_cv_widget.html">OpenCvWidget</a>();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#a95a6faa37072434e852d626f0a3ee5a9">   36</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_open_cv_widget.html#a95a6faa37072434e852d626f0a3ee5a9">frameWidth</a>;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#a5dd41b76affe4c4a37b9502bf7ed9dda">   37</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_open_cv_widget.html#a5dd41b76affe4c4a37b9502bf7ed9dda">frameHeight</a>;</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#aedde6affb6c0d453f563195013800d9e">   38</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_open_cv_widget.html#aedde6affb6c0d453f563195013800d9e">subImageWidth</a>;</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#a6cb6b03a5d6ef68a55ff2aaae6a12465">   39</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_open_cv_widget.html#a6cb6b03a5d6ef68a55ff2aaae6a12465">subImageHeight</a>;</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#abcfddda69b2bc5752751d8df8ee27691">   40</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_open_cv_widget.html#abcfddda69b2bc5752751d8df8ee27691">templateWidth</a>;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#a2d3122dccb9094d5fea1ca8bbc439954">   41</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_open_cv_widget.html#a2d3122dccb9094d5fea1ca8bbc439954">templateHeight</a>;</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#aa241205fdfbc332e7bc40974a4bc5667">   42</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_open_cv_widget.html#aa241205fdfbc332e7bc40974a4bc5667">state</a>;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#ad0cb1cbe57dd17e340461a6f60f743cf">   43</a></span>&#160;    Rect <a class="code" href="class_open_cv_widget.html#ad0cb1cbe57dd17e340461a6f60f743cf">workingRect_</a>;</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#a81c8a710b09fa082c8288f5781030fb0">   44</a></span>&#160;    Rect <a class="code" href="class_open_cv_widget.html#a81c8a710b09fa082c8288f5781030fb0">templateRect_</a>;</div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#aaf9445696f65d650ae8ee576dc303eaf">   45</a></span>&#160;    Point <a class="code" href="class_open_cv_widget.html#aaf9445696f65d650ae8ee576dc303eaf">workingCenter_</a>;</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_open_cv_widget.html#a1ede2abdfc5042232566cb2eec7844ee">   46</a></span>&#160;    VideoCapture <a class="code" href="class_open_cv_widget.html#a1ede2abdfc5042232566cb2eec7844ee">cap</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif // OPENCVWIDGET_H</span></div><div class="ttc" id="class_open_cv_widget_html_aa241205fdfbc332e7bc40974a4bc5667"><div class="ttname"><a href="class_open_cv_widget.html#aa241205fdfbc332e7bc40974a4bc5667">OpenCvWidget::state</a></div><div class="ttdeci">bool state</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00042">opencvwidget.h:42</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_aaf9445696f65d650ae8ee576dc303eaf"><div class="ttname"><a href="class_open_cv_widget.html#aaf9445696f65d650ae8ee576dc303eaf">OpenCvWidget::workingCenter_</a></div><div class="ttdeci">Point workingCenter_</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00045">opencvwidget.h:45</a></div></div>
 <div class="ttc" id="namespacecv_html"><div class="ttname"><a href="namespacecv.html">cv</a></div></div>
-<div class="ttc" id="class_open_cv_widget_html"><div class="ttname"><a href="class_open_cv_widget.html">OpenCvWidget</a></div><div class="ttdef"><b>Definition:</b> opencvwidget.h:12</div></div>
+<div class="ttc" id="class_open_cv_widget_html_a5dd41b76affe4c4a37b9502bf7ed9dda"><div class="ttname"><a href="class_open_cv_widget.html#a5dd41b76affe4c4a37b9502bf7ed9dda">OpenCvWidget::frameHeight</a></div><div class="ttdeci">int frameHeight</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00037">opencvwidget.h:37</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_a2d3122dccb9094d5fea1ca8bbc439954"><div class="ttname"><a href="class_open_cv_widget.html#a2d3122dccb9094d5fea1ca8bbc439954">OpenCvWidget::templateHeight</a></div><div class="ttdeci">int templateHeight</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00041">opencvwidget.h:41</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html"><div class="ttname"><a href="class_open_cv_widget.html">OpenCvWidget</a></div><div class="ttdoc">Regroupe les éléments utilisés pour l&amp;#39;affichage de la caméra et la detection de mouvement. </div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00024">opencvwidget.h:24</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_aedde6affb6c0d453f563195013800d9e"><div class="ttname"><a href="class_open_cv_widget.html#aedde6affb6c0d453f563195013800d9e">OpenCvWidget::subImageWidth</a></div><div class="ttdeci">int subImageWidth</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00038">opencvwidget.h:38</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_a6cb6b03a5d6ef68a55ff2aaae6a12465"><div class="ttname"><a href="class_open_cv_widget.html#a6cb6b03a5d6ef68a55ff2aaae6a12465">OpenCvWidget::subImageHeight</a></div><div class="ttdeci">int subImageHeight</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00039">opencvwidget.h:39</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_abcfddda69b2bc5752751d8df8ee27691"><div class="ttname"><a href="class_open_cv_widget.html#abcfddda69b2bc5752751d8df8ee27691">OpenCvWidget::templateWidth</a></div><div class="ttdeci">int templateWidth</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00040">opencvwidget.h:40</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_a1ede2abdfc5042232566cb2eec7844ee"><div class="ttname"><a href="class_open_cv_widget.html#a1ede2abdfc5042232566cb2eec7844ee">OpenCvWidget::cap</a></div><div class="ttdeci">VideoCapture cap</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00046">opencvwidget.h:46</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_a81c8a710b09fa082c8288f5781030fb0"><div class="ttname"><a href="class_open_cv_widget.html#a81c8a710b09fa082c8288f5781030fb0">OpenCvWidget::templateRect_</a></div><div class="ttdeci">Rect templateRect_</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00044">opencvwidget.h:44</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_a95a6faa37072434e852d626f0a3ee5a9"><div class="ttname"><a href="class_open_cv_widget.html#a95a6faa37072434e852d626f0a3ee5a9">OpenCvWidget::frameWidth</a></div><div class="ttdeci">int frameWidth</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00036">opencvwidget.h:36</a></div></div>
+<div class="ttc" id="class_open_cv_widget_html_ad0cb1cbe57dd17e340461a6f60f743cf"><div class="ttname"><a href="class_open_cv_widget.html#ad0cb1cbe57dd17e340461a6f60f743cf">OpenCvWidget::workingRect_</a></div><div class="ttdeci">Rect workingRect_</div><div class="ttdef"><b>Definition:</b> <a href="opencvwidget_8h_source.html#l00043">opencvwidget.h:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_fdd8476826cbf2ff84558f4700e5891b.html">Breakout</a></li><li class="navelem"><a class="el" href="opencvwidget_8h.html">opencvwidget.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,5 @@
+<map id="GameManager::searchPositionImpact" name="GameManager::searchPositionImpact">
+<area shape="rect" id="node2" href="$class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="268,5,364,32"/>
+<area shape="rect" id="node3" href="$class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="255,56,377,83"/>
+<area shape="rect" id="node4" href="$class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="277,107,355,133"/>
+</map>

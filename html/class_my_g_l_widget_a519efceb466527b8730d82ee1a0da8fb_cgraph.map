@@ -1,0 +1,8 @@
+<map id="MyGLWidget::mouseMoveEvent" name="MyGLWidget::mouseMoveEvent">
+<area shape="rect" id="node2" href="$class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543" title="getStick " alt="" coords="260,5,423,32"/>
+<area shape="rect" id="node3" href="$class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="280,56,403,83"/>
+<area shape="rect" id="node4" href="$class_square.html#a9c14b2ee20078f70e313c1cb62965106" title="setX " alt="" coords="293,107,389,133"/>
+<area shape="rect" id="node5" href="$class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392" title="getBille " alt="" coords="262,157,421,184"/>
+<area shape="rect" id="node6" href="$class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="291,208,392,235"/>
+<area shape="rect" id="node7" href="$class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389" title="setX " alt="" coords="303,259,380,285"/>
+</map>

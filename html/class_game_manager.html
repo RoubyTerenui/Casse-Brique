@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_game_manager.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,11 +87,11 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_game_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameManager Class Reference</div>  </div>
@@ -75,6 +100,19 @@ $(function() {
 
 <p>Classe regroupant et gérant les éléments du jeu.  
  <a href="class_game_manager.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for GameManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager__coll__graph.jpg" border="0" usemap="#_game_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="_game_manager_coll__map" id="_game_manager_coll__map">
+<area shape="rect" id="node2" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. " alt="" coords="132,557,229,679"/>
+<area shape="rect" id="node3" href="class_square.html" title="Classe gérant les caractéristiques des briques. " alt="" coords="30,5,128,332"/>
+<area shape="rect" id="node4" href="class_player.html" title="Classe gérant les caractéristiques du joueur. " alt="" coords="253,469,364,767"/>
+<area shape="rect" id="node5" href="class_ball.html" title="Classe gérant les caractéristiques des balles. " alt="" coords="388,381,508,855"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -96,9 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaab1c8649edbdc0496371a83bad05cb4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4">collisionWall</a> (double dimensionMax, double width, double height)</td></tr>
 <tr class="memdesc:aaab1c8649edbdc0496371a83bad05cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">collisionWall  <a href="#aaab1c8649edbdc0496371a83bad05cb4">More...</a><br /></td></tr>
 <tr class="separator:aaab1c8649edbdc0496371a83bad05cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af72705118801e4011c3343ac9a8b5335"><td class="memItemLeft" align="right" valign="top"><a id="af72705118801e4011c3343ac9a8b5335"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#af72705118801e4011c3343ac9a8b5335">updateBille_Score</a> ()</td></tr>
-<tr class="memdesc:af72705118801e4011c3343ac9a8b5335"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateBille_Score Met à jour Position de la Bille,la Vie des briques et le score du joueur en fonction de l'état de la liste de brick <br /></td></tr>
+<tr class="memitem:af72705118801e4011c3343ac9a8b5335"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#af72705118801e4011c3343ac9a8b5335">updateBille_Score</a> ()</td></tr>
+<tr class="memdesc:af72705118801e4011c3343ac9a8b5335"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateBille_Score Met à jour Position de la Bille,la Vie des briques et le score du joueur en fonction de l'état de la liste de brick  <a href="#af72705118801e4011c3343ac9a8b5335">More...</a><br /></td></tr>
 <tr class="separator:af72705118801e4011c3343ac9a8b5335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10193620d465e7e17285be2533e03f78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a10193620d465e7e17285be2533e03f78">updateNbWin</a> ()</td></tr>
 <tr class="memdesc:a10193620d465e7e17285be2533e03f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateNbWin  <a href="#a10193620d465e7e17285be2533e03f78">More...</a><br /></td></tr>
@@ -142,12 +179,25 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ade8777ca190763f4314035f7ee5905c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac69eb2bd39346ff2c5304c6af93a6406"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ac69eb2bd39346ff2c5304c6af93a6406">nbwin_</a></td></tr>
 <tr class="separator:ac69eb2bd39346ff2c5304c6af93a6406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04e5a46806b4c6199a688f1e91ff2d0f"><td class="memItemLeft" align="right" valign="top"><a id="a04e5a46806b4c6199a688f1e91ff2d0f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =false</td></tr>
+<tr class="memitem:a04e5a46806b4c6199a688f1e91ff2d0f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a04e5a46806b4c6199a688f1e91ff2d0f">mouseEventAct</a> =false</td></tr>
 <tr class="separator:a04e5a46806b4c6199a688f1e91ff2d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a73d93b3268d7c7f2e69c262e9d0c6192"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192">collisionPointCercle</a> (double x, double y, <a class="el" href="class_ball.html">Ball</a> b)</td></tr>
+<tr class="memdesc:a73d93b3268d7c7f2e69c262e9d0c6192"><td class="mdescLeft">&#160;</td><td class="mdescRight">collisionPointCercle  <a href="#a73d93b3268d7c7f2e69c262e9d0c6192">More...</a><br /></td></tr>
+<tr class="separator:a73d93b3268d7c7f2e69c262e9d0c6192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d01eb6bd1613b446d079365551fb15f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f">collisionDroite</a> (double aX, double aY, double bX, double bY, <a class="el" href="class_ball.html">Ball</a> C)</td></tr>
+<tr class="memdesc:a4d01eb6bd1613b446d079365551fb15f"><td class="mdescLeft">&#160;</td><td class="mdescRight">collisionDroite  <a href="#a4d01eb6bd1613b446d079365551fb15f">More...</a><br /></td></tr>
+<tr class="separator:a4d01eb6bd1613b446d079365551fb15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acedcd837373ddcab758627071bfaa0e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#acedcd837373ddcab758627071bfaa0e1">collisionSegmentCercle</a> (double aX, double aY, double bX, double bY, <a class="el" href="class_ball.html">Ball</a> C)</td></tr>
+<tr class="memdesc:acedcd837373ddcab758627071bfaa0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">collisionSegmentCercle  <a href="#acedcd837373ddcab758627071bfaa0e1">More...</a><br /></td></tr>
+<tr class="separator:acedcd837373ddcab758627071bfaa0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe regroupant et gérant les éléments du jeu. </p>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00016">16</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa0e2424dc1a39d380e5b6605b179bf05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa0e2424dc1a39d380e5b6605b179bf05">&#9670;&nbsp;</a></span>GameManager()</h2>
@@ -166,6 +216,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 
 <p>Constructeur. </p>
 <p>Constructeur de la classe <a class="el" href="class_game_manager.html" title="Classe regroupant et gérant les éléments du jeu. ">GameManager</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00003">3</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
 
 </div>
 </div>
@@ -196,6 +248,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 <p>changeMode </p>
 <p>Changement du mode de Jeu (Mode souris ou caméra) </p>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00072">72</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
 </div>
 </div>
 <a id="a2bd2b0363ac1c5c6026029fba4d41e38"></a>
@@ -223,6 +277,253 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>:Renvoie un entier entre 0 et 8 indiquant la collision avec une brick et met à jour sa vie </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00272">272</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_a2bd2b0363ac1c5c6026029fba4d41e38_cgraph.jpg" border="0" usemap="#class_game_manager_a2bd2b0363ac1c5c6026029fba4d41e38_cgraph" alt=""/></div>
+<map name="class_game_manager_a2bd2b0363ac1c5c6026029fba4d41e38_cgraph" id="class_game_manager_a2bd2b0363ac1c5c6026029fba4d41e38_cgraph">
+<area shape="rect" id="node2" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="302,5,403,32"/>
+<area shape="rect" id="node3" href="class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f" title="getHeight " alt="" coords="289,56,416,83"/>
+<area shape="rect" id="node4" href="class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="291,107,414,133"/>
+<area shape="rect" id="node5" href="class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="305,157,401,184"/>
+<area shape="rect" id="node6" href="class_square.html#a466213e529d0623f27dd59baa5fd425c" title="getY " alt="" coords="303,208,402,235"/>
+<area shape="rect" id="node7" href="class_game_manager.html#acedcd837373ddcab758627071bfaa0e1" title="collisionSegmentCercle " alt="" coords="245,259,460,301"/>
+<area shape="rect" id="node8" href="class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f" title="collisionDroite " alt="" coords="508,237,704,264"/>
+<area shape="rect" id="node9" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="769,216,846,243"/>
+<area shape="rect" id="node10" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="768,317,847,344"/>
+<area shape="rect" id="node12" href="class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192" title="collisionPointCercle " alt="" coords="510,289,702,330"/>
+<area shape="rect" id="node11" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="752,267,863,293"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d01eb6bd1613b446d079365551fb15f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d01eb6bd1613b446d079365551fb15f">&#9670;&nbsp;</a></span>collisionDroite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameManager::collisionDroite </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>aX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>aY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_ball.html">Ball</a>&#160;</td>
+          <td class="paramname"><em>C</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>collisionDroite </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aX</td><td>Coordonnée en X d'une extremité a de la droite </td></tr>
+    <tr><td class="paramname">aY</td><td>Coordonnée en Y d'une extremité a de la droite </td></tr>
+    <tr><td class="paramname">bX</td><td>Coordonnée en X d'une extremité b de la droite </td></tr>
+    <tr><td class="paramname">bY</td><td>Coordonnée en Y d'une extremité b de la droite </td></tr>
+    <tr><td class="paramname">C</td><td>bille(avec les attributs cercles que l'on souhaite tester) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean indiquant si il y a collision entre le Point et la bille </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00210">210</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_a4d01eb6bd1613b446d079365551fb15f_cgraph.jpg" border="0" usemap="#class_game_manager_a4d01eb6bd1613b446d079365551fb15f_cgraph" alt=""/></div>
+<map name="class_game_manager_a4d01eb6bd1613b446d079365551fb15f_cgraph" id="class_game_manager_a4d01eb6bd1613b446d079365551fb15f_cgraph">
+<area shape="rect" id="node2" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="266,5,343,32"/>
+<area shape="rect" id="node3" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="265,56,344,83"/>
+<area shape="rect" id="node4" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="249,107,360,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a73d93b3268d7c7f2e69c262e9d0c6192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d93b3268d7c7f2e69c262e9d0c6192">&#9670;&nbsp;</a></span>collisionPointCercle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameManager::collisionPointCercle </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_ball.html">Ball</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>collisionPointCercle </p>
+<p>Mode de Jeu <br />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonné en X du Point tester </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonné en Y du Point tester </td></tr>
+    <tr><td class="paramname">b</td><td>bille(avec les attributs cercles que l'on souhaite tester) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean indiquant si il y a collision entre le Point et la bille </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00200">200</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_a73d93b3268d7c7f2e69c262e9d0c6192_cgraph.jpg" border="0" usemap="#class_game_manager_a73d93b3268d7c7f2e69c262e9d0c6192_cgraph" alt=""/></div>
+<map name="class_game_manager_a73d93b3268d7c7f2e69c262e9d0c6192_cgraph" id="class_game_manager_a73d93b3268d7c7f2e69c262e9d0c6192_cgraph">
+<area shape="rect" id="node2" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="262,5,339,32"/>
+<area shape="rect" id="node3" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="261,56,340,83"/>
+<area shape="rect" id="node4" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="245,107,356,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acedcd837373ddcab758627071bfaa0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acedcd837373ddcab758627071bfaa0e1">&#9670;&nbsp;</a></span>collisionSegmentCercle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameManager::collisionSegmentCercle </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>aX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>aY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_ball.html">Ball</a>&#160;</td>
+          <td class="paramname"><em>C</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>collisionSegmentCercle </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aX</td><td>Coordonnée en X d'un point a de la droite </td></tr>
+    <tr><td class="paramname">aY</td><td>Coordonnée en Y d'un point a de la droite </td></tr>
+    <tr><td class="paramname">bX</td><td>Coordonnée en X d'un point b de la droite </td></tr>
+    <tr><td class="paramname">bY</td><td>Coordonnée en Y d'un point b de la droite </td></tr>
+    <tr><td class="paramname">C</td><td>bille(avec les attributs cercles que l'on souhaite tester) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00230">230</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_acedcd837373ddcab758627071bfaa0e1_cgraph.jpg" border="0" usemap="#class_game_manager_acedcd837373ddcab758627071bfaa0e1_cgraph" alt=""/></div>
+<map name="class_game_manager_acedcd837373ddcab758627071bfaa0e1_cgraph" id="class_game_manager_acedcd837373ddcab758627071bfaa0e1_cgraph">
+<area shape="rect" id="node2" href="class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f" title="collisionDroite " alt="" coords="268,27,464,53"/>
+<area shape="rect" id="node3" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="529,5,606,32"/>
+<area shape="rect" id="node4" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="528,107,607,133"/>
+<area shape="rect" id="node6" href="class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192" title="collisionPointCercle " alt="" coords="270,78,462,119"/>
+<area shape="rect" id="node5" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="512,56,623,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -270,6 +571,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Renvoie un entier entre 0 et 8 indiquant la collision avec les bords du plateau </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00317">317</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_aaab1c8649edbdc0496371a83bad05cb4_cgraph.jpg" border="0" usemap="#class_game_manager_aaab1c8649edbdc0496371a83bad05cb4_cgraph" alt=""/></div>
+<map name="class_game_manager_aaab1c8649edbdc0496371a83bad05cb4_cgraph" id="class_game_manager_aaab1c8649edbdc0496371a83bad05cb4_cgraph">
+<area shape="rect" id="node2" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="298,5,399,32"/>
+<area shape="rect" id="node3" href="class_game_manager.html#acedcd837373ddcab758627071bfaa0e1" title="collisionSegmentCercle " alt="" coords="241,57,456,98"/>
+<area shape="rect" id="node4" href="class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f" title="collisionDroite " alt="" coords="504,35,700,61"/>
+<area shape="rect" id="node5" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="765,13,842,40"/>
+<area shape="rect" id="node6" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="764,115,843,141"/>
+<area shape="rect" id="node8" href="class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192" title="collisionPointCercle " alt="" coords="506,86,698,127"/>
+<area shape="rect" id="node7" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="748,64,859,91"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="af7c8890b2880ac4a7e9df9b5359d0392"></a>
@@ -297,6 +614,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 
 <p>getBille </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00134">134</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
 
 </div>
 </div>
@@ -333,6 +652,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Brick numéro i de listbricks </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00160">160</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
 </div>
 </div>
 <a id="a8b770addd88c3e9dba5691e38ec59a2b"></a>
@@ -360,6 +681,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 
 <p>getNbWin </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00149">149</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
 
 </div>
 </div>
@@ -389,6 +712,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 <p>getPlayer </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00144">144</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
 </div>
 </div>
 <a id="a0eb6a90c2608f741f37d870a7b90255c"></a>
@@ -416,6 +741,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 
 <p>getState </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00154">154</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
 
 </div>
 </div>
@@ -445,6 +772,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 <p>getStick </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00139">139</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
 </div>
 </div>
 <a id="aec56f391111fb15f43711719da20e407"></a>
@@ -473,6 +802,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 <p>initializeNbWin </p>
 <p>initialise la variable nbwin_ </p>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00084">84</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
 </div>
 </div>
 <a id="a982951601283ec375c115cd3f19b64a2"></a>
@@ -492,6 +823,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 
 <p>reinitialiserBricks </p>
 <p>Réinitialise la liste de brick en fonction du niveau de difficulté </p>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00019">19</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
 
 </div>
 </div>
@@ -514,11 +847,82 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 <p>searchPositionImpact Cherche la position de l'impact entre la bille et la palette </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">brick</td><td>: <a class="el" href="class_palette.html">Palette</a> de jeu </td></tr>
+    <tr><td class="paramname">brick</td><td>: <a class="el" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. ">Palette</a> de jeu </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Position en X de l'impact </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00256">256</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_ab6b2748c5280bc20cbed15f32a18deb9_cgraph.jpg" border="0" usemap="#class_game_manager_ab6b2748c5280bc20cbed15f32a18deb9_cgraph" alt=""/></div>
+<map name="class_game_manager_ab6b2748c5280bc20cbed15f32a18deb9_cgraph" id="class_game_manager_ab6b2748c5280bc20cbed15f32a18deb9_cgraph">
+<area shape="rect" id="node2" href="class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="268,5,364,32"/>
+<area shape="rect" id="node3" href="class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="255,56,377,83"/>
+<area shape="rect" id="node4" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="277,107,355,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af72705118801e4011c3343ac9a8b5335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72705118801e4011c3343ac9a8b5335">&#9670;&nbsp;</a></span>updateBille_Score()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager::updateBille_Score </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>updateBille_Score Met à jour Position de la Bille,la Vie des briques et le score du joueur en fonction de l'état de la liste de brick </p>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00039">39</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_af72705118801e4011c3343ac9a8b5335_cgraph.jpg" border="0" usemap="#class_game_manager_af72705118801e4011c3343ac9a8b5335_cgraph" alt=""/></div>
+<map name="class_game_manager_af72705118801e4011c3343ac9a8b5335_cgraph" id="class_game_manager_af72705118801e4011c3343ac9a8b5335_cgraph">
+<area shape="rect" id="node2" href="class_game_manager.html#a2bd2b0363ac1c5c6026029fba4d41e38" title="collisionBrick " alt="" coords="237,250,429,277"/>
+<area shape="rect" id="node3" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="538,98,639,125"/>
+<area shape="rect" id="node5" href="class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="527,418,650,445"/>
+<area shape="rect" id="node6" href="class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="541,317,637,344"/>
+<area shape="rect" id="node10" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="1005,274,1082,301"/>
+<area shape="rect" id="node11" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="1004,132,1083,158"/>
+<area shape="rect" id="node14" href="class_ball.html#a7758c0e5b90900b8984e602797798d12" title="setDirectionY " alt="" coords="267,520,398,546"/>
+<area shape="rect" id="node15" href="class_ball.html#a791c67c6112d626112b09e43420089a6" title="getDirectionY " alt="" coords="267,570,398,597"/>
+<area shape="rect" id="node16" href="class_ball.html#a51f2f0f1e6aa3b1cee878c1713f31fbb" title="setDirectionX " alt="" coords="269,621,397,648"/>
+<area shape="rect" id="node17" href="class_ball.html#a3b36da76a1ea6c1e30ffa4ed60ccd446" title="getDirectionX " alt="" coords="269,672,397,698"/>
+<area shape="rect" id="node18" href="class_square.html#a115fdac881e80628eca323b22d5a0280" title="setLife " alt="" coords="278,722,387,749"/>
+<area shape="rect" id="node19" href="class_player.html#a23c9b25aeb8dd1ff86d03d993e07a73d" title="setScore " alt="" coords="273,773,392,800"/>
+<area shape="rect" id="node20" href="class_player.html#a97e5447778ae6c384eedc532dcd8431d" title="getScore " alt="" coords="273,824,392,850"/>
+<area shape="rect" id="node21" href="class_square.html#a5a52ced157d32d3fe038c3674dc7c975" title="getScore " alt="" coords="271,874,394,901"/>
+<area shape="rect" id="node22" href="class_game_manager.html#ab6b2748c5280bc20cbed15f32a18deb9" title="searchPositionImpact Cherche la position de l&#39;impact entre la bille et la palette ..." alt="" coords="232,352,433,394"/>
+<area shape="rect" id="node23" href="class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4" title="collisionWall " alt="" coords="239,157,427,184"/>
+<area shape="rect" id="node24" href="class_player.html#ac3ad5e51b95a604a27c6f8ac6ecc6f90" title="getLifePoint " alt="" coords="265,925,400,952"/>
+<area shape="rect" id="node25" href="class_player.html#a3fc95cf72792aad03d73c58998ab2643" title="setLifePoint " alt="" coords="265,976,400,1002"/>
+<area shape="rect" id="node26" href="class_ball.html#ae639c8f2030279739228019198021e99" title="reinitialiser Replacement de la balle " alt="" coords="275,1026,390,1053"/>
+<area shape="rect" id="node27" href="class_ball.html#a0d566e6196748ba2ff4c48e42b0ca7b1" title="getSpeed " alt="" coords="280,1077,385,1104"/>
+<area shape="rect" id="node28" href="class_ball.html#a7d6e946cfe6310088e938258cb9e88f1" title="getDirectionZ " alt="" coords="269,1128,397,1154"/>
+<area shape="rect" id="node29" href="class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359" title="getZ " alt="" coords="294,1178,371,1205"/>
+<area shape="rect" id="node30" href="class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389" title="setX " alt="" coords="294,1229,371,1256"/>
+<area shape="rect" id="node31" href="class_ball.html#a074c539ee788dda3edcd3dbafe46c6b1" title="setY " alt="" coords="293,1280,372,1306"/>
+<area shape="rect" id="node32" href="class_ball.html#ae58e925566371743c7fe20af87d007f9" title="setZ " alt="" coords="294,1330,371,1357"/>
+<area shape="rect" id="node4" href="class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f" title="getHeight " alt="" coords="525,216,652,242"/>
+<area shape="rect" id="node7" href="class_square.html#a466213e529d0623f27dd59baa5fd425c" title="getY " alt="" coords="539,266,638,293"/>
+<area shape="rect" id="node8" href="class_game_manager.html#acedcd837373ddcab758627071bfaa0e1" title="collisionSegmentCercle " alt="" coords="481,150,696,191"/>
+<area shape="rect" id="node9" href="class_game_manager.html#a4d01eb6bd1613b446d079365551fb15f" title="collisionDroite " alt="" coords="744,157,940,184"/>
+<area shape="rect" id="node13" href="class_game_manager.html#a73d93b3268d7c7f2e69c262e9d0c6192" title="collisionPointCercle " alt="" coords="746,208,938,250"/>
+<area shape="rect" id="node12" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="988,200,1099,226"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -540,6 +944,20 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 <p>updateNbWin </p>
 <p>Met à jour le Level sur lequel on se situe et le comptage du nombre de victoire </p>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00179">179</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_a10193620d465e7e17285be2533e03f78_cgraph.jpg" border="0" usemap="#class_game_manager_a10193620d465e7e17285be2533e03f78_cgraph" alt=""/></div>
+<map name="class_game_manager_a10193620d465e7e17285be2533e03f78_cgraph" id="class_game_manager_a10193620d465e7e17285be2533e03f78_cgraph">
+<area shape="rect" id="node2" href="class_ball.html#acf8c22e5244ca7ab3d1d7af9aa6f3f18" title="setSpeed " alt="" coords="282,5,389,32"/>
+<area shape="rect" id="node3" href="class_ball.html#a0d566e6196748ba2ff4c48e42b0ca7b1" title="getSpeed " alt="" coords="283,56,388,83"/>
+<area shape="rect" id="node4" href="class_game_manager.html#a982951601283ec375c115cd3f19b64a2" title="reinitialiserBricks " alt="" coords="247,107,424,149"/>
+<area shape="rect" id="node5" href="class_ball.html#ae639c8f2030279739228019198021e99" title="reinitialiser Replacement de la balle " alt="" coords="278,173,393,200"/>
+<area shape="rect" id="node6" href="class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="287,224,383,251"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aba55e5cb8867a408fc2492d732446ab8"></a>
@@ -560,6 +978,20 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 <p>updatePositionPalette </p>
 <p>Met à jour la position de la palette dans le mode Camera </p>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8cpp_source.html#l00172">172</a> of file <a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_manager_aba55e5cb8867a408fc2492d732446ab8_cgraph.jpg" border="0" usemap="#class_game_manager_aba55e5cb8867a408fc2492d732446ab8_cgraph" alt=""/></div>
+<map name="class_game_manager_aba55e5cb8867a408fc2492d732446ab8_cgraph" id="class_game_manager_aba55e5cb8867a408fc2492d732446ab8_cgraph">
+<area shape="rect" id="node2" href="class_square.html#a9c14b2ee20078f70e313c1cb62965106" title="setX " alt="" coords="270,5,366,32"/>
+<area shape="rect" id="node3" href="class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="270,56,366,83"/>
+<area shape="rect" id="node4" href="class_palette.html#a3668970bbba4c28104443ff68a682da9" title="getSpeed " alt="" coords="255,107,381,133"/>
+<area shape="rect" id="node5" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="267,157,369,184"/>
+<area shape="rect" id="node6" href="class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389" title="setX " alt="" coords="279,208,357,235"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -576,6 +1008,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 </div><div class="memdoc">
 <p>Bille du jeu </p>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00023">23</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
 </div>
 </div>
 <a id="a1f4d4e5f73f424ba4d04492e2b38cb88"></a>
@@ -590,6 +1024,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
       </table>
 </div><div class="memdoc">
 <p>Liste avec pour taille le nombre de lignes de bricks maximum *10 </p>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00024">24</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
+</div>
+</div>
+<a id="a04e5a46806b4c6199a688f1e91ff2d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e5a46806b4c6199a688f1e91ff2d0f">&#9670;&nbsp;</a></span>mouseEventAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameManager::mouseEventAct =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00029">29</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
 
 </div>
 </div>
@@ -606,6 +1058,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 </div><div class="memdoc">
 <p>Niveau de difficulté du jeu </p>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00028">28</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
 </div>
 </div>
 <a id="af93b2a683a681a346d22577cd75a9dd5"></a>
@@ -620,6 +1074,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
       </table>
 </div><div class="memdoc">
 <p>Joueur </p>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00026">26</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
 
 </div>
 </div>
@@ -636,6 +1092,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
 </div><div class="memdoc">
 <p>Etats du jeu (peut prendre deux valeurs </p>
 
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00027">27</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
+
 </div>
 </div>
 <a id="a086b81b6572ee3e4505143e284c2d503"></a>
@@ -649,20 +1107,26 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mouseEventAct</b> =fa
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_palette.html">Palette</a> du jeu permettant de renvoyer la balle et de la diriger </p>
+<p><a class="el" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. ">Palette</a> du jeu permettant de renvoyer la balle et de la diriger </p>
+
+<p class="definition">Definition at line <a class="el" href="gamemanager_8h_source.html#l00025">25</a> of file <a class="el" href="gamemanager_8h_source.html">gamemanager.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/<a class="el" href="gamemanager_8h_source.html">gamemanager.h</a></li>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/gamemanager.cpp</li>
+<li>Breakout/<a class="el" href="gamemanager_8h_source.html">gamemanager.h</a></li>
+<li>Breakout/<a class="el" href="gamemanager_8cpp_source.html">gamemanager.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_game_manager.html">GameManager</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

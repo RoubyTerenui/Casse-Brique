@@ -1,17 +1,19 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 /*!
   *\file MainWindow.h
   *\brief Gestionnaire de Jeu
   *\author Rouby Terenui,Ansart Valentin
 */
+
 #include<opencvwidget.h>
 #include <listplayer.h>
 #include <QTimer>
 #include <QMainWindow>
 
 namespace Ui {
-/*! \namespace ui
+/*! \namespace Ui
  *
  * espace de nommage regroupant les outils l'interface graphique
  */

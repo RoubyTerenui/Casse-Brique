@@ -1,0 +1,7 @@
+<map id="GameManager::updateNbWin" name="GameManager::updateNbWin">
+<area shape="rect" id="node2" href="$class_ball.html#acf8c22e5244ca7ab3d1d7af9aa6f3f18" title="setSpeed " alt="" coords="282,5,389,32"/>
+<area shape="rect" id="node3" href="$class_ball.html#a0d566e6196748ba2ff4c48e42b0ca7b1" title="getSpeed " alt="" coords="283,56,388,83"/>
+<area shape="rect" id="node4" href="$class_game_manager.html#a982951601283ec375c115cd3f19b64a2" title="reinitialiserBricks " alt="" coords="247,107,424,149"/>
+<area shape="rect" id="node5" href="$class_ball.html#ae639c8f2030279739228019198021e99" title="reinitialiser Replacement de la balle " alt="" coords="278,173,393,200"/>
+<area shape="rect" id="node6" href="$class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="287,224,383,251"/>
+</map>

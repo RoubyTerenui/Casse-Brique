@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['changemode',['changeMode',['../class_game_manager.html#a707019231d8892afbe87da17dc31ae9e',1,'GameManager']]],
-  ['collisionbrick',['collisionBrick',['../class_game_manager.html#a2bd2b0363ac1c5c6026029fba4d41e38',1,'GameManager']]],
-  ['collisionwall',['collisionWall',['../class_game_manager.html#aaab1c8649edbdc0496371a83bad05cb4',1,'GameManager']]]
+  ['ball',['Ball',['../class_ball.html#a86a144d3dad6c953e422e32435923bbb',1,'Ball::Ball()'],['../class_ball.html#a522a66cf500f94275cceb49b1635e962',1,'Ball::Ball(double radius, double x, double y, double z, double speed)']]]
 ];

@@ -1,0 +1,5 @@
+<map id="GameManager::collisionDroite" name="GameManager::collisionDroite">
+<area shape="rect" id="node2" href="$class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="266,5,343,32"/>
+<area shape="rect" id="node3" href="$class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="265,56,344,83"/>
+<area shape="rect" id="node4" href="$class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="249,107,360,133"/>
+</map>

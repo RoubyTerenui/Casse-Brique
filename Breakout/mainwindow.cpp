@@ -14,7 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     //Taille de la fenêtre
     resize( QSize(2000,1000));
-
     // MouseTracking Pour le mode de jeu souris
     setMouseTracking(true);
     ui->centralWidget->setMouseTracking(true);
@@ -166,6 +165,7 @@ void MainWindow::on_restart_Button_clicked()
 {
     ui->openGLWidget->game=GameManager();
     ui->slider->setValue(9);
+    ui->changeModeButton->setText("Passer en mode Souris");
 }
 
 
@@ -174,7 +174,7 @@ void MainWindow::on_changeSizeStick_Button_clicked()
     ui->openGLWidget->game.stick_.setWidth(ui->slider->value());
 }
 void MainWindow::updateTabList(){
-    qDebug(""+topPlayers.size());
+    ui->topPlayers->clear();
     for (ListPlayer::iterator it=topPlayers.begin();
          it!=topPlayers.end();it++)
     {

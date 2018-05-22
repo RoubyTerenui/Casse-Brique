@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,9 +31,9 @@
   <td id="projectlogo"><img alt="Logo" src="index.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Casse-Brique
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">Version 1.0</span>
    </div>
-   <div id="projectbrief">Projet scolaire</div>
+   <div id="projectbrief">Jeu de Casse-Brique avec Webcam</div>
   </td>
  </tr>
  </tbody>
@@ -48,6 +56,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_my_g_l_widget.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,75 +87,533 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_my_g_l_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MyGLWidget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe gérant les caractéristiques du widget OpenGL.  
+ <a href="class_my_g_l_widget.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="myglwidget_8h_source.html">myglwidget.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MyGLWidget:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_my_g_l_widget.png" usemap="#MyGLWidget_map" alt=""/>
-  <map id="MyGLWidget_map" name="MyGLWidget_map">
+<div class="center"><img src="class_my_g_l_widget__inherit__graph.jpg" border="0" usemap="#_my_g_l_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="_my_g_l_widget_inherit__map" id="_my_g_l_widget_inherit__map">
 </map>
- </div></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for MyGLWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_g_l_widget__coll__graph.jpg" border="0" usemap="#_my_g_l_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="_my_g_l_widget_coll__map" id="_my_g_l_widget_coll__map">
+<area shape="rect" id="node3" href="class_game_manager.html" title="Classe regroupant et gérant les éléments du jeu. " alt="" coords="188,917,363,1288"/>
+<area shape="rect" id="node4" href="class_palette.html" title="Classe gérant les caractéristiques de la palette. " alt="" coords="151,557,248,679"/>
+<area shape="rect" id="node5" href="class_square.html" title="Classe gérant les caractéristiques des briques. " alt="" coords="50,5,147,332"/>
+<area shape="rect" id="node6" href="class_player.html" title="Classe gérant les caractéristiques du joueur. " alt="" coords="272,469,383,767"/>
+<area shape="rect" id="node7" href="class_ball.html" title="Classe gérant les caractéristiques des balles. " alt="" coords="408,381,528,855"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a50dfc5ed9f6874956b09378e82265fda"><td class="memItemLeft" align="right" valign="top"><a id="a50dfc5ed9f6874956b09378e82265fda"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MyGLWidget</b> (QWidget *parent=nullptr)</td></tr>
+<tr class="memitem:a50dfc5ed9f6874956b09378e82265fda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a50dfc5ed9f6874956b09378e82265fda">MyGLWidget</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:a50dfc5ed9f6874956b09378e82265fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a519efceb466527b8730d82ee1a0da8fb"><td class="memItemLeft" align="right" valign="top"><a id="a519efceb466527b8730d82ee1a0da8fb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mouseMoveEvent</b> (QMouseEvent *event)</td></tr>
+<tr class="memitem:a519efceb466527b8730d82ee1a0da8fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a519efceb466527b8730d82ee1a0da8fb">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
+<tr class="memdesc:a519efceb466527b8730d82ee1a0da8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">mouseMoveEvent Detecte un mouvement de la souris  <a href="#a519efceb466527b8730d82ee1a0da8fb">More...</a><br /></td></tr>
 <tr class="separator:a519efceb466527b8730d82ee1a0da8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e963e10932c45bd4f95813bfa533bfc"><td class="memItemLeft" align="right" valign="top"><a id="a3e963e10932c45bd4f95813bfa533bfc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateCamMoveEvent</b> (int vectX, int vectY)</td></tr>
+<tr class="memitem:a3e963e10932c45bd4f95813bfa533bfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a3e963e10932c45bd4f95813bfa533bfc">updateCamMoveEvent</a> (int vectX, int vectY)</td></tr>
+<tr class="memdesc:a3e963e10932c45bd4f95813bfa533bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateCamMoveEvent Detecte un mouvement dans la camera  <a href="#a3e963e10932c45bd4f95813bfa533bfc">More...</a><br /></td></tr>
 <tr class="separator:a3e963e10932c45bd4f95813bfa533bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a10b11952a864dfa4827c97039f3313bf"><td class="memItemLeft" align="right" valign="top"><a id="a10b11952a864dfa4827c97039f3313bf"></a>
-<a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>game</b></td></tr>
+<tr class="memitem:a10b11952a864dfa4827c97039f3313bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a10b11952a864dfa4827c97039f3313bf">game</a></td></tr>
 <tr class="separator:a10b11952a864dfa4827c97039f3313bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a5c536c2ebab76533eb16eac0a9830c8e"><td class="memItemLeft" align="right" valign="top"><a id="a5c536c2ebab76533eb16eac0a9830c8e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initializeGL</b> ()</td></tr>
+<tr class="memitem:a5c536c2ebab76533eb16eac0a9830c8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a5c536c2ebab76533eb16eac0a9830c8e">initializeGL</a> ()</td></tr>
+<tr class="memdesc:a5c536c2ebab76533eb16eac0a9830c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializeGL Fonction d'initialisation  <a href="#a5c536c2ebab76533eb16eac0a9830c8e">More...</a><br /></td></tr>
 <tr class="separator:a5c536c2ebab76533eb16eac0a9830c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9717968e75b8a7fc358b947f31eb2690"><td class="memItemLeft" align="right" valign="top"><a id="a9717968e75b8a7fc358b947f31eb2690"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resizeGL</b> (int width, int height)</td></tr>
+<tr class="memitem:a9717968e75b8a7fc358b947f31eb2690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a9717968e75b8a7fc358b947f31eb2690">resizeGL</a> (int width, int height)</td></tr>
+<tr class="memdesc:a9717968e75b8a7fc358b947f31eb2690"><td class="mdescLeft">&#160;</td><td class="mdescRight">resizeGL Fonction de redimensionnement  <a href="#a9717968e75b8a7fc358b947f31eb2690">More...</a><br /></td></tr>
 <tr class="separator:a9717968e75b8a7fc358b947f31eb2690"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0e4171fab09ad54d4e2d23e7d6541eb"><td class="memItemLeft" align="right" valign="top"><a id="ad0e4171fab09ad54d4e2d23e7d6541eb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>paintGL</b> ()</td></tr>
+<tr class="memitem:ad0e4171fab09ad54d4e2d23e7d6541eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#ad0e4171fab09ad54d4e2d23e7d6541eb">paintGL</a> ()</td></tr>
+<tr class="memdesc:ad0e4171fab09ad54d4e2d23e7d6541eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">paitnGL Fonction d'affichage  <a href="#ad0e4171fab09ad54d4e2d23e7d6541eb">More...</a><br /></td></tr>
 <tr class="separator:ad0e4171fab09ad54d4e2d23e7d6541eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a170905e3688320a2286d3c19a3c4d83a"><td class="memItemLeft" align="right" valign="top"><a id="a170905e3688320a2286d3c19a3c4d83a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawBall</b> ()</td></tr>
+<tr class="memitem:a170905e3688320a2286d3c19a3c4d83a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a170905e3688320a2286d3c19a3c4d83a">drawBall</a> ()</td></tr>
+<tr class="memdesc:a170905e3688320a2286d3c19a3c4d83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">drawball Fonction de dessin de la balle  <a href="#a170905e3688320a2286d3c19a3c4d83a">More...</a><br /></td></tr>
 <tr class="separator:a170905e3688320a2286d3c19a3c4d83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a895664084af28911b896b43335da71d0"><td class="memItemLeft" align="right" valign="top"><a id="a895664084af28911b896b43335da71d0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawPallet</b> ()</td></tr>
+<tr class="memitem:a895664084af28911b896b43335da71d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a895664084af28911b896b43335da71d0">drawPallet</a> ()</td></tr>
+<tr class="memdesc:a895664084af28911b896b43335da71d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">drawPallet Fonction de dessin de la palette  <a href="#a895664084af28911b896b43335da71d0">More...</a><br /></td></tr>
 <tr class="separator:a895664084af28911b896b43335da71d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a493775e718c254eb669f75548eb7d870"><td class="memItemLeft" align="right" valign="top"><a id="a493775e718c254eb669f75548eb7d870"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dessineCube</b> (double centerX, double centerY, double centerZ, double width, double height, int lpTot, int lp)</td></tr>
+<tr class="memitem:a493775e718c254eb669f75548eb7d870"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a493775e718c254eb669f75548eb7d870">dessineCube</a> (double centerX, double centerY, double centerZ, double width, double height, int lpTot, int lp)</td></tr>
+<tr class="memdesc:a493775e718c254eb669f75548eb7d870"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessineCube Dessine les briques  <a href="#a493775e718c254eb669f75548eb7d870">More...</a><br /></td></tr>
 <tr class="separator:a493775e718c254eb669f75548eb7d870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0145d024e6e020fc28c35c58fb5207ab"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_g_l_widget.html#a0145d024e6e020fc28c35c58fb5207ab">tab_text</a> [23]</td></tr>
+<tr class="separator:a0145d024e6e020fc28c35c58fb5207ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe gérant les caractéristiques du widget OpenGL. </p>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8h_source.html#l00019">19</a> of file <a class="el" href="myglwidget_8h_source.html">myglwidget.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a50dfc5ed9f6874956b09378e82265fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50dfc5ed9f6874956b09378e82265fda">&#9670;&nbsp;</a></span>MyGLWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MyGLWidget::MyGLWidget </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructeur </p>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8cpp_source.html#l00016">16</a> of file <a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a493775e718c254eb669f75548eb7d870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493775e718c254eb669f75548eb7d870">&#9670;&nbsp;</a></span>dessineCube()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyGLWidget::dessineCube </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>centerX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>centerY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>centerZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lpTot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>dessineCube Dessine les briques </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">centerX</td><td>Position selon x de la brique </td></tr>
+    <tr><td class="paramname">centerY</td><td>Position selon y de la brique </td></tr>
+    <tr><td class="paramname">centerZ</td><td>Position selon z de la brique </td></tr>
+    <tr><td class="paramname">width</td><td>Largeur de la brique </td></tr>
+    <tr><td class="paramname">height</td><td>Hauteur de la brique </td></tr>
+    <tr><td class="paramname">lpTot</td><td>PdV totaux/Score de la brique </td></tr>
+    <tr><td class="paramname">lp</td><td>PdV restants de la brique </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8cpp_source.html#l00283">283</a> of file <a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a170905e3688320a2286d3c19a3c4d83a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a170905e3688320a2286d3c19a3c4d83a">&#9670;&nbsp;</a></span>drawBall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyGLWidget::drawBall </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>drawball Fonction de dessin de la balle </p>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8cpp_source.html#l00393">393</a> of file <a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_g_l_widget_a170905e3688320a2286d3c19a3c4d83a_cgraph.jpg" border="0" usemap="#class_my_g_l_widget_a170905e3688320a2286d3c19a3c4d83a_cgraph" alt=""/></div>
+<map name="class_my_g_l_widget_a170905e3688320a2286d3c19a3c4d83a_cgraph" id="class_my_g_l_widget_a170905e3688320a2286d3c19a3c4d83a_cgraph">
+<area shape="rect" id="node2" href="class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392" title="getBille " alt="" coords="208,5,367,32"/>
+<area shape="rect" id="node3" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="249,56,326,83"/>
+<area shape="rect" id="node4" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="248,107,327,133"/>
+<area shape="rect" id="node5" href="class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359" title="getZ " alt="" coords="249,157,326,184"/>
+<area shape="rect" id="node6" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="232,208,343,235"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a895664084af28911b896b43335da71d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a895664084af28911b896b43335da71d0">&#9670;&nbsp;</a></span>drawPallet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyGLWidget::drawPallet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>drawPallet Fonction de dessin de la palette </p>
+
+</div>
+</div>
+<a id="a5c536c2ebab76533eb16eac0a9830c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c536c2ebab76533eb16eac0a9830c8e">&#9670;&nbsp;</a></span>initializeGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyGLWidget::initializeGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initializeGL Fonction d'initialisation </p>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8cpp_source.html#l00028">28</a> of file <a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a519efceb466527b8730d82ee1a0da8fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a519efceb466527b8730d82ee1a0da8fb">&#9670;&nbsp;</a></span>mouseMoveEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyGLWidget::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>mouseMoveEvent Detecte un mouvement de la souris </p>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8cpp_source.html#l00424">424</a> of file <a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_g_l_widget_a519efceb466527b8730d82ee1a0da8fb_cgraph.jpg" border="0" usemap="#class_my_g_l_widget_a519efceb466527b8730d82ee1a0da8fb_cgraph" alt=""/></div>
+<map name="class_my_g_l_widget_a519efceb466527b8730d82ee1a0da8fb_cgraph" id="class_my_g_l_widget_a519efceb466527b8730d82ee1a0da8fb_cgraph">
+<area shape="rect" id="node2" href="class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543" title="getStick " alt="" coords="260,5,423,32"/>
+<area shape="rect" id="node3" href="class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="280,56,403,83"/>
+<area shape="rect" id="node4" href="class_square.html#a9c14b2ee20078f70e313c1cb62965106" title="setX " alt="" coords="293,107,389,133"/>
+<area shape="rect" id="node5" href="class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392" title="getBille " alt="" coords="262,157,421,184"/>
+<area shape="rect" id="node6" href="class_ball.html#ad791ba74a79741d4d66f0fff6c1367d1" title="getState " alt="" coords="291,208,392,235"/>
+<area shape="rect" id="node7" href="class_ball.html#a67a08cf9315f3f2c38408f0f24ffd389" title="setX " alt="" coords="303,259,380,285"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0e4171fab09ad54d4e2d23e7d6541eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e4171fab09ad54d4e2d23e7d6541eb">&#9670;&nbsp;</a></span>paintGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyGLWidget::paintGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>paitnGL Fonction d'affichage </p>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8cpp_source.html#l00212">212</a> of file <a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_g_l_widget_ad0e4171fab09ad54d4e2d23e7d6541eb_cgraph.jpg" border="0" usemap="#class_my_g_l_widget_ad0e4171fab09ad54d4e2d23e7d6541eb_cgraph" alt=""/></div>
+<map name="class_my_g_l_widget_ad0e4171fab09ad54d4e2d23e7d6541eb_cgraph" id="class_my_g_l_widget_ad0e4171fab09ad54d4e2d23e7d6541eb_cgraph">
+<area shape="rect" id="node2" href="class_game_manager.html#a0eb6a90c2608f741f37d870a7b90255c" title="getState " alt="" coords="213,5,377,32"/>
+<area shape="rect" id="node3" href="class_game_manager.html#a8b770addd88c3e9dba5691e38ec59a2b" title="getNbWin " alt="" coords="209,56,381,83"/>
+<area shape="rect" id="node4" href="class_game_manager.html#aebb883b6b25f5e017d315f692d5cd5a1" title="getPlayer " alt="" coords="209,107,380,133"/>
+<area shape="rect" id="node5" href="class_player.html#ac3ad5e51b95a604a27c6f8ac6ecc6f90" title="getLifePoint " alt="" coords="227,157,362,184"/>
+<area shape="rect" id="node6" href="class_player.html#a97e5447778ae6c384eedc532dcd8431d" title="getScore " alt="" coords="235,208,354,235"/>
+<area shape="rect" id="node7" href="class_game_manager.html#ac3efa1f197bd8d0869b41bd969e02fd0" title="getBrickI " alt="" coords="211,259,378,285"/>
+<area shape="rect" id="node8" href="class_square.html#a8a9dc441b3a1108c52024d5adf25fa80" title="getLife " alt="" coords="240,309,349,336"/>
+<area shape="rect" id="node9" href="class_my_g_l_widget.html#a493775e718c254eb669f75548eb7d870" title="dessineCube Dessine les briques " alt="" coords="204,360,385,387"/>
+<area shape="rect" id="node10" href="class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="247,411,343,437"/>
+<area shape="rect" id="node11" href="class_square.html#a466213e529d0623f27dd59baa5fd425c" title="getY " alt="" coords="245,461,344,488"/>
+<area shape="rect" id="node12" href="class_square.html#add85982817300e975f00d982c2944fd3" title="getZ " alt="" coords="247,512,343,539"/>
+<area shape="rect" id="node13" href="class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="233,563,356,589"/>
+<area shape="rect" id="node14" href="class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f" title="getHeight " alt="" coords="231,613,358,640"/>
+<area shape="rect" id="node15" href="class_square.html#a5a52ced157d32d3fe038c3674dc7c975" title="getScore " alt="" coords="233,664,356,691"/>
+<area shape="rect" id="node16" href="class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543" title="getStick " alt="" coords="213,715,376,741"/>
+<area shape="rect" id="node17" href="class_my_g_l_widget.html#a170905e3688320a2286d3c19a3c4d83a" title="drawball Fonction de dessin de la balle " alt="" coords="217,765,372,792"/>
+<area shape="rect" id="node18" href="class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392" title="getBille " alt="" coords="433,664,592,691"/>
+<area shape="rect" id="node19" href="class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="474,715,551,741"/>
+<area shape="rect" id="node20" href="class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="473,765,552,792"/>
+<area shape="rect" id="node21" href="class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359" title="getZ " alt="" coords="474,816,551,843"/>
+<area shape="rect" id="node22" href="class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="457,867,568,893"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9717968e75b8a7fc358b947f31eb2690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9717968e75b8a7fc358b947f31eb2690">&#9670;&nbsp;</a></span>resizeGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyGLWidget::resizeGL </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>resizeGL Fonction de redimensionnement </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Largeur de la fenêtre </td></tr>
+    <tr><td class="paramname">height</td><td>Hauteur de la fenêtre </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8cpp_source.html#l00193">193</a> of file <a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3e963e10932c45bd4f95813bfa533bfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e963e10932c45bd4f95813bfa533bfc">&#9670;&nbsp;</a></span>updateCamMoveEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyGLWidget::updateCamMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vectX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vectY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>updateCamMoveEvent Detecte un mouvement dans la camera </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vectX</td><td>Position selon x de la détection </td></tr>
+    <tr><td class="paramname">vectY</td><td>Position selon y de la détection </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8cpp_source.html#l00408">408</a> of file <a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_my_g_l_widget_a3e963e10932c45bd4f95813bfa533bfc_cgraph.jpg" border="0" usemap="#class_my_g_l_widget_a3e963e10932c45bd4f95813bfa533bfc_cgraph" alt=""/></div>
+<map name="class_my_g_l_widget_a3e963e10932c45bd4f95813bfa533bfc_cgraph" id="class_my_g_l_widget_a3e963e10932c45bd4f95813bfa533bfc_cgraph">
+<area shape="rect" id="node2" href="class_palette.html#ad8d5e54600152a30732b766f8a1d7739" title="setSpeed " alt="" coords="256,13,383,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a10b11952a864dfa4827c97039f3313bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b11952a864dfa4827c97039f3313bf">&#9670;&nbsp;</a></span>game</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_manager.html">GameManager</a> MyGLWidget::game</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Game manager </p>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8h_source.html#l00031">31</a> of file <a class="el" href="myglwidget_8h_source.html">myglwidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a0145d024e6e020fc28c35c58fb5207ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0145d024e6e020fc28c35c58fb5207ab">&#9670;&nbsp;</a></span>tab_text</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint MyGLWidget::tab_text[23]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tableau des textures </p>
+
+<p class="definition">Definition at line <a class="el" href="myglwidget_8h_source.html#l00090">90</a> of file <a class="el" href="myglwidget_8h_source.html">myglwidget.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/<a class="el" href="myglwidget_8h_source.html">myglwidget.h</a></li>
-<li>D:/TravailEtudiant/fise2-sem2/QTCreator/Developpement projet/Casse-Brique/Breakout/myglwidget.cpp</li>
+<li>Breakout/<a class="el" href="myglwidget_8h_source.html">myglwidget.h</a></li>
+<li>Breakout/<a class="el" href="myglwidget_8cpp_source.html">myglwidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_my_g_l_widget.html">MyGLWidget</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<map id="MyGLWidget::paintGL" name="MyGLWidget::paintGL">
+<area shape="rect" id="node2" href="$class_game_manager.html#a0eb6a90c2608f741f37d870a7b90255c" title="getState " alt="" coords="213,5,377,32"/>
+<area shape="rect" id="node3" href="$class_game_manager.html#a8b770addd88c3e9dba5691e38ec59a2b" title="getNbWin " alt="" coords="209,56,381,83"/>
+<area shape="rect" id="node4" href="$class_game_manager.html#aebb883b6b25f5e017d315f692d5cd5a1" title="getPlayer " alt="" coords="209,107,380,133"/>
+<area shape="rect" id="node5" href="$class_player.html#ac3ad5e51b95a604a27c6f8ac6ecc6f90" title="getLifePoint " alt="" coords="227,157,362,184"/>
+<area shape="rect" id="node6" href="$class_player.html#a97e5447778ae6c384eedc532dcd8431d" title="getScore " alt="" coords="235,208,354,235"/>
+<area shape="rect" id="node7" href="$class_game_manager.html#ac3efa1f197bd8d0869b41bd969e02fd0" title="getBrickI " alt="" coords="211,259,378,285"/>
+<area shape="rect" id="node8" href="$class_square.html#a8a9dc441b3a1108c52024d5adf25fa80" title="getLife " alt="" coords="240,309,349,336"/>
+<area shape="rect" id="node9" href="$class_my_g_l_widget.html#a493775e718c254eb669f75548eb7d870" title="dessineCube Dessine les briques " alt="" coords="204,360,385,387"/>
+<area shape="rect" id="node10" href="$class_square.html#abca130ad5c32ded493bc56851de84974" title="getX " alt="" coords="247,411,343,437"/>
+<area shape="rect" id="node11" href="$class_square.html#a466213e529d0623f27dd59baa5fd425c" title="getY " alt="" coords="245,461,344,488"/>
+<area shape="rect" id="node12" href="$class_square.html#add85982817300e975f00d982c2944fd3" title="getZ " alt="" coords="247,512,343,539"/>
+<area shape="rect" id="node13" href="$class_square.html#a3e8803173f2c9c75df15689760a7db68" title="getWidth " alt="" coords="233,563,356,589"/>
+<area shape="rect" id="node14" href="$class_square.html#a2759b76cb77ad8310d37e5f8464f6d0f" title="getHeight " alt="" coords="231,613,358,640"/>
+<area shape="rect" id="node15" href="$class_square.html#a5a52ced157d32d3fe038c3674dc7c975" title="getScore " alt="" coords="233,664,356,691"/>
+<area shape="rect" id="node16" href="$class_game_manager.html#ae28734a8c38cffbd7fc2ab4f8a996543" title="getStick " alt="" coords="213,715,376,741"/>
+<area shape="rect" id="node17" href="$class_my_g_l_widget.html#a170905e3688320a2286d3c19a3c4d83a" title="drawball Fonction de dessin de la balle " alt="" coords="217,765,372,792"/>
+<area shape="rect" id="node18" href="$class_game_manager.html#af7c8890b2880ac4a7e9df9b5359d0392" title="getBille " alt="" coords="433,664,592,691"/>
+<area shape="rect" id="node19" href="$class_ball.html#a6806cba5442118acd06f48fd02cdd5cc" title="getX " alt="" coords="474,715,551,741"/>
+<area shape="rect" id="node20" href="$class_ball.html#ac4e44551d59c3c09d28444b41e1c623b" title="getY " alt="" coords="473,765,552,792"/>
+<area shape="rect" id="node21" href="$class_ball.html#a44bd04f6ba99b9a43c94e83a0e209359" title="getZ " alt="" coords="474,816,551,843"/>
+<area shape="rect" id="node22" href="$class_ball.html#a5c1bcd887f634369ed2b205199c3323c" title="getRadius " alt="" coords="457,867,568,893"/>
+</map>

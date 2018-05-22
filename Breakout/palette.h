@@ -1,5 +1,6 @@
 #ifndef PALETTE_H
 #define PALETTE_H
+
 /*!
   *\file Palette.h
   *\brief Gestionnaire de palette

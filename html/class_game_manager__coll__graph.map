@@ -1,0 +1,6 @@
+<map id="GameManager" name="GameManager">
+<area shape="rect" id="node2" href="$class_palette.html" title="Classe gérant les caractéristiques de la palette. " alt="" coords="132,557,229,679"/>
+<area shape="rect" id="node3" href="$class_square.html" title="Classe gérant les caractéristiques des briques. " alt="" coords="30,5,128,332"/>
+<area shape="rect" id="node4" href="$class_player.html" title="Classe gérant les caractéristiques du joueur. " alt="" coords="253,469,364,767"/>
+<area shape="rect" id="node5" href="$class_ball.html" title="Classe gérant les caractéristiques des balles. " alt="" coords="388,381,508,855"/>
+</map>
