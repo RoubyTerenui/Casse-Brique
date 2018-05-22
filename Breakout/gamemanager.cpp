@@ -124,7 +124,7 @@ void GameManager::updateBille_Score()//Position de la Bille et Direction et upda
     if (collisionWall(45,1200,500)!=0){
         int direction=collisionWall(45,1200,500);
         if (direction==1){
-            if(player.getLifePoint()>0){//Lors de l'arrivé sur le sol réinitialisation de la partie et soustraction d'un point de vie
+            if(player.getLifePoint()>1){//Lors de l'arrivé sur le sol réinitialisation de la partie et soustraction d'un point de vie
                 player.setLifePoint(player.getLifePoint()-1);
                 bille_.reinitialiser(stick_.getX(),-18+1.225,55);
             }
