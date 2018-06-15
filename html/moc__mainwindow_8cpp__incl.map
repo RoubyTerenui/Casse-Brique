@@ -1,4 +1,4 @@
-<map id="build&#45;Breakout&#45;Desktop_Qt_5_10_1_MinGW_32bit&#45;Debug/debug/moc_mainwindow.cpp" name="build&#45;Breakout&#45;Desktop_Qt_5_10_1_MinGW_32bit&#45;Debug/debug/moc_mainwindow.cpp">
+<map id="build&#45;Breakout&#45;Desktop_Qt_5_10_1_MinGW_32bit&#45;Release/release/moc_mainwindow.cpp" name="build&#45;Breakout&#45;Desktop_Qt_5_10_1_MinGW_32bit&#45;Release/release/moc_mainwindow.cpp">
 <area shape="rect" id="node2" href="$mainwindow_8h.html" title="Gestionnaire de Jeu. " alt="" coords="916,109,1099,136"/>
 <area shape="rect" id="node3" href="$opencvwidget_8h.html" title="Utiliser OpenCV Réutilisation d&#39;une classe donnée comme point de départ dans le cadre du projet qui a..." alt="" coords="616,184,727,211"/>
 <area shape="rect" id="node10" href="$listplayer_8h.html" title="ListPlayer utilisé pour le tableau de score. " alt="" coords="915,184,1001,211"/>

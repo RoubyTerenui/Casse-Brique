@@ -184,7 +184,7 @@ var moc__predefs_8h =
     [ "__LONG_MAX__", "moc__predefs_8h.html#af16678d7537c7a5463c807639fe2f635", null ],
     [ "__MINGW32__", "moc__predefs_8h.html#a58bb9ff70f3a05d2794468e3d6bcba26", null ],
     [ "__MSVCRT__", "moc__predefs_8h.html#a03cf4cdbd788cd7d067c5b4b157315bb", null ],
-    [ "__NO_INLINE__", "moc__predefs_8h.html#a7a76473a66d022aee2c9f661405d8fbb", null ],
+    [ "__OPTIMIZE__", "moc__predefs_8h.html#a5bcf2962d7a37c34484cef13fa9601b2", null ],
     [ "__ORDER_BIG_ENDIAN__", "moc__predefs_8h.html#a190d0219caabccc0e05909f39bcb00d6", null ],
     [ "__ORDER_LITTLE_ENDIAN__", "moc__predefs_8h.html#a2b695357ce4b46971d54e8e9dfe5724f", null ],
     [ "__ORDER_PDP_ENDIAN__", "moc__predefs_8h.html#a94ead674b2441dc29dbd5d6aba467197", null ],

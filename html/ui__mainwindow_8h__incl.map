@@ -1,4 +1,4 @@
-<map id="build&#45;Breakout&#45;Desktop_Qt_5_10_1_MinGW_32bit&#45;Debug/ui_mainwindow.h" name="build&#45;Breakout&#45;Desktop_Qt_5_10_1_MinGW_32bit&#45;Debug/ui_mainwindow.h">
+<map id="build&#45;Breakout&#45;Desktop_Qt_5_10_1_MinGW_32bit&#45;Release/ui_mainwindow.h" name="build&#45;Breakout&#45;Desktop_Qt_5_10_1_MinGW_32bit&#45;Release/ui_mainwindow.h">
 <area shape="rect" id="node19" href="$myglwidget_8h.html" title="Gestionnaire du widget OpenGL. " alt="" coords="3002,109,3101,136"/>
 <area shape="rect" id="node25" href="$gamemanager_8h.html" title="Gestionnaire de Jeu. " alt="" coords="3214,184,3329,211"/>
 <area shape="rect" id="node26" href="$ball_8h.html" title="Gestionnaire de Balle. " alt="" coords="3107,259,3161,285"/>

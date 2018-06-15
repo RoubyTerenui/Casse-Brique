@@ -3,10 +3,10 @@
 <area shape="rect" id="node9" href="$palette_8h.html" title="Gestionnaire de palette. " alt="" coords="266,80,394,107"/>
 <area shape="rect" id="node11" href="$square_8cpp.html" title="Breakout/square.cpp" alt="" coords="419,80,561,107"/>
 <area shape="rect" id="node3" href="$gamemanager_8cpp.html" title="Breakout/gamemanager.cpp" alt="" coords="5,229,191,256"/>
-<area shape="rect" id="node4" href="$myglwidget_8h.html" title="Gestionnaire du widget OpenGL. " alt="" coords="319,229,474,256"/>
-<area shape="rect" id="node5" href="$myglwidget_8cpp.html" title="Breakout/myglwidget.cpp" alt="" coords="118,319,286,345"/>
-<area shape="rect" id="node6" href="$moc__myglwidget_8cpp.html" title="build&#45;Breakout&#45;Desktop\l_Qt_5_10_1_MinGW_32bit\l&#45;Debug/debug/moc_myglwidget.cpp" alt="" coords="311,304,539,360"/>
-<area shape="rect" id="node7" href="$ui__mainwindow_8h.html" title="build&#45;Breakout&#45;Desktop\l_Qt_5_10_1_MinGW_32bit\l&#45;Debug/ui_mainwindow.h" alt="" coords="563,304,742,360"/>
-<area shape="rect" id="node8" href="$mainwindow_8cpp.html" title="Breakout/mainwindow.cpp" alt="" coords="566,408,739,435"/>
+<area shape="rect" id="node4" href="$myglwidget_8h.html" title="Gestionnaire du widget OpenGL. " alt="" coords="323,229,478,256"/>
+<area shape="rect" id="node5" href="$myglwidget_8cpp.html" title="Breakout/myglwidget.cpp" alt="" coords="115,319,283,345"/>
+<area shape="rect" id="node6" href="$moc__myglwidget_8cpp.html" title="build&#45;Breakout&#45;Desktop\l_Qt_5_10_1_MinGW_32bit\l&#45;Release/release/moc_myglwidget.cpp" alt="" coords="307,304,553,360"/>
+<area shape="rect" id="node7" href="$ui__mainwindow_8h.html" title="build&#45;Breakout&#45;Desktop\l_Qt_5_10_1_MinGW_32bit\l&#45;Release/ui_mainwindow.h" alt="" coords="577,304,755,360"/>
+<area shape="rect" id="node8" href="$mainwindow_8cpp.html" title="Breakout/mainwindow.cpp" alt="" coords="579,408,753,435"/>
 <area shape="rect" id="node10" href="$palette_8cpp.html" title="Breakout/palette.cpp" alt="" coords="339,155,481,181"/>
 </map>
