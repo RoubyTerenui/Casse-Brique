@@ -1,0 +1,15 @@
+INPUT(
+./debug\mainwindow.o
+./debug\gamemanager.o
+./debug\ball.o
+./debug\main.o
+./debug\myglwidget.o
+./debug\palette.o
+./debug\player.o
+./debug\square.o
+./debug\opencvwidget.o
+./debug\listplayer.o
+./debug\qrc_textures.o
+./debug\moc_mainwindow.o
+./debug\moc_myglwidget.o
+);
